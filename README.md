@@ -8,7 +8,7 @@ A modern, static HTML website for Jarvis and Sam AI Solutions, featuring glassmo
 - **Modern Design** - Glassmorphism UI with backdrop blur effects
 - **Template System** - Consistent header/footer across all pages
 - **SEO Optimized** - Complete meta tags, Open Graph, Twitter Cards
-- **Google Analytics** - GTM tracking integrated (GTM-TRT4SWZC)
+- **Google Analytics** - GTM tracking integrated
 - **Mobile Responsive** - Optimized for all devices and screen sizes
 - **Lab Section** - Dynamic lab projects display with filtering
 - **Contact Form** - Working contact form with FormSubmit integration
@@ -238,30 +238,34 @@ php -S localhost:8000
 4. **Access your site:**
    - URL: `https://yourusername.github.io/jns-website/`
 
-### Google Cloud Platform Deployment
+### Google Cloud Run Deployment
 
-1. **Create App Engine app.yaml:**
-   ```yaml
-   runtime: python39
-   
-   handlers:
-   - url: /
-     static_files: index.html
-     upload: index.html
-   
-   - url: /(.*)
-     static_files: \1
-     upload: (.*)
+This project uses Docker and nginx to serve the static website on Google Cloud Run.
+
+1. **Deploy to Cloud Run:**
+   ```bash
+   gcloud run deploy jns-website --source . --region=asia-east1 --allow-unauthenticated
    ```
 
-2. **Deploy to GCP:**
+2. **Custom domain setup (optional):**
    ```bash
-   gcloud app deploy
+   # First verify domain ownership in Google Search Console
+   gcloud beta run domain-mappings create --service=jns-website --domain=your-domain.com --replace
    ```
 
-3. **Custom domain setup:**
+4. **Check existing domain mappings:**
    ```bash
-   gcloud app domain-mappings create jarvisnsam.com
+   # List all domain mappings
+   gcloud beta run domain-mappings list
+   
+   # Get details of specific domain
+   gcloud beta run domain-mappings describe --domain=your-domain.com
+   ```
+
+3. **Update existing service:**
+   ```bash
+   # To update an existing deployment
+   gcloud run deploy jns-website --source . --region=asia-east1 --allow-unauthenticated
    ```
 
 ## 📊 Content Management
@@ -324,7 +328,6 @@ When adding new pages, update `sitemap.xml`:
 
 ### Google Tag Manager
 
-- **GTM ID:** GTM-TRT4SWZC
 - **Tracks:** Page views, form submissions, button clicks
 - **Configure:** Additional events in GTM dashboard
 
