@@ -30,110 +30,31 @@ jns-website/
 └── README.md               # This file
 ```
 
-## 🚀 Deployment Workflow
-
-### Branch Strategy
-- **`web`** - Development branch (work here daily)
-- **`main`** - Production branch (auto-deploys to jarvisnsam.com)
-
-### Development Workflow
-
-```bash
-# 1. Work on development branch
-git checkout web
-
-# 2. Make your changes
-# Edit files, add features, etc.
-
-# 3. Commit changes
-git add .
-git commit -m "Add new feature or fix"
-
-# 4. Push to development
-git push origin web
-
-# 5. Deploy to production (when ready)
-git checkout main
-git merge web
-git push origin main  # 🚀 Triggers auto-deployment!
-```
-
-## 🔧 Auto-Deployment Setup
-
-### GitHub Actions
-- **Workflow**: `.github/workflows/deploy.yml`
-- **Trigger**: Push to `main` branch
-- **Target**: Google Cloud Run (asia-east1)
-- **Container**: nginx:alpine with custom configuration
-
-### Required GitHub Secrets
-- `GCP_SA_KEY` - Google Cloud service account JSON key
-- `GCP_PROJECT_ID` - `voicebot-453915`
-
-### Google Cloud Configuration
-- **Project**: voicebot-453915
-- **Service**: jns-website
-- **Region**: asia-east1 (Taiwan)
-- **Authentication**: Allow unauthenticated
-- **Custom Domain**: jarvisnsam.com
-
-## 📝 Quick Git Commands
-
-### First Time Setup
-```bash
-# Clone repository
-git clone https://github.com/YOUR_USERNAME/jns-website.git
-cd jns-website
-
-# Create development branch
-git checkout -b web
-git push -u origin web
-```
+## 🚀 Quick Git Commands
 
 ### Daily Development
 ```bash
-# Switch to development branch
 git checkout web
-
-# Check status
-git status
-
-# Add all changes
 git add .
-
-# Commit with message
-git commit -m "Description of changes"
-
-# Push to GitHub
+git commit -m "your changes"
 git push origin web
 ```
 
 ### Deploy to Production
 ```bash
-# Switch to main branch
 git checkout main
-
-# Merge development changes
 git merge web
-
-# Push to trigger deployment
 git push origin main
 ```
 
-### Useful Commands
-```bash
-# Check current branch
-git branch
+### Branch Strategy
+- **`web`** - Development (GitHub Pages preview)
+- **`main`** - Production (auto-deploys to jarvisnsam.com)
 
-# See commit history
-git log --oneline
-
-# Undo last commit (keep changes)
-git reset --soft HEAD~1
-
-# Discard all local changes
-git checkout -- .
-```
+## 🔧 Auto-Deployment
+- **Trigger**: Push to `main` branch
+- **Target**: Google Cloud Run (asia-east1)
+- **Domain**: jarvisnsam.com
 
 ## 🔗 Link Page Features
 
@@ -223,15 +144,207 @@ git checkout main
 git reset --hard origin/main
 
 # Force push (use carefully)
-git push --force-with-lease origin main
+2. **Push to GitHub:**
+   ```bash
+   git remote add origin https://github.com/yourusername/jns-website.git
+   git push -u origin main
+   ```
+
+3. **Enable GitHub Pages:**
+   - Go to repository Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: main, Folder: / (root)
+   - Save
+
+4. **Access your site:**
+   - URL: `https://yourusername.github.io/jns-website/`
+
+### Google Cloud Run Deployment
+
+This project uses Docker and nginx to serve the static website on Google Cloud Run.
+
+1. **Deploy to Cloud Run:**
+   ```bash
+   gcloud run deploy jns-website --source . --region=asia-east1 --allow-unauthenticated
+   ```
+
+2. **Custom domain setup (optional):**
+   ```bash
+   # First verify domain ownership in Google Search Console
+   gcloud beta run domain-mappings create --service=jns-website --domain=your-domain.com --replace
+   ```
+
+4. **Check existing domain mappings:**
+   ```bash
+   # List all domain mappings
+   gcloud beta run domain-mappings list
+   
+   # Get details of specific domain
+   gcloud beta run domain-mappings describe --domain=your-domain.com
+   ```
+
+3. **Update existing service:**
+   ```bash
+   # To update an existing deployment
+   gcloud run deploy jns-website --source . --region=asia-east1 --allow-unauthenticated
+   ```
+
+## 📊 Content Management
+
+### Updating Lab Projects
+
+Lab projects are defined in `js/lab.js`. To add/update projects:
+
+```javascript
+const labDataEmbedded = [
+    {
+        "id": 1,
+        "title": "Project Name",
+        "description": "Project description (keep under 100 characters)",
+        "tags": ["AI", "Agent", "Category"],
+        "status": "active",
+        "link": "https://project-url.com/",
+        "image": "https://image-url.com/image.png"
+    }
+];
 ```
+
+### Updating Customer Logos
+
+1. Add logo image to `img/customers/`
+2. Update customer array in `index.html`:
+   ```html
+   <div class="customer-item" data-animation="fade-zoom-in" data-delay="0.1">
+       <div class="customer-logo">
+           <a href="https://customer-website.com/" target="_blank" rel="noopener noreferrer" title="Customer Name">
+               <img src="img/customers/Customer_Logo.png" alt="Customer Name" />
+           </a>
+       </div>
+   </div>
+   ```
+
+## 🔍 SEO Optimization
+
+### Sitemap Updates
+
+When adding new pages, update `sitemap.xml`:
+
+```xml
+<url>
+    <loc>https://jarvisnsam.com/your-new-page.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+</url>
+```
+
+### Meta Tag Best Practices
+
+- **Title:** 50-60 characters, include main keyword
+- **Description:** 150-160 characters, compelling summary
+- **Keywords:** 5-10 relevant keywords, comma-separated
+- **OG Image:** 1200x630px for social sharing
+
+## 🎯 Analytics & Tracking
+
+### Google Tag Manager
+
+- **Tracks:** Page views, form submissions, button clicks
+- **Configure:** Additional events in GTM dashboard
+
+### Contact Form Analytics
+
+The contact form automatically tracks:
+- Form submissions
+- Success/error rates
+- User engagement
+
+## 🔧 Technical Features
+
+### Glassmorphism Design System
+
+Modern UI design with:
+- **Backdrop blur effects:** 10px blur for glass-like appearance
+- **Semi-transparent backgrounds:** RGBA colors with opacity
+- **Gradient borders:** Subtle cyan accent borders
+- **Smooth animations:** Cubic-bezier transitions for premium feel
+
+### Button Design
+
+Enhanced button styling features:
+- **Glass effect:** Semi-transparent background with backdrop blur
+- **Hover animations:** Scale, lift, and glow effects
+- **Shimmer effect:** Light sweep animation on hover
+- **Icon animations:** Icons slide right on hover
+- **Mobile optimized:** Touch-friendly sizing and spacing
+
+### Typography System
+
+Professional typography with:
+- **Gradient text:** Section titles with cyan-to-red gradients
+- **Font weights:** 900 weight for maximum impact
+- **Letter spacing:** Optimized for readability
+- **Responsive sizing:** Scales appropriately on mobile
+
+### Lab Page Features
+
+Advanced lab project display:
+- **Flexbox centering:** Cards center regardless of quantity
+- **Filter system:** Dynamic filtering by technology tags
+- **Responsive grid:** Adapts from 4 columns to 1 on mobile
+- **Card animations:** Hover effects and smooth transitions
+
+### Floating Icons Animation
+
+The homepage includes animated floating icons. To customize:
+
+1. **Edit positions:** Modify CSS in `css/style.css`
+2. **Change icons:** Update Boxicons classes in `index.html`
+3. **Adjust animation:** Modify `@keyframes float` in CSS
+
+### Mobile Menu
+
+Responsive mobile navigation with:
+- **Slide-in menu:** Smooth offcanvas animation
+- **Backdrop overlay:** Dark overlay with blur
+- **Touch-friendly:** Large touch targets
+- **Gradient effects:** Consistent with design system
+
+### Contact Form
+
+Features:
+- **Service:** FormSubmit.co
+- **Email:** info@jarvisnsam.com
+- **Validation:** Client-side validation
+- **Feedback:** Success/error messages
+- **Security:** Honeypot spam protection
+- **Glass styling:** Consistent with design system
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+**Animations not working:**
+- Ensure you're using HTTP server (not file://)
+- Check browser console for JavaScript errors
+
+**Images not loading:**
+- Verify image paths are correct
+- Check image file extensions match HTML references
+
+**Contact form not working:**
+- Verify FormSubmit.co configuration
+- Check network tab for submission errors
+
+**Mobile menu not working:**
+- Ensure Bootstrap JavaScript is loaded
+- Check for JavaScript console errors
 
 ## 📞 Support
 
-For issues or questions:
-- **Email**: info@jarvisnsam.com
-- **GitHub Issues**: Create an issue in this repository
-- **Documentation**: This README file
+For technical issues or questions:
+- **Email:** info@jarvisnsam.com
+- **Website:** https://jarvisnsam.com
 
 ## 📄 License
 
