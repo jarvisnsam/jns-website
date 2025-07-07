@@ -1,0 +1,45 @@
+# Git files
+.git
+.gitignore
+
+# GitHub files
+.github
+
+# Documentation
+README.md
+*.md
+
+# Development files
+.vscode
+.idea
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies (if any)
+node_modules
+
+# Temporary files
+*.tmp
+*.temp
+
+# Service account keys (security)
+*.json
+!package*.json
+
+# Build artifacts
+dist
+build
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Cache
+.cache

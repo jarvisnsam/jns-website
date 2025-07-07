@@ -1,0 +1,40 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup Google Cloud CLI
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        export_default_credentials: true
+    
+    - name: Configure Docker for GCR
+      run: gcloud auth configure-docker
+    
+    - name: Build and Push Docker Image
+      run: |
+        docker build -t gcr.io/voicebot-453915/jns-website:${{ github.sha }} .
+        docker push gcr.io/voicebot-453915/jns-website:${{ github.sha }}
+    
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud run deploy jns-website \
+          --image gcr.io/voicebot-453915/jns-website:${{ github.sha }} \
+          --region asia-east1 \
+          --allow-unauthenticated \
+          --platform managed \
+          --port 8080 \
+          --memory 512Mi \
+          --cpu 1 \
+          --max-instances 10
