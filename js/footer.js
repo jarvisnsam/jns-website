@@ -1,4 +1,22 @@
-const footerHTML = `
+// Auto-detect path depth for consistent relative paths (shared with header.js)
+function getBasePath() {
+    const pathname = window.location.pathname;
+    const pathSegments = pathname.split('/').filter(segment => segment !== '');
+    
+    // Remove filename if present (ends with .html)
+    if (pathSegments.length > 0 && pathSegments[pathSegments.length - 1].includes('.html')) {
+        pathSegments.pop();
+    }
+    
+    // Calculate depth from root (excluding domain)
+    const depth = pathSegments.length;
+    return depth > 0 ? '../'.repeat(depth) : './';
+}
+
+function generateFooterHTML() {
+    const basePath = getBasePath();
+    
+    return `
 <div class="footer-area">
     <div class="footer-widget-info ptb-100">
         <div class="container">
@@ -8,7 +26,7 @@ const footerHTML = `
                         <h4>Contact Us</h4>
                         <div class="footer-logo mb-3">
                             <img 
-                                src="img/jns_logo.png" 
+                                src="${basePath}img/jns_logo.png" 
                                 alt="Jarvis and Sam" 
                                 style="max-width: 60px; max-height: 60px; object-fit: contain;"
                             />
@@ -56,13 +74,14 @@ const footerHTML = `
                     <div class="footer-widget">
                         <h4>Sitemap</h4>
                         <ul>
-                            <li><a href="index.html#hero">Home</a></li>
-                            <li><a href="index.html#about">About</a></li>
-                            <li><a href="index.html#products">Products</a></li>
-                            <li><a href="lab.html">Lab</a></li>
-                            <li><a href="https://blog.jarvisnsam.com/" target="_blank" rel="noopener noreferrer">Blog</a></li>
-                            <li><a href="index.html#customers">Customers</a></li>
-                            <li><a href="index.html#contact">Contact Us</a></li>
+                            <li><a href="${basePath}index.html#hero">Home</a></li>
+                            <li><a href="${basePath}index.html#about">About</a></li>
+                            <li><a href="${basePath}index.html#products">Products</a></li>
+                            <li><a href="${basePath}lab.html">Lab</a></li>
+                            <li><a href="${basePath}link.html">Link</a></li>
+                            <li><a href="${basePath}blog/">Blog</a></li>
+                            <li><a href="${basePath}index.html#customers">Customers</a></li>
+                            <li><a href="${basePath}index.html#contact">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -70,10 +89,10 @@ const footerHTML = `
                     <div class="footer-widget">
                         <h4>Products</h4>
                         <ul>
-                            <li><a href="index.html#smartgent-detail">Smartgent</a></li>
-                            <li><a href="index.html#voicebot">Voicebot</a></li>
-                            <li><a href="index.html#agentel-agency">Agentel Agency</a></li>
-                            <li><a href="index.html#custom-solutions">Custom Solutions</a></li>
+                            <li><a href="${basePath}index.html#smartgent-detail">Smartgent</a></li>
+                            <li><a href="${basePath}index.html#voicebot">Voicebot</a></li>
+                            <li><a href="${basePath}index.html#agentel-agency">Agentel Agency</a></li>
+                            <li><a href="${basePath}index.html#custom-solutions">Custom Solutions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -97,7 +116,8 @@ const footerHTML = `
 <div class="go-top" id="go-top">
     <i class="bx bx-up-arrow-alt"></i>
 </div>`;
+}
 
 function loadFooter() {
-    document.getElementById('footer').innerHTML = footerHTML;
+    document.getElementById('footer').innerHTML = generateFooterHTML();
 }

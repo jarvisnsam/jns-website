@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jarvis and Sam AI Blog</title>
+    <description>AI Solutions &amp; Business Transformation Insights</description>
+    <link>/blog</link>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Jul 2025 07:00:00 GMT</lastBuildDate>
+    <atom:link href="/blog/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building A2A-Compatible Agents: A Complete Guide for n8n Developers</title>
+      <description>The Agent-to-Agent (A2A) protocol is revolutionizing how AI systems communicate and exchange files. Complete guide for n8n developers.</description>
+      <link>/blog/a2a-agent-setup-guide-n8n-developers.html</link>
+      <guid isPermaLink="false">a2a-agent-setup-guide-n8n-developers</guid>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 GMT</pubDate>
+      <author>blog@jarvisnsam.com (Jarvis and Sam)</author>
+      <category>A2A Protocol</category>
+      <category>n8n Development</category>
+      <category>AI Agents</category>
+      <category>Workflow Automation</category>
+      <category>File Processing</category>
+    </item>
+    
+    <item>
+      <title>From an Idea to an AI Product in 6 Hours</title>
+      <description>The game-changing methodology that's making competitors irrelevant by turning morning brainstorms into afternoon revenue</description>
+      <link>/blog/business-driven-agentic-workflow.html</link>
+      <guid isPermaLink="false">business-driven-agentic-workflow</guid>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 GMT</pubDate>
+      <author>blog@jarvisnsam.com (Jarvis and Sam)</author>
+      <category>AI Workflow</category>
+      <category>Business Automation</category>
+      <category>Rapid Development</category>
+      <category>Enterprise Solutions</category>
+    </item>
+    
+    <item>
+      <title>Agentic Protocol Future Trends</title>
+      <description>Exploring the key trends shaping AI agent communication, collaboration, and the future of agentic protocols in artificial intelligence.</description>
+      <link>/blog/agentic-protocol-future-trend.html</link>
+      <guid isPermaLink="false">agentic-protocol-future-trend</guid>
+      <pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate>
+      <author>blog@jarvisnsam.com (Zorro Cheng)</author>
+      <category>AI Protocols</category>
+      <category>Future Trends</category>
+      <category>AI Collaboration</category>
+      <category>A2A Communication</category>
+    </item>
+    
+    <item>
+      <title>MCP vs A2A: Understanding Modern AI Communication Protocols</title>
+      <description>As AI systems become more sophisticated and interconnected, the protocols governing their communication are evolving from traditional client-server architectures to more distributed, agent-based models.</description>
+      <link>/blog/mcp-vs-a2a-protocols.html</link>
+      <guid isPermaLink="false">mcp-vs-a2a-protocols</guid>
+      <pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate>
+      <author>blog@jarvisnsam.com (Jarvis and Sam)</author>
+      <category>MCP Protocol</category>
+      <category>A2A Protocol</category>
+      <category>AI Communication</category>
+      <category>Protocol Architecture</category>
+    </item>
+    
+    <item>
+      <title>Parallel Internet: Traditional vs Agentic Internet</title>
+      <description>The fundamental shift we're witnessing in internet architecture from traditional internet to emerging agentic internet where AI agents act as intelligent intermediaries.</description>
+      <link>/blog/parallel-internet.html</link>
+      <guid isPermaLink="false">parallel-internet</guid>
+      <pubDate>Mon, 26 May 2025 00:00:00 GMT</pubDate>
+      <author>blog@jarvisnsam.com (Jarvis and Sam)</author>
+      <category>Internet Architecture</category>
+      <category>AI Agents</category>
+      <category>MCP Protocol</category>
+      <category>Future Tech</category>
+    </item>
+  </channel>
+</rss>

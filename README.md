@@ -6,345 +6,285 @@ Official website for Jarvis and Sam - Enterprise AI Automation Solutions.
 - **Production**: [jarvisnsam.com](https://jarvisnsam.com)
 - **Cloud Run URL**: https://jns-website-431625878670.asia-east1.run.app
 
-## 📁 Project Structure
+## 📁 Key Files & Structure
 
 ```
 jns-website/
-├── index.html              # Main homepage
+├── index.html              # Main homepage (includes latest blog section)
 ├── link.html               # Links page with contact & tools
 ├── lab.html                # Lab page
+├── blog/
+│   ├── index.html          # Blog index (auto-generated from blog-data.js)
+│   ├── [post-slug].html    # Individual blog posts
+│   ├── sitemap.xml         # Blog sitemap
+│   └── feed.xml            # RSS feed
 ├── css/
-│   ├── style.css           # Main styles
+│   ├── style.css           # Main styles (includes latest blog styles)
+│   ├── blog.css            # Blog-specific styles
 │   ├── link.css            # Link page styles
 │   └── lab.css             # Lab page styles
 ├── js/
-│   ├── main.js             # Main JavaScript
+│   ├── main.js             # Main JavaScript (includes blog loading)
+│   ├── blog-data.js        # Blog post metadata (centralized)
 │   ├── header.js           # Header component
-│   ├── footer.js           # Footer component
-│   ├── link.js             # Link page functionality
-│   └── lab.js              # Lab page functionality
-├── img/                    # Images and assets
-├── .github/workflows/      # GitHub Actions
-├── Dockerfile              # Container configuration
-├── nginx.conf              # Web server configuration
-└── README.md               # This file
+│   ├── footer.js           # Footer component (includes link page)
+│   └── blog.js             # Blog functionality
+└── img/
+    └── blog/               # Blog images
 ```
 
 ## 🚀 Quick Git Commands
 
 ### Daily Development
 ```bash
-git checkout web
 git add .
 git commit -m "your changes"
-git push origin web
-```
-
-### Deploy to Production
-```bash
-git checkout main
-git merge web
 git push origin main
 ```
 
-### Branch Strategy
-- **`web`** - Development (GitHub Pages preview)
-- **`main`** - Production (auto-deploys to jarvisnsam.com)
-
-## 🔧 Auto-Deployment
+### Auto-Deployment
 - **Trigger**: Push to `main` branch
 - **Target**: Google Cloud Run (asia-east1)
 - **Domain**: jarvisnsam.com
 
-## 🔗 Link Page Features
+## 📝 Blog Management
 
-The link page (`/link.html`) includes:
-- **Contact Links**: Website, email, phone, social media
-- **Tool Links**: Smartgent, OpenWebUI, VoiceBot, n8n
-- **Category Filtering**: All, Contact, Tools
-- **Responsive Design**: 4 → 3 → 2 → 1 cards based on screen size
-- **Gradient Highlights**: Consistent branding with main site
+### Adding New Blog Posts
 
-### Adding New Links
-Edit `js/link.js` and add to the appropriate category:
+#### 1. Create Blog Post HTML
+Create `blog/your-post-slug.html` using this template:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../img/jns_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog Post Title – Jarvis and Sam Blog</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your blog post description" />
+    <meta name="keywords" content="keyword1, keyword2, keyword3" />
+    <meta name="author" content="Jarvis and Sam" />
+    
+    <!-- Article Tags -->
+    <meta name="article:tag" content="Tag 1" />
+    <meta name="article:tag" content="Tag 2" />
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/boxicons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Header Section -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="blog-post-section">
+            <div class="container">
+                <div class="blog-post-container">
+                    <!-- Blog Post Header -->
+                    <div class="blog-post-header">
+                        <div class="blog-post-header-top">
+                            <h1 class="blog-post-title">Your Blog Post Title</h1>
+                            <div class="blog-post-meta">
+                                <time datetime="2025-07-07">July 7, 2025</time>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Image (Optional) -->
+                    <div class="blog-post-image">
+                        <img src="../img/blog/your-featured-image.png" alt="Your Blog Post Title" />
+                    </div>
+
+                    <!-- Blog Post Content -->
+                    <div class="blog-post-content">
+                        <p>Your blog post content goes here...</p>
+                        
+                        <h2>Section Heading</h2>
+                        <p>More content...</p>
+                    </div>
+
+                    <!-- Tags Section -->
+                    <div class="blog-post-tags">
+                        <h3 class="blog-post-tags-title">Tags:</h3>
+                        <div class="blog-post-tags-list">
+                            <span class="blog-post-tag">Tag 1</span>
+                            <span class="blog-post-tag">Tag 2</span>
+                        </div>
+                    </div>
+
+                    <!-- Share Section -->
+                    <div class="blog-share-section">
+                        <h3 class="blog-share-title">Share this post:</h3>
+                        <div class="blog-share-buttons">
+                            <a href="mailto:?subject=Check out this article&body=Your Blog Post Title - /blog/your-post-slug.html" class="blog-share-btn" title="Share via Email">
+                                <i class="bx bx-envelope"></i>
+                            </a>
+                            <a href="https://api.whatsapp.com/send?text=Your Blog Post Title - /blog/your-post-slug.html" target="_blank" class="blog-share-btn" title="Share on WhatsApp">
+                                <i class="bx bxl-whatsapp"></i>
+                            </a>
+                            <button onclick="copyBlogLink('/blog/your-post-slug.html')" class="blog-share-btn" title="Copy link">
+                                <i class="bx bx-link"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/blog.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHeader();
+            loadFooter();
+        });
+    </script>
+</body>
+</html>
+```
+
+#### 2. Add Post to Blog Data
+Edit `js/blog-data.js` and add your post:
 
 ```javascript
-// Add to contact category
-contact: [
-    // existing items...
-    {
-        name: "New Platform",
-        url: "https://example.com",
-        icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/example.svg"
-    }
-]
+{
+    slug: "your-post-slug",
+    title: "Your Blog Post Title",
+    excerpt: "Brief description (2-3 sentences)",
+    date: "2025-07-07",
+    image: "your-featured-image.png",
+    tags: ["Tag1", "Tag2", "Tag3"]
+}
 ```
 
-## 🛠 Local Development
-
-### Prerequisites
-- Web browser
-- Text editor (VS Code recommended)
-- Git installed
-
-### Running Locally
-1. **Clone the repository**
-2. **Open `index.html`** in your browser
-3. **Make changes** to files
-4. **Refresh browser** to see updates
-
-### Testing with Docker (Optional)
-```bash
-# Build container
-docker build -t jns-website .
-
-# Run locally
-docker run -p 8080:8080 jns-website
-
-# Open http://localhost:8080
-```
-
-## 🔒 Security
-
-- **GitHub Secrets**: All sensitive data encrypted
-- **Service Account**: Minimal required permissions
-- **Container**: Non-root user, security headers
-- **HTTPS**: Enforced via Cloud Run and custom domain
-
-## 📊 Monitoring
-
-### Cloud Run Metrics
-- **URL**: https://console.cloud.google.com/run/detail/asia-east1/jns-website
-- **Metrics**: Request count, latency, memory usage
-- **Logs**: Deployment and runtime logs
-
-### GitHub Actions
-- **URL**: https://github.com/YOUR_USERNAME/jns-website/actions
-- **Status**: Build and deployment status
-- **Logs**: Detailed deployment logs
-
-## 🆘 Troubleshooting
-
-### Deployment Fails
-1. **Check GitHub Actions logs**
-2. **Verify secrets are set correctly**
-3. **Check Cloud Run service logs**
-4. **Ensure service account has permissions**
-
-### Website Not Loading
-1. **Check Cloud Run service status**
-2. **Verify custom domain mapping**
-3. **Check nginx configuration**
-4. **Review container logs**
-
-### Git Issues
-```bash
-# Reset to last working state
-git checkout main
-git reset --hard origin/main
-
-# Force push (use carefully)
-2. **Push to GitHub:**
-   ```bash
-   git remote add origin https://github.com/yourusername/jns-website.git
-   git push -u origin main
-   ```
-
-3. **Enable GitHub Pages:**
-   - Go to repository Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: main, Folder: / (root)
-   - Save
-
-4. **Access your site:**
-   - URL: `https://yourusername.github.io/jns-website/`
-
-### Google Cloud Run Deployment
-
-This project uses Docker and nginx to serve the static website on Google Cloud Run.
-
-1. **Deploy to Cloud Run:**
-   ```bash
-   gcloud run deploy jns-website --source . --region=asia-east1 --allow-unauthenticated
-   ```
-
-2. **Custom domain setup (optional):**
-   ```bash
-   # First verify domain ownership in Google Search Console
-   gcloud beta run domain-mappings create --service=jns-website --domain=your-domain.com --replace
-   ```
-
-4. **Check existing domain mappings:**
-   ```bash
-   # List all domain mappings
-   gcloud beta run domain-mappings list
-   
-   # Get details of specific domain
-   gcloud beta run domain-mappings describe --domain=your-domain.com
-   ```
-
-3. **Update existing service:**
-   ```bash
-   # To update an existing deployment
-   gcloud run deploy jns-website --source . --region=asia-east1 --allow-unauthenticated
-   ```
-
-## 📊 Content Management
-
-### Updating Lab Projects
-
-Lab projects are defined in `js/lab.js`. To add/update projects:
-
-```javascript
-const labDataEmbedded = [
-    {
-        "id": 1,
-        "title": "Project Name",
-        "description": "Project description (keep under 100 characters)",
-        "tags": ["AI", "Agent", "Category"],
-        "status": "active",
-        "link": "https://project-url.com/",
-        "image": "https://image-url.com/image.png"
-    }
-];
-```
-
-### Updating Customer Logos
-
-1. Add logo image to `img/customers/`
-2. Update customer array in `index.html`:
-   ```html
-   <div class="customer-item" data-animation="fade-zoom-in" data-delay="0.1">
-       <div class="customer-logo">
-           <a href="https://customer-website.com/" target="_blank" rel="noopener noreferrer" title="Customer Name">
-               <img src="img/customers/Customer_Logo.png" alt="Customer Name" />
-           </a>
-       </div>
-   </div>
-   ```
-
-## 🔍 SEO Optimization
-
-### Sitemap Updates
-
-When adding new pages, update `sitemap.xml`:
+#### 3. Update Sitemap
+Add to `sitemap.xml`:
 
 ```xml
 <url>
-    <loc>https://jarvisnsam.com/your-new-page.html</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>./blog/your-post-slug.html</loc>
+    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
 </url>
 ```
 
-### Meta Tag Best Practices
+### Files to Update for New Posts
+1. **`blog/your-post-slug.html`** - Create post content
+2. **`js/blog-data.js`** - Add post metadata
+3. **`sitemap.xml`** - Add URL entry
 
-- **Title:** 50-60 characters, include main keyword
-- **Description:** 150-160 characters, compelling summary
-- **Keywords:** 5-10 relevant keywords, comma-separated
-- **OG Image:** 1200x630px for social sharing
+**Total: 3 files** (blog index auto-updates from blog-data.js)
 
-## 🎯 Analytics & Tracking
+## 🔗 Link Page Management
 
-### Google Tag Manager
+Edit `js/link.js` to add new links:
 
-- **Tracks:** Page views, form submissions, button clicks
-- **Configure:** Additional events in GTM dashboard
+```javascript
+// Add to contact or tools category
+{
+    name: "New Platform",
+    url: "https://example.com",
+    icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/example.svg"
+}
+```
 
-### Contact Form Analytics
+## 🛠 Lab Page Management
 
-The contact form automatically tracks:
-- Form submissions
-- Success/error rates
-- User engagement
+Edit `js/lab.js` to add/update projects:
 
-## 🔧 Technical Features
+```javascript
+{
+    "id": 1,
+    "title": "Project Name",
+    "description": "Project description",
+    "tags": ["AI", "Agent"],
+    "status": "active",
+    "link": "https://project-url.com/",
+    "image": "https://image-url.com/image.png"
+}
+```
 
-### Glassmorphism Design System
+## 📊 Sitemap Management
 
-Modern UI design with:
-- **Backdrop blur effects:** 10px blur for glass-like appearance
-- **Semi-transparent backgrounds:** RGBA colors with opacity
-- **Gradient borders:** Subtle cyan accent borders
-- **Smooth animations:** Cubic-bezier transitions for premium feel
+### Current Structure (Relative URLs)
+- Uses `./` prefix for all URLs
+- Works across dev, production, and GitHub Pages
+- Auto-updated for blog posts via blog-data.js
 
-### Button Design
+### Manual Updates Required
+- New pages (non-blog)
+- Changed URLs
+- Priority adjustments
 
-Enhanced button styling features:
-- **Glass effect:** Semi-transparent background with backdrop blur
-- **Hover animations:** Scale, lift, and glow effects
-- **Shimmer effect:** Light sweep animation on hover
-- **Icon animations:** Icons slide right on hover
-- **Mobile optimized:** Touch-friendly sizing and spacing
+## 🛠 Local Development
 
-### Typography System
+### Running Local Server
+python -m http.server 8000
 
-Professional typography with:
-- **Gradient text:** Section titles with cyan-to-red gradients
-- **Font weights:** 900 weight for maximum impact
-- **Letter spacing:** Optimized for readability
-- **Responsive sizing:** Scales appropriately on mobile
+# Then open http://localhost:8000
+```
 
-### Lab Page Features
+## 🔧 Key Features
 
-Advanced lab project display:
-- **Flexbox centering:** Cards center regardless of quantity
-- **Filter system:** Dynamic filtering by technology tags
-- **Responsive grid:** Adapts from 4 columns to 1 on mobile
-- **Card animations:** Hover effects and smooth transitions
+### Homepage Latest Blog Section
+- **Location**: Between hero and about sections
+- **Data Source**: `js/blog-data.js`
+- **Auto-updates**: Shows latest 3 posts automatically
+- **Styling**: Consistent with site design (subtle tags, hover effects)
 
-### Floating Icons Animation
+### Blog System
+- **Semi-dynamic**: Index generated from blog-data.js
+- **Search & Filter**: By title, content, tags
+- **Responsive**: Mobile-optimized
+- **SEO**: Proper meta tags, relative URLs
 
-The homepage includes animated floating icons. To customize:
+### Design System
+- **Glassmorphism**: Backdrop blur effects
+- **Gradient Text**: Cyan-to-red gradients
+- **Subtle Tags**: Transparent with border, hover effects
+- **Consistent Spacing**: Reduced blog section padding
 
-1. **Edit positions:** Modify CSS in `css/style.css`
-2. **Change icons:** Update Boxicons classes in `index.html`
-3. **Adjust animation:** Modify `@keyframes float` in CSS
+## 🆘 Quick Troubleshooting
 
-### Mobile Menu
+### Blog Posts Not Showing
+1. Check `js/blog-data.js` syntax
+2. Verify image paths in `img/blog/`
+3. Ensure blog-data.js is loaded before main.js
 
-Responsive mobile navigation with:
-- **Slide-in menu:** Smooth offcanvas animation
-- **Backdrop overlay:** Dark overlay with blur
-- **Touch-friendly:** Large touch targets
-- **Gradient effects:** Consistent with design system
+### Deployment Issues
+1. Check GitHub Actions logs
+2. Verify all files committed
+3. Check Cloud Run service status
 
-### Contact Form
-
-Features:
-- **Service:** FormSubmit.co
-- **Email:** info@jarvisnsam.com
-- **Validation:** Client-side validation
-- **Feedback:** Success/error messages
-- **Security:** Honeypot spam protection
-- **Glass styling:** Consistent with design system
-
-## 🛠️ Troubleshooting
-
-### Common Issues
-
-**Animations not working:**
-- Ensure you're using HTTP server (not file://)
-- Check browser console for JavaScript errors
-
-**Images not loading:**
-- Verify image paths are correct
-- Check image file extensions match HTML references
-
-**Contact form not working:**
-- Verify FormSubmit.co configuration
-- Check network tab for submission errors
-
-**Mobile menu not working:**
-- Ensure Bootstrap JavaScript is loaded
-- Check for JavaScript console errors
+### Sitemap Issues
+1. Use relative URLs (`./` prefix)
+2. Update lastmod dates
+3. Validate XML syntax
 
 ## 📞 Support
 
-For technical issues or questions:
-- **Email:** info@jarvisnsam.com
-- **Website:** https://jarvisnsam.com
+For technical issues: info@jarvisnsam.com
 
 ## 📄 License
 

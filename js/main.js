@@ -374,3 +374,60 @@ style.textContent = `
 `;
 
 document.head.appendChild(style);
+
+// Load latest blog posts for homepage
+function loadLatestBlogPosts() {
+    const container = document.getElementById('latest-blog-posts');
+    if (!container) return;
+
+    // Check if blog-data.js is available
+    if (typeof blogPosts === 'undefined') {
+        console.log('Blog data not available');
+        return;
+    }
+
+    // Sort posts by date (newest first) and get latest 3
+    const latestPosts = blogPosts
+        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
+        .slice(0, 3);
+
+    // Generate HTML for each post
+    const postsHTML = latestPosts.map(post => {
+        const tagsHTML = post.tags.map(tag => 
+            `<span class="latest-blog-tag">${tag}</span>`
+        ).join('');
+
+        // Fix image path for homepage context (remove ../ prefix)
+        const imagePath = post.featuredImage.replace('../', '');
+
+        return `
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="latest-blog-card">
+                    <a href="blog/${post.slug}" class="latest-blog-card-link">
+                        <div class="latest-blog-card-image">
+                            <img src="${imagePath}" alt="${post.title}" />
+                        </div>
+                        <div class="latest-blog-card-content">
+                            <h3 class="latest-blog-card-title">${post.title}</h3>
+                            <div class="latest-blog-card-date">${formatDate(post.publishDate)}</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = postsHTML;
+}
+
+// Format date for display
+function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('en-US', options);
+}
+
+// Load blog posts when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Add a small delay to ensure blog-data.js is loaded
+    setTimeout(loadLatestBlogPosts, 100);
+});
