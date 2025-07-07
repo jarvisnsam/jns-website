@@ -6,7 +6,7 @@ Consistent with existing design system
 /* Blog Hero Section */
 .blog-hero-section {
     background-color: var(--DarkBg);
-    padding: 100px 0 80px;
+    padding: 100px 0 10px;
     position: relative;
     overflow: hidden;
 }
@@ -52,7 +52,7 @@ Consistent with existing design system
 /* Blog Content Section */
 .blog-content-section {
     background-color: var(--DarkBg);
-    padding: 40px 0 100px;
+    padding: 5px 0 100px;
     position: relative;
 }
 
@@ -561,11 +561,11 @@ Consistent with existing design system
     }
     
     .blog-hero-section {
-        padding: 80px 0 60px;
+        padding: 80px 0 10px;
     }
     
     .blog-content-section {
-        padding: 60px 0 80px;
+        padding: 5px 0 80px;
     }
     
     .blog-card-content {

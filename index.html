@@ -105,8 +105,21 @@
         <!-- Latest Blog Posts Section -->
         <section id="latest-blog" class="latest-blog-section pt-50 pb-70">
             <div class="container">
-                <div class="row" id="latest-blog-posts">
+                <!-- Desktop Grid -->
+                <div class="row d-none d-md-flex" id="latest-blog-posts">
                     <!-- Blog posts will be dynamically loaded here -->
+                </div>
+                
+                <!-- Mobile Carousel -->
+                <div class="d-md-none blog-carousel-container">
+                    <div class="blog-carousel-wrapper">
+                        <div class="blog-carousel-slides" id="mobile-blog-carousel">
+                            <!-- Mobile carousel slides will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="blog-carousel-dots" id="carousel-dots">
+                        <!-- Navigation dots will be generated here -->
+                    </div>
                 </div>
                 
                 <div class="row">

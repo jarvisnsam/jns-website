@@ -87,6 +87,11 @@ const linksData = {
             name: "n8n",
             url: "https://n8n.smartgen.w3btest.com/",
             icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/n8n.svg"
+        },
+        {
+            name: "Service Monitor",
+            url: "https://stats.uptimerobot.com/7UlJQrSiLt",
+            icon: "https://www.svgrepo.com/show/520001/uptimerobot.svg"
         }
     ]
 };

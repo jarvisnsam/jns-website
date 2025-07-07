@@ -377,8 +377,10 @@ document.head.appendChild(style);
 
 // Load latest blog posts for homepage
 function loadLatestBlogPosts() {
-    const container = document.getElementById('latest-blog-posts');
-    if (!container) return;
+    const desktopContainer = document.getElementById('latest-blog-posts');
+    const mobileContainer = document.getElementById('mobile-blog-carousel');
+    
+    if (!desktopContainer && !mobileContainer) return;
 
     // Check if blog-data.js is available
     if (typeof blogPosts === 'undefined') {
@@ -391,33 +393,167 @@ function loadLatestBlogPosts() {
         .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
         .slice(0, 3);
 
-    // Generate HTML for each post
-    const postsHTML = latestPosts.map(post => {
-        const tagsHTML = post.tags.map(tag => 
-            `<span class="latest-blog-tag">${tag}</span>`
-        ).join('');
+    // Generate desktop grid HTML
+    if (desktopContainer) {
+        const desktopHTML = latestPosts.map(post => {
+            // Fix image path for homepage context (remove ../ prefix)
+            const imagePath = post.featuredImage.replace('../', '');
 
-        // Fix image path for homepage context (remove ../ prefix)
-        const imagePath = post.featuredImage.replace('../', '');
-
-        return `
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="latest-blog-card">
-                    <a href="blog/${post.slug}" class="latest-blog-card-link">
-                        <div class="latest-blog-card-image">
-                            <img src="${imagePath}" alt="${post.title}" />
-                        </div>
-                        <div class="latest-blog-card-content">
-                            <h3 class="latest-blog-card-title">${post.title}</h3>
-                            <div class="latest-blog-card-date">${formatDate(post.publishDate)}</div>
-                        </div>
-                    </a>
+            return `
+                <div class="col-lg-4 col-md-6 mb-4 blog-card-item">
+                    <div class="latest-blog-card">
+                        <a href="blog/${post.slug}" class="latest-blog-card-link">
+                            <div class="latest-blog-card-image">
+                                <img src="${imagePath}" alt="${post.title}" />
+                            </div>
+                            <div class="latest-blog-card-content">
+                                <h3 class="latest-blog-card-title">${post.title}</h3>
+                                <p class="latest-blog-card-excerpt">${post.excerpt}</p>
+                                <div class="latest-blog-card-date">${formatDate(post.publishDate)}</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        `;
-    }).join('');
+            `;
+        }).join('');
+        
+        desktopContainer.innerHTML = desktopHTML;
+    }
 
-    container.innerHTML = postsHTML;
+    // Generate mobile carousel HTML
+    if (mobileContainer) {
+        const mobileHTML = latestPosts.map(post => {
+            // Fix image path for homepage context (remove ../ prefix)
+            const imagePath = post.featuredImage.replace('../', '');
+
+            return `
+                <div class="blog-carousel-slide">
+                    <div class="latest-blog-card">
+                        <a href="blog/${post.slug}" class="latest-blog-card-link">
+                            <div class="latest-blog-card-image">
+                                <img src="${imagePath}" alt="${post.title}" />
+                            </div>
+                            <div class="latest-blog-card-content">
+                                <h3 class="latest-blog-card-title">${post.title}</h3>
+                                <p class="latest-blog-card-excerpt">${post.excerpt}</p>
+                                <div class="latest-blog-card-date">${formatDate(post.publishDate)}</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        mobileContainer.innerHTML = mobileHTML;
+        
+        // Initialize carousel functionality
+        initializeBlogCarousel(latestPosts.length);
+    }
+}
+
+// Initialize blog carousel functionality
+function initializeBlogCarousel(totalSlides) {
+    const carousel = document.getElementById('mobile-blog-carousel');
+    const dotsContainer = document.getElementById('carousel-dots');
+    
+    if (!carousel || !dotsContainer) return;
+    
+    let currentSlide = 0;
+    let autoSlideInterval;
+    
+    // Create navigation dots
+    const dotsHTML = Array.from({length: totalSlides}, (_, i) => 
+        `<button class="carousel-dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></button>`
+    ).join('');
+    dotsContainer.innerHTML = dotsHTML;
+    
+    // Get all dots
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+    
+    // Function to go to specific slide
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        const translateX = -(slideIndex * 33.333);
+        carousel.style.transform = `translateX(${translateX}%)`;
+        
+        // Update active dot
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === slideIndex);
+        });
+    }
+    
+    // Function to go to next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+    }
+    
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+            resetAutoSlide();
+        });
+    });
+    
+    // Auto-slide functionality
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 4000); // 4 seconds
+    }
+    
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+    
+    function resetAutoSlide() {
+        stopAutoSlide();
+        startAutoSlide();
+    }
+    
+    // Touch/swipe support
+    let startX = 0;
+    let isDragging = false;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        stopAutoSlide();
+    });
+    
+    carousel.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+    
+    carousel.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        
+        if (Math.abs(diffX) > 50) { // Minimum swipe distance
+            if (diffX > 0) {
+                // Swipe left - next slide
+                nextSlide();
+            } else {
+                // Swipe right - previous slide
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                goToSlide(currentSlide);
+            }
+        }
+        
+        resetAutoSlide();
+    });
+    
+    // Pause on hover/touch
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+    
+    // Start auto-slide
+    startAutoSlide();
 }
 
 // Format date for display
