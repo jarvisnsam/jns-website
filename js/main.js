@@ -402,7 +402,7 @@ function loadLatestBlogPosts() {
             return `
                 <div class="col-lg-4 col-md-6 mb-4 blog-card-item">
                     <div class="latest-blog-card">
-                        <a href="blog/${post.slug}" class="latest-blog-card-link">
+                        <a href="./blog/${post.slug}" class="latest-blog-card-link">
                             <div class="latest-blog-card-image">
                                 <img src="${imagePath}" alt="${post.title}" />
                             </div>
@@ -429,7 +429,7 @@ function loadLatestBlogPosts() {
             return `
                 <div class="blog-carousel-slide">
                     <div class="latest-blog-card">
-                        <a href="blog/${post.slug}" class="latest-blog-card-link">
+                        <a href="./blog/${post.slug}" class="latest-blog-card-link">
                             <div class="latest-blog-card-image">
                                 <img src="${imagePath}" alt="${post.title}" />
                             </div>

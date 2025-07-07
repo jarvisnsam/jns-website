@@ -40,14 +40,14 @@ function generateBlogCard(post) {
     return `
         <div class="col-lg-4 col-md-6 mb-4" data-tags="${tagsData}" data-title="${titleData}" data-description="${descriptionData}">
             <article class="blog-card">
-                <a href="${post.slug}" class="blog-card-link">
+                <a href="./${post.slug}" class="blog-card-link">
                     <div class="blog-card-image">
                         <img src="${post.featuredImage}" alt="${post.title}" />
                     </div>
                 </a>
                 <div class="blog-card-content">
                     <h3 class="blog-card-title">
-                        <a href="${post.slug}">${post.title}</a>
+                        <a href="./${post.slug}">${post.title}</a>
                     </h3>
                     <p class="blog-card-excerpt">
                         ${post.excerpt}
