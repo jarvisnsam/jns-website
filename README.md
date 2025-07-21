@@ -33,13 +33,42 @@ jns-website/
     └── blog/               # Blog images
 ```
 
-## 🚀 Quick Git Commands
+## 🚀 Git Workflow Commands
 
-### Daily Development
+### Branch Strategy
+- **`web`** - Staging environment 
+- **`main`** - Production environment (auto-deploys to jarvisnsam.com)
+
+### Simple Workflow: Web → Main
+
+#### 1. Work on Web Branch (Staging)
 ```bash
+git checkout web
 git add .
 git commit -m "your changes"
+git push origin web
+```
+
+#### 2. Deploy to Main (Production)
+```bash
+git checkout main
+git merge web
 git push origin main
+```
+
+### Quick Commands
+```bash
+# Switch branches
+git checkout web
+git checkout main
+
+# Check status
+git status
+git branch -a
+
+# Reset if needed
+git reset --hard origin/web
+git reset --hard origin/main
 ```
 
 ### Auto-Deployment
