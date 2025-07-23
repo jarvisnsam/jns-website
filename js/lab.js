@@ -34,7 +34,7 @@ const labDataEmbedded = [
         "description": "Advanced Audio Transcription Solution that transforms conversations into structured text.",
         "image_url": "https://cdn-icons-png.flaticon.com/512/8862/8862361.png",
         "tags": ["AI", "Audio", "Productivity"],
-        "link": "https://voicebot.jarvisnsam.ai/",
+        "link": "https://vb.jarvisnsam.ai/",
         "active": 1
     },
     {
