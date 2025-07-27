@@ -53,7 +53,7 @@ function generateHeaderHTML() {
                         <a href="${basePath}index.html#products" class="nav-link">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a href="${basePath}lab.html" class="nav-link">Lab</a>
+                        <a href="${basePath}lab/" class="nav-link">Lab</a>
                     </li>
                     <li class="nav-item">
                         <a href="${basePath}blog/" class="nav-link">Blog</a>
@@ -95,7 +95,7 @@ function generateHeaderHTML() {
                 <a href="${basePath}index.html#products" class="nav-link" onclick="toggleMobileMenu()">Products</a>
             </li>
             <li class="nav-item">
-                <a href="${basePath}lab.html" class="nav-link" onclick="toggleMobileMenu()">Lab</a>
+                <a href="${basePath}lab/" class="nav-link" onclick="toggleMobileMenu()">Lab</a>
             </li>
             <li class="nav-item">
                 <a href="${basePath}blog/" class="nav-link" onclick="toggleMobileMenu()">Blog</a>

@@ -77,8 +77,8 @@ function generateFooterHTML() {
                             <li><a href="${basePath}index.html#hero">Home</a></li>
                             <li><a href="${basePath}index.html#about">About</a></li>
                             <li><a href="${basePath}index.html#products">Products</a></li>
-                            <li><a href="${basePath}lab.html">Lab</a></li>
-                            <li><a href="${basePath}link.html">Link</a></li>
+                            <li><a href="${basePath}lab/">Lab</a></li>
+                            <li><a href="${basePath}link/">Link</a></li>
                             <li><a href="${basePath}blog/">Blog</a></li>
                             <li><a href="${basePath}index.html#customers">Customers</a></li>
                             <li><a href="${basePath}index.html#contact">Contact Us</a></li>
