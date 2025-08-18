@@ -78,10 +78,11 @@ function generateFooterHTML() {
                             <li><a href="${basePath}index.html#about">About</a></li>
                             <li><a href="${basePath}index.html#products">Products</a></li>
                             <li><a href="${basePath}lab/">Lab</a></li>
-                            <li><a href="${basePath}link/">Link</a></li>
                             <li><a href="${basePath}blog/">Blog</a></li>
                             <li><a href="${basePath}index.html#customers">Customers</a></li>
+                            <li><a href="${basePath}link/">Link</a></li>
                             <li><a href="${basePath}index.html#contact">Contact Us</a></li>
+                            <li><a href="${basePath}privacy-policy/">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -119,5 +120,13 @@ function generateFooterHTML() {
 }
 
 function loadFooter() {
-    document.getElementById('footer').innerHTML = generateFooterHTML();
+    // Clear any existing footer content first
+    const footerElement = document.getElementById('footer');
+    if (footerElement) {
+        footerElement.innerHTML = '';
+        // Force re-render
+        setTimeout(() => {
+            footerElement.innerHTML = generateFooterHTML();
+        }, 10);
+    }
 }
