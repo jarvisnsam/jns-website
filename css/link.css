@@ -289,52 +289,88 @@ Consistent with existing design system
 @media (max-width: 480px) {
     .category-tabs {
         gap: 10px;
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: nowrap;
         overflow-x: auto;
-        padding: 0 10px;
+        padding: 0 15px;
     }
     
     .tab-button {
         font-size: 12px;
         padding: 10px 12px;
-        min-width: 50px;
+        min-width: 60px;
         flex-shrink: 0;
         letter-spacing: 0.3px;
+        white-space: nowrap;
+    }
+    
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 30px;
     }
     
     .link-card {
-        padding: 14px 16px;
-        height: 65px;
+        padding: 12px 14px;
+        height: 60px;
     }
     
     .link-icon {
-        width: 35px;
-        height: 35px;
-        margin-right: 14px;
+        width: 32px;
+        height: 32px;
+        margin-right: 12px;
     }
     
     .link-icon img {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
     }
     
     .link-text {
-        font-size: 15px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 360px) {
     .category-tabs {
         gap: 8px;
-        padding: 0 5px;
+        padding: 0 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
     
     .tab-button {
         font-size: 11px;
         padding: 8px 10px;
-        min-width: 45px;
+        min-width: 55px;
         letter-spacing: 0.2px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .link-card {
+        padding: 10px 12px;
+        height: 55px;
+    }
+    
+    .link-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    
+    .link-icon img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .link-text {
+        font-size: 13px;
     }
 }
 

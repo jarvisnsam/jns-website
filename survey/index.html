@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../img/jns_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey – Jarvis and Sam</title>
+    
+    <!-- Initialize dataLayer -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TRT4SWZC');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="Take our survey to help us improve our AI automation solutions and services." />
+    <meta name="keywords" content="survey, feedback, AI automation, Jarvis and Sam" />
+    <meta name="author" content="Jarvis and Sam" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jarvisnsam.com/survey/" />
+    <meta property="og:site_name" content="Jarvis and Sam" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Survey – Jarvis and Sam" />
+    <meta property="og:description" content="Take our survey to help us improve our AI automation solutions and services." />
+    <meta property="og:image" content="https://jarvisnsam.com/img/jns_logo.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://jarvisnsam.com/survey/" />
+    <meta property="twitter:site" content="@jarvisnsam" />
+    <meta property="twitter:title" content="Survey – Jarvis and Sam" />
+    <meta property="twitter:description" content="Take our survey to help us improve our AI automation solutions and services." />
+    <meta property="twitter:image" content="https://jarvisnsam.com/img/jns_logo.png" />
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/boxicons.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Survey Page Styles -->
+    <style>
+        .survey-section {
+            padding: 20px 0 0 0;
+            min-height: 100vh;
+        }
+        
+        .survey-iframe-container {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 90px);
+            background: #fff;
+            border-radius: 0;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .survey-iframe {
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+            border: none;
+            display: block;
+            overflow-y: auto;
+        }
+        
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            z-index: 1;
+        }
+        
+        .loading-overlay.hidden {
+            display: none;
+        }
+        
+        /* Smooth scrolling for iframe content */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hide black row/bar at bottom */
+        .bottom-bar,
+        .fixed-bottom,
+        .navbar-fixed-bottom,
+        .bottom-navigation,
+        #go-top,
+        .go-top,
+        .scroll-to-top,
+        .back-to-top,
+        .bottom-banner {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .survey-section {
+                padding: 15px 0 0 0;
+            }
+            
+            .survey-iframe-container {
+                height: calc(100vh - 75px);
+                overflow-y: auto;
+            }
+            
+            .survey-iframe {
+                min-height: calc(100vh - 75px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .survey-section {
+                padding: 10px 0 0 0;
+            }
+            
+            .survey-iframe-container {
+                height: calc(100vh - 70px);
+            }
+            
+            .survey-iframe {
+                min-height: calc(100vh - 70px);
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRT4SWZC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Header Section -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <section class="survey-section">
+            <div class="survey-iframe-container">
+                <div class="loading-overlay" id="loading-overlay">
+                    <div>
+                        <i class="bx bx-loader-alt bx-spin" style="font-size: 24px; margin-right: 10px;"></i>
+                        Loading...
+                    </div>
+                </div>
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScdpON372jXGKoZrWSPsDXYl3enXDmYVvfTOf4mlVZbBdeffw/viewform?embedded=true" 
+                    class="survey-iframe" 
+                    id="survey-iframe"
+                    title="Jarvis and Sam Survey"
+                    onload="document.getElementById('loading-overlay').classList.add('hidden')"
+                    loading="lazy">
+                    Loading…
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Load header and footer components when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHeader();
+        });
+
+        // Simple iframe loading handler
+        window.addEventListener('load', () => {
+            // Height is now handled by CSS viewport units
+            console.log('Survey page loaded');
+        });
+    </script>
+</body>
+</html>

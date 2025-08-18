@@ -316,6 +316,7 @@ img {
   width: 100%;
 }
 
+
 /* Mobile Menu */
 .offcanvas {
   background-color: #05051E !important;
@@ -350,6 +351,7 @@ img {
   background: rgba(0, 191, 255, 0.1);
   padding-left: 10px;
 }
+
 
 .offcanvas .btn-close {
   background: none;
