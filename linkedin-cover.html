@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis and Sam - LinkedIn Cover</title>
+    
+    <!-- Boxicons CSS from CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000000;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            padding: 40px;
+        }
+        
+        .icon-showcase {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        .tech-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .tech-icon i {
+            background: linear-gradient(90deg, #00BFFF, #FF3333);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.6));
+            font-size: 80px;
+        }
+        
+        /* Large icons for easy capture */
+        .tech-icon {
+            width: 150px;
+            height: 150px;
+            opacity: 1;
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-3px) rotate(1deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(3px) rotate(-1deg); }
+        }
+        
+        /* Add staggered animation delays for variety */
+        .tech-icon:nth-child(1) { animation-delay: 0s; }
+        .tech-icon:nth-child(2) { animation-delay: -2s; }
+        .tech-icon:nth-child(3) { animation-delay: -4s; }
+        .tech-icon:nth-child(4) { animation-delay: -6s; }
+        .tech-icon:nth-child(5) { animation-delay: -8s; }
+        .tech-icon:nth-child(6) { animation-delay: -10s; }
+        .tech-icon:nth-child(7) { animation-delay: -12s; }
+        .tech-icon:nth-child(8) { animation-delay: -14s; }
+        .tech-icon:nth-child(9) { animation-delay: -16s; }
+        .tech-icon:nth-child(10) { animation-delay: -18s; }
+        .tech-icon:nth-child(11) { animation-delay: -1s; }
+        .tech-icon:nth-child(12) { animation-delay: -3s; }
+        .tech-icon:nth-child(13) { animation-delay: -5s; }
+        .tech-icon:nth-child(14) { animation-delay: -7s; }
+        .tech-icon:nth-child(15) { animation-delay: -9s; }
+        .tech-icon:nth-child(16) { animation-delay: -11s; }
+        .tech-icon:nth-child(17) { animation-delay: -13s; }
+        .tech-icon:nth-child(18) { animation-delay: -15s; }
+        .tech-icon:nth-child(19) { animation-delay: -17s; }
+        .tech-icon:nth-child(20) { animation-delay: -19s; }
+        .tech-icon:nth-child(21) { animation-delay: -0.5s; }
+        .tech-icon:nth-child(22) { animation-delay: -2.5s; }
+        .tech-icon:nth-child(23) { animation-delay: -4.5s; }
+        .tech-icon:nth-child(24) { animation-delay: -6.5s; }
+    </style>
+</head>
+<body>
+    <div class="icon-showcase">
+        <!-- Core AI/Tech Icons -->
+        <div class="tech-icon"><i class="bx bx-brain"></i></div>
+        <div class="tech-icon"><i class="bx bx-bot"></i></div>
+        <div class="tech-icon"><i class="bx bx-chip"></i></div>
+        <div class="tech-icon"><i class="bx bx-network-chart"></i></div>
+        <div class="tech-icon"><i class="bx bx-data"></i></div>
+        <div class="tech-icon"><i class="bx bx-code-block"></i></div>
+        
+        <!-- Advanced Tech Icons -->
+        <div class="tech-icon"><i class="bx bx-analyse"></i></div>
+        <div class="tech-icon"><i class="bx bx-cloud"></i></div>
+        <div class="tech-icon"><i class="bx bx-atom"></i></div>
+        <div class="tech-icon"><i class="bx bx-cube-alt"></i></div>
+        <div class="tech-icon"><i class="bx bx-rocket"></i></div>
+        <div class="tech-icon"><i class="bx bx-cog"></i></div>
+        
+        <!-- Additional IT/AI Icons -->
+        <div class="tech-icon"><i class="bx bx-line-chart"></i></div>
+        <div class="tech-icon"><i class="bx bx-server"></i></div>
+        <div class="tech-icon"><i class="bx bx-wifi"></i></div>
+        <div class="tech-icon"><i class="bx bx-microchip"></i></div>
+        <div class="tech-icon"><i class="bx bx-hdd"></i></div>
+        <div class="tech-icon"><i class="bx bx-desktop"></i></div>
+        <div class="tech-icon"><i class="bx bx-mobile-alt"></i></div>
+        <div class="tech-icon"><i class="bx bx-code-alt"></i></div>
+        <div class="tech-icon"><i class="bx bx-terminal"></i></div>
+        <div class="tech-icon"><i class="bx bx-search-alt"></i></div>
+        <div class="tech-icon"><i class="bx bx-shield-alt-2"></i></div>
+        <div class="tech-icon"><i class="bx bx-trending-up"></i></div>
+    </div>
+</body>
+</html>

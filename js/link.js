@@ -62,6 +62,11 @@ const linksData = {
             icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg"
         },
         {
+            name: "Github",
+            url: "https://github.com/jarvisnsam",
+            icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+        },
+        {
             name: "Bing Place",
             url: "https://www.bing.com/maps?&ty=18&ss=ypid.YN8500x294417118513417026&mb=22.305505~114.152777~22.28996~114.183161&description=%E9%A6%99%E6%B8%AFPhase%205%20Harbour%20City%2029%2FF%C2%B7Information%20technology%20company&cardbg=%2388979C&dt=1755507600000&tt=Jarvis%20and%20Sam%20-%20Enterprise%20AI%20Automation%20Solutions&tsts0=%2526ty%253D18%2526ss%253Dypid.YN8500x294417118513417026%2526mb%253D22.305505~114.152777~22.28996~114.183161%2526description%253D%2525E9%2525A6%252599%2525E6%2525B8%2525AFPhase%2525205%252520Harbour%252520City%25252029%25252FF%2525C2%2525B7Information%252520technology%252520company%2526cardbg%253D%25252388979C%2526dt%253D1755507600000&tstt0=Jarvis%20and%20Sam%20-%20Enterprise%20AI%20Automation%20Solutions&cp=22.297733~114.162562&lvl=16&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027",
             icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftbing.svg"

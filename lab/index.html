@@ -134,13 +134,21 @@
         }
 
         .lab-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 25%);
-            gap: 1.5rem;
-            padding: 1.5rem 0;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 1.5rem !important;
+            padding: 1.5rem 0 !important;
+            width: 100% !important;
+            max-width: none !important;
+            flex-wrap: nowrap !important;
+            justify-content: stretch !important;
+        }
+
+        .lab-grid .lab-card {
+            flex: none !important;
+            max-width: none !important;
+            min-width: auto !important;
+            width: 100% !important;
         }
 
         .lab-card {
@@ -155,7 +163,7 @@
             color: inherit;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            min-height: 380px;
             width: 100%;
         }
 
@@ -170,13 +178,13 @@
             width: 50%;
             height: auto;
             object-fit: contain;
-            margin: 0.8rem auto 0.5rem auto;
+            margin: 1.2rem auto 0.5rem auto;
             display: block;
             max-height: 100px;
         }
 
         .lab-card-header {
-            padding: 0 0.8rem 0.8rem 0.8rem;
+            padding: 0 0.8rem 1.2rem 0.8rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -192,8 +200,8 @@
 
         .lab-card-description {
             color: #666666;
-            line-height: 1.5;
-            margin-bottom: 0.8rem;
+            line-height: 1.4;
+            margin-bottom: 0.3rem;
             text-align: center;
             flex-grow: 1;
             font-size: 0.9rem;
@@ -202,7 +210,7 @@
         .lab-card-tags {
             display: flex;
             gap: 0.4rem;
-            margin-top: auto;
+            margin-top: 0.1rem;
             margin-bottom: 0;
             flex-wrap: wrap;
             justify-content: center;
@@ -220,11 +228,46 @@
             text-transform: uppercase;
         }
 
+        .lab-card-extra-links {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0.8rem 0;
+            justify-content: center;
+            flex-wrap: wrap;
+            min-height: 32px; /* Reserve space even when no extra links */
+        }
+
+        .extra-link-btn {
+            padding: 0.4rem 0.8rem;
+            background: #00BFFF;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .extra-link-btn:hover {
+            background: #0099cc;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0, 191, 255, 0.3);
+        }
+
+        .extra-link-btn i {
+            font-size: 0.7rem;
+        }
+
         .lab-hero .container,
         .lab-content .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
         }
 
         @media (max-width: 768px) {
@@ -243,8 +286,13 @@
             }
             
             .lab-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+                padding: 1rem 0 !important;
+            }
+            
+            .lab-card {
+                min-height: 320px;
             }
 
             .lab-card-image {
@@ -330,7 +378,11 @@
                 "tags": ["AI", "Audio", "Productivity"],
                 "status": "active",
                 "link": "https://vb.jarvisnsam.ai/",
-                "image": "https://cdn-icons-png.flaticon.com/512/8862/8862366.png"
+                "image": "https://cdn-icons-png.flaticon.com/512/8862/8862366.png",
+                "extraLinks": [
+                    {"text": "Video", "url": "https://www.youtube.com/watch?v=beXa5nYhz7I", "icon": "fa-play"},
+                    {"text": "Setup Guide", "url": "https://vbsetup.jarvisnsam.ai/", "icon": "fa-cogs"}
+                ]
             },
             {
                 "id": 3,
@@ -364,20 +416,64 @@
                     : this.labs.filter(lab => lab.tags.includes(filter));
 
                 labGrid.innerHTML = filteredLabs.map(lab => this.createLabCard(lab)).join('');
+                
+                // Add click handlers for main card navigation
+                this.setupCardClicks();
+            }
+
+            setupCardClicks() {
+                const cards = document.querySelectorAll('.lab-card');
+                cards.forEach(card => {
+                    card.addEventListener('click', (event) => {
+                        // Don't navigate if clicking on extra buttons
+                        if (event.target.closest('.extra-link-btn')) {
+                            return;
+                        }
+                        
+                        const mainUrl = card.getAttribute('data-main-url');
+                        if (mainUrl) {
+                            window.open(mainUrl, '_blank');
+                        }
+                    });
+                });
             }
 
             createLabCard(lab) {
                 const tagsHtml = lab.tags.map(tag => `<span class="lab-card-tag">${tag}</span>`).join('');
                 
+                // Create all buttons - Demo button for all cards + any extra links
+                const allButtons = [];
+                
+                // Add Demo button for all cards (links to main card link)
+                allButtons.push({
+                    text: "Demo",
+                    url: lab.link,
+                    icon: "fa-external-link-alt"
+                });
+                
+                // Add any existing extra links
+                if (lab.extraLinks) {
+                    allButtons.push(...lab.extraLinks);
+                }
+                
+                const buttonsHtml = `<div class="lab-card-extra-links">
+                    ${allButtons.map(button => 
+                        `<button class="extra-link-btn" data-url="${button.url}" onclick="event.stopPropagation(); window.open('${button.url}', '_blank')">
+                            <i class="fa ${button.icon}"></i> ${button.text}
+                        </button>`
+                    ).join('')}
+                </div>`;
+                
                 return `
-                    <a href="${lab.link}" class="lab-card" target="_blank" rel="noopener noreferrer" data-tags="${lab.tags.join(',')}">
+                    <div class="lab-card" data-main-url="${lab.link}" data-tags="${lab.tags.join(',')}">
                         <img src="${lab.image}" alt="${lab.title}" class="lab-card-image" onerror="this.style.display='none'">
                         <div class="lab-card-header">
                             <h3 class="lab-card-title">${lab.title}</h3>
+                            ${buttonsHtml}
                             <p class="lab-card-description">${lab.description}</p>
                             <div class="lab-card-tags">${tagsHtml}</div>
                         </div>
-                    </a>
+                    </div>
                 `;
             }
 
