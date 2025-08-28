@@ -66,12 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form functionality
+    // Contact form functionality - TEMPORARILY DISABLED FOR ENCHARGE TRACKING SETUP
+    // This allows natural form submission so Encharge can detect and register the form
     const contactForm = document.getElementById('contact-form');
     const submitBtn = document.getElementById('submit-btn');
     const formSuccess = document.getElementById('form-success');
     const formError = document.getElementById('form-error');
 
+    // Temporarily comment out JavaScript form handling to allow natural submission
+    /*
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -118,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    */
 
     // Animation on scroll and immediate hero animations
     const observerOptions = {
