@@ -21,56 +21,62 @@ function generateFooterHTML() {
     <div class="footer-widget-info ptb-100">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-6 col-md-4">
-                    <div class="footer-widget">
-                        <h4>Contact Us</h4>
-                        <div class="footer-logo mb-3">
-                            <img 
-                                src="${basePath}img/jns_logo.png" 
-                                alt="Jarvis and Sam" 
-                                style="max-width: 60px; max-height: 60px; object-fit: contain;"
-                            />
+                <div class="col-lg-4 col-md-12 col-12 mb-4">
+                    <div class="footer-widget text-center">
+                        <!-- Centered Logo and Company Name -->
+                        <div class="footer-brand-section mb-4">
+                            <div class="footer-logo mb-3">
+                                <img 
+                                    src="${basePath}img/JnS_logo_960x540.png" 
+                                    alt="Jarvis and Sam - Enterprise AI Solutions" 
+                                    style="max-width: 140px; height: auto; object-fit: contain; display: block; margin: 0 auto;"
+                                />
+                            </div>
+                            <p style="margin: 0; font-size: 0.85rem; font-weight: 400; color: #fff;">Enterprise AI Solutions | AI Enablement Training</p>
                         </div>
-                        <p style="margin-bottom: 20px; font-size: 0.9rem;">Jarvis and Sam</p>
                         
-                        <!-- Contact & Social Media Grid (5x2) -->
-                        <div class="footer-contact-social-grid">
-                            <!-- Row 1 -->
-                            <a href="tel:+85252119127" class="footer-btn" title="Phone">
-                                <i class="bx bx-phone"></i>
-                            </a>
-                            <a href="https://wa.me/85252119127" target="_blank" rel="noopener noreferrer" class="footer-btn" title="WhatsApp">
-                                <i class="bx bxl-whatsapp"></i>
-                            </a>
-                            <a href="mailto:info@jarvisnsam.com" class="footer-btn" title="Email">
-                                <i class="bx bx-envelope"></i>
-                            </a>
-                            <a href="https://maps.app.goo.gl/vh1dGuscVY77rdcx6" target="_blank" rel="noopener noreferrer" class="footer-btn" title="Address">
-                                <i class="bx bx-map"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/company/jarvisnsam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="LinkedIn">
-                                <i class="bx bxl-linkedin"></i>
-                            </a>
-                            <!-- Row 2 -->
-                            <a href="https://www.facebook.com/jarvisnsam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="Facebook">
-                                <i class="bx bxl-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/jarvisnsam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="Instagram">
-                                <i class="bx bxl-instagram"></i>
-                            </a>
-                            <a href="https://www.threads.net/@jarvisnsam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="Threads">
-                                <i class="bx bx-at"></i>
-                            </a>
-                            <a href="https://x.com/JarvisnSam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="X (Twitter)">
-                                <i class="bx bx-x"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@JarvisnSam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="YouTube">
-                                <i class="bx bxl-youtube"></i>
-                            </a>
+                        <!-- All Contact & Social Buttons (10 buttons in 2 rows of 5) -->
+                        <div class="footer-all-buttons">
+                            <!-- Row 1: 5 buttons -->
+                            <div class="button-row mb-2" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
+                                <a href="tel:+85252119127" class="footer-btn" title="Phone" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bx-phone"></i>
+                                </a>
+                                <a href="https://wa.me/85252119127" target="_blank" rel="noopener noreferrer" class="footer-btn" title="WhatsApp" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bxl-whatsapp"></i>
+                                </a>
+                                <a href="mailto:info@jarvisnsam.com" class="footer-btn" title="Email" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bx-envelope"></i>
+                                </a>
+                                <a href="https://maps.app.goo.gl/vh1dGuscVY77rdcx6" target="_blank" rel="noopener noreferrer" class="footer-btn" title="Address" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bx-map"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/company/jarvisnsam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="LinkedIn" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bxl-linkedin"></i>
+                                </a>
+                            </div>
+                            <!-- Row 2: 5 buttons -->
+                            <div class="button-row" style="display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;">
+                                <a href="https://www.facebook.com/jarvisnsam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="Facebook" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bxl-facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/jarvisnsam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="Instagram" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bxl-instagram"></i>
+                                </a>
+                                <a href="https://www.threads.net/@jarvisnsam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="Threads" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bx-at"></i>
+                                </a>
+                                <a href="https://x.com/JarvisnSam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="X (Twitter)" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bx-x"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@JarvisnSam" target="_blank" rel="noopener noreferrer" class="footer-btn" title="YouTube" style="width: 36px; height: 36px; padding: 4px; font-size: 12px;">
+                                    <i class="bx bxl-youtube"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 col-md-4">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="footer-widget">
                         <h4>Sitemap</h4>
                         <ul>
@@ -79,14 +85,12 @@ function generateFooterHTML() {
                             <li><a href="${basePath}index.html#products">Products</a></li>
                             <li><a href="${basePath}lab/">Lab</a></li>
                             <li><a href="${basePath}blog/">Blog</a></li>
-                            <li><a href="${basePath}index.html#customers">Customers</a></li>
                             <li><a href="${basePath}link/">Link</a></li>
                             <li><a href="${basePath}index.html#contact">Contact Us</a></li>
-                            <li><a href="${basePath}privacy-policy/">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 col-md-4">
+                <div class="col-lg-4 col-md-6 col-6">
                     <div class="footer-widget">
                         <h4>Products</h4>
                         <ul>
@@ -105,7 +109,10 @@ function generateFooterHTML() {
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="cpr-center">
-                        <p>© 2025 Jarvis and Sam. All rights reserved.</p>
+                        <p style="margin-bottom: 10px;">
+                            <a href="${basePath}privacy-policy/" style="color: #667eea; text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+                        </p>
+                        <p style="margin: 0;">© 2025 Jarvis and Sam. All rights reserved.</p>
                     </div>
                 </div>
             </div>

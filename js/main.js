@@ -51,20 +51,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Go to top button functionality
     const goTopBtn = document.getElementById('go-top');
     
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            goTopBtn.classList.add('active');
-        } else {
-            goTopBtn.classList.remove('active');
-        }
-    });
-
-    goTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (goTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                goTopBtn.classList.add('active');
+            } else {
+                goTopBtn.classList.remove('active');
+            }
         });
-    });
+
+        goTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Contact form functionality - TEMPORARILY DISABLED FOR ENCHARGE TRACKING SETUP
     // This allows natural form submission so Encharge can detect and register the form

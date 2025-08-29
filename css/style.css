@@ -104,7 +104,7 @@ img {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(0, 191, 255, 0.7);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 16px 32px;
+  padding: 12px 24px;
   color: #FFFFFF;
   display: inline-flex;
   align-items: center;
@@ -116,7 +116,7 @@ img {
   cursor: pointer;
   text-transform: none;
   letter-spacing: 0.3px;
-  min-width: 160px;
+  min-width: 140px;
   text-align: center;
   text-decoration: none;
   overflow: hidden;
@@ -174,9 +174,22 @@ img {
   box-shadow: 0 12px 40px rgba(255, 72, 0, 0.4);
 }
 
+/* Purple Button Variant for Survey Submit */
+.default-btn.purple-btn {
+  background: rgba(102, 126, 234, 0.35);
+  border: 2px solid rgba(102, 126, 234, 0.7);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+}
+
+.default-btn.purple-btn:hover {
+  background: rgba(102, 126, 234, 0.25);
+  border-color: rgba(102, 126, 234, 0.6);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+}
+
 /* Section Titles */
 .section-title {
-  max-width: 775px;
+  max-width: 1000px;
   position: relative;
   text-align: center;
   margin-bottom: 50px;
@@ -414,7 +427,7 @@ img {
 .hero-content-2 .hero-description {
   margin-bottom: 2rem !important;
   line-height: 1.6;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 15px;
@@ -837,23 +850,25 @@ img {
   display: grid;
   gap: 15px;
   justify-content: center;
-  margin-bottom: 40px;
-  grid-template-columns: repeat(6, 1fr);
-  max-width: 1200px;
   margin: 0 auto 60px auto;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 1400px;
+  padding: 0 20px;
 }
 
 .customer-item {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .customer-logo {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
-  padding: 20px;
-  width: 180px;
+  padding: 15px;
+  width: 100%;
+  max-width: 180px;
   height: 120px;
   display: flex;
   align-items: center;
@@ -861,6 +876,40 @@ img {
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+}
+
+/* Mobile adjustments for customer grid */
+@media (max-width: 992px) {
+  .customers-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .customers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 600px;
+  }
+  
+  .customer-logo {
+    height: 100px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .customers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 400px;
+  }
+  
+  .customer-logo {
+    height: 90px;
+    padding: 10px;
+  }
 }
 
 .customer-logo:hover {
@@ -890,12 +939,7 @@ img {
 }
 
 .contact-content-wrapper {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 191, 255, 0.1));
-  border-radius: 20px;
-  padding: 40px;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(0, 191, 255, 0.5);
-  box-shadow: 0 15px 35px rgba(0, 191, 255, 0.3);
+  padding: 0;
 }
 
 .contact-info-column {
@@ -1019,29 +1063,30 @@ img {
 }
 
 .contact-form-wrapper .form-control {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  border: 1px solid rgba(211, 211, 211, 0.3);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
   border-radius: 8px;
-  padding: 12px 15px;
-  color: #FFFFFF;
+  padding: 12px;
+  height: 50px;
+  margin-bottom: 15px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
-  margin-bottom: 20px;
 }
 
 .contact-form-wrapper .form-control:focus {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-  border-color: rgba(0, 191, 255, 0.5);
-  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.2);
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  color: #fff;
 }
 
 .contact-form-wrapper .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
 }
 
 .contact-form-wrapper textarea.form-control {
-  min-height: 150px;
+  height: auto;
+  min-height: 100px;
   resize: vertical;
 }
 
@@ -1301,9 +1346,9 @@ img {
   }
   
   .default-btn {
-    padding: 14px 24px;
+    padding: 10px 18px;
     font-size: 14px;
-    min-width: 140px;
+    min-width: 120px;
     border-radius: 40px;
   }
   
@@ -1352,8 +1397,8 @@ img {
     flex: 1;
     max-width: none;
     min-width: auto;
-    padding: 12px 16px !important;
-    font-size: 13px !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
     white-space: nowrap;
   }
   
@@ -1431,20 +1476,14 @@ img {
     margin-right: 8px;
   }
   
-  .customers-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 40px;
-  }
-  
-  .customer-logo {
-    width: 160px;
-    height: 100px;
-    padding: 15px;
-  }
-  
   .customer-logo img {
-    max-height: 50px;
+    max-height: 45px;
+  }
+  
+  /* Mobile footer padding for sitemap and products columns */
+  .footer-widget-info .col-md-6.col-6 {
+    padding-left: 25px;
+    padding-right: 25px;
   }
   
   .contact-section-new {

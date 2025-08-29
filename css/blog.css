@@ -5,8 +5,10 @@ Consistent with existing design system
 
 /* Blog Hero Section */
 .blog-hero-section {
-    background-color: var(--DarkBg);
-    padding: 100px 0 10px;
+    background: linear-gradient(135deg, #05051E 0%, #0a0a2e 100%);
+    padding: 80px 0 40px;
+    text-align: center;
+    color: white;
     position: relative;
     overflow: hidden;
 }
@@ -18,10 +20,8 @@ Consistent with existing design system
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 51, 51, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
 }
 
 .blog-hero-content {
@@ -30,29 +30,37 @@ Consistent with existing design system
 }
 
 .blog-hero-title {
-    font-size: 48px;
-    font-weight: 800;
-    color: #FFFFFF;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
     background: linear-gradient(90deg, #00BFFF, #FF3333);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: var(--fontFamily);
+    position: relative;
+    z-index: 1;
 }
 
 .blog-hero-description {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 600px;
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 800px;
     margin: 0 auto;
-    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    color: #E0E0E0;
+}
+
+.blog-hero-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 /* Blog Content Section */
 .blog-content-section {
     background-color: var(--DarkBg);
-    padding: 5px 0 100px;
+    padding: 20px 0 100px;
     position: relative;
 }
 
@@ -561,7 +569,7 @@ Consistent with existing design system
     }
     
     .blog-hero-section {
-        padding: 80px 0 10px;
+        padding: 60px 0 30px;
     }
     
     .blog-content-section {

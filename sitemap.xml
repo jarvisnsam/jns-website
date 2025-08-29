@@ -117,12 +117,6 @@
   </url>
   
   <!-- Other Sections -->
-  <url>
-    <loc>./#customers</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
   
   <url>
     <loc>./#contact</loc>

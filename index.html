@@ -52,6 +52,47 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Contact Form Styles - Match Survey Form Size and Style -->
+    <style>
+        /* Contact form styling to exactly match survey form */
+        .contact-form-wrapper .form-control {
+            background: rgba(255,255,255,0.1) !important;
+            border: 1px solid rgba(255,255,255,0.2) !important;
+            color: #fff !important;
+            border-radius: 6px !important;
+            padding: 8px !important;
+            height: 40px !important;
+            font-size: 13px !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .contact-form-wrapper .form-control::placeholder {
+            color: rgba(255,255,255,0.7) !important;
+            font-style: italic !important;
+        }
+        
+        .contact-form-wrapper .form-control:focus {
+            background: rgba(255,255,255,0.15) !important;
+            border-color: rgba(102, 126, 234, 0.5) !important;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+            color: #fff !important;
+            outline: none !important;
+        }
+        
+        /* Textarea specific styling to match survey */
+        .contact-form-wrapper .form-control[rows] {
+            height: auto !important;
+            min-height: 60px !important;
+            padding-top: 12px !important;
+            resize: vertical !important;
+        }
+        
+        /* Form group spacing */
+        .contact-form-wrapper .form-group {
+            margin-bottom: 20px !important;
+        }
+    </style>
 </head>
 <body class="dark-theme">
     <!-- Google Tag Manager (noscript) -->
@@ -942,18 +983,18 @@
                                                 style="display: none;"
                                             />
                                             
-                                            <!-- Privacy Policy Text -->
-                                            <div class="privacy-notice mb-3">
-                                                <p class="text-light mb-0" style="font-size: 14px; line-height: 1.5;">
-                                                    By submitting, you agree to our 
-                                                    <a href="privacy-policy/" target="_blank" class="text-primary">Privacy Policy</a>.
+                                            <!-- Consent message above submit -->
+                                            <div class="text-center mb-3">
+                                                <p style="color: #e0e0e0; font-size: 0.9rem; margin: 0;">
+                                                    By submitting, you accept our <a href="privacy-policy/" target="_blank" style="color: #667eea;">Privacy Policy</a> and data handling.
                                                 </p>
                                             </div>
                                             
-                                            <div class="form-submit">
+                                            <!-- Submit Button -->
+                                            <div class="text-center">
                                                 <button 
                                                     type="submit" 
-                                                    class="default-btn" 
+                                                    class="default-btn purple-btn" 
                                                     id="submit-btn"
                                                 >
                                                     <span>Submit</span>
