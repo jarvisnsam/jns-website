@@ -25,6 +25,24 @@ jobs:
     - name: Configure Docker for GCR
       run: gcloud auth configure-docker
     
+    - name: Cache Bust Assets
+      run: |
+        # Get first 8 characters of commit SHA for versioning
+        VERSION=$(echo ${{ github.sha }} | cut -c1-8)
+        echo "Using version: $VERSION"
+        
+        # Update all HTML files to add version parameter to CSS and JS assets
+        find . -name "*.html" -type f -exec sed -i.bak \
+          -e "s/href=\"\([^\"]*\.css\)\"/href=\"\1?v=$VERSION\"/g" \
+          -e "s/src=\"\([^\"]*\.js\)\"/src=\"\1?v=$VERSION\"/g" {} \;
+        
+        # Clean up backup files
+        find . -name "*.bak" -type f -delete
+        
+        # Show what files were modified
+        echo "Modified HTML files:"
+        find . -name "*.html" -type f | head -5
+    
     - name: Build and Push Docker Image
       run: |
         docker build -t gcr.io/voicebot-453915/jns-website:${{ github.sha }} .
