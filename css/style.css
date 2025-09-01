@@ -329,6 +329,109 @@ img {
   width: 100%;
 }
 
+/* Override regular nav link underline rule specifically for dropdown toggles */
+.navbar-area .navbar .navbar-nav > .nav-item.dropdown > .dropdown-toggle:after {
+  /* Reset underline properties */
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: auto !important;
+  height: auto !important;
+  background-color: transparent !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  
+  /* Apply dropdown arrow properties */
+  display: inline-block;
+  margin-left: 8px;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid #FFFFFF;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Ensure dropdown toggle gets same underline as regular nav items using ::before */
+.navbar-area .navbar .navbar-nav > .nav-item.dropdown > .dropdown-toggle:before {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--mainColor2);
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.navbar-area .navbar .navbar-nav > .nav-item.dropdown > .dropdown-toggle:hover:before {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+}
+
+.navbar-area .navbar .navbar-nav .nav-item.dropdown:hover .dropdown-toggle::after {
+  border-top-color: var(--mainColor2);
+}
+
+
+/* Dropdown Styles */
+.navbar-area .nav-item.dropdown {
+  position: relative;
+}
+
+.navbar-area .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 200px;
+  padding: 10px 0;
+  margin: 0;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.navbar-area .dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-area .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 8px 20px;
+  clear: both;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  border: 0;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.navbar-area .dropdown-item:hover,
+.navbar-area .dropdown-item:focus {
+  color: #FFFFFF;
+  background: linear-gradient(90deg, rgba(0, 191, 255, 0.2), rgba(255, 51, 51, 0.1));
+  text-decoration: none;
+  transform: translateX(5px);
+}
+
 
 /* Mobile Menu */
 .offcanvas {
@@ -365,6 +468,55 @@ img {
   padding-left: 10px;
 }
 
+/* Mobile Dropdown Styles */
+.offcanvas .nav-item.dropdown {
+  position: relative;
+}
+
+.offcanvas .dropdown-menu {
+  position: static;
+  display: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  opacity: 1;
+  margin-top: 5px;
+  border-left: 2px solid rgba(0, 191, 255, 0.3);
+}
+
+.offcanvas .dropdown-menu.show {
+  display: block;
+}
+
+.offcanvas .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px 25px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.offcanvas .dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.offcanvas .dropdown-item:hover {
+  color: #00BFFF;
+  background: rgba(0, 191, 255, 0.1);
+  padding-left: 35px;
+  text-decoration: none;
+}
 
 .offcanvas .btn-close {
   background: none;
@@ -1922,4 +2074,3 @@ textarea.form-control {
     padding: 0 5px;
   }
 }
-/* Force deployment Sun Jul 27 15:17:54 HKT 2025 */
