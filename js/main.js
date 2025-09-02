@@ -1,32 +1,50 @@
 // Main JavaScript file for Jarvis and Sam website
 
+// Function to handle anchor scrolling with proper offset
+function scrollToAnchor(hash) {
+    const targetElement = document.querySelector(hash);
+    if (targetElement) {
+        // Calculate offset based on screen size - matching fixed header height
+        let offset = 80; // Desktop fixed header height
+        if (window.innerWidth <= 768) {
+            offset = 70; // Mobile fixed header height
+        }
+        
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Handle cross-page anchor navigation
+function handleCrossPageAnchor() {
+    if (window.location.hash) {
+        // Wait for the page to fully load and header to be rendered
+        setTimeout(() => {
+            scrollToAnchor(window.location.hash);
+        }, 300); // Small delay to ensure page is rendered
+    }
+}
+
 // Smooth scrolling for anchor links
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle cross-page anchor navigation on page load
+    handleCrossPageAnchor();
+    
+    // Also handle it after a brief delay in case content loads dynamically
+    setTimeout(handleCrossPageAnchor, 1000);
+    
     // Smooth scrolling for navigation links with fixed header offset
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Calculate offset based on screen size
-                let offset = 30; // Default desktop offset
-                if (window.innerWidth <= 480) {
-                    offset = 20; // Mobile offset
-                } else if (window.innerWidth <= 768) {
-                    offset = 25; // Tablet offset
-                }
-                
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            scrollToAnchor(targetId);
         });
     });
 

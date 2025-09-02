@@ -1909,12 +1909,22 @@ a.contact-btn.btn {
 
 /* Smooth Scrolling */
 html {
-  scroll-padding-top: 30px;
+  scroll-padding-top: 80px;
   scroll-behavior: smooth;
 }
 
 section {
-  scroll-margin-top: 30px;
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+  
+  section {
+    scroll-margin-top: 70px;
+  }
 }
 
 /* Privacy Policy Text for Forms - Common Style */
@@ -1945,6 +1955,134 @@ section {
 @media (max-width: 480px) {
   .form-privacy-text {
     font-size: 0.7rem;
+  }
+}
+
+/* Product Page Typography Classes for Mobile Consistency */
+.product-feature-title {
+  font-size: 2rem;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.product-feature-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.product-use-case-title {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.product-use-case-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.product-cta-title {
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.product-cta-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile responsive typography for product pages */
+@media (max-width: 768px) {
+  /* Global paragraph text size reduction for mobile */
+  p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .product-feature-title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #FFFFFF !important;
+    background: none !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+  
+  .product-feature-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .product-use-case-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #FFFFFF !important;
+  }
+  
+  .product-use-case-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  .product-cta-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #FFFFFF !important;
+  }
+  
+  .product-cta-description {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Global paragraph text size reduction for smaller mobile */
+  p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  .product-feature-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #FFFFFF !important;
+    background: none !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+  
+  .product-feature-description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  .product-use-case-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #FFFFFF !important;
+  }
+  
+  .product-use-case-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  .product-cta-title {
+    font-size: 1.3rem;
+    color: #FFFFFF !important;
+  }
+  
+  .product-cta-description {
+    font-size: 0.8rem;
   }
 }
 

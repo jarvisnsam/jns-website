@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voicebot - Your AI Secretary | Jarvis and Sam</title>
     
+    <!-- Initialize dataLayer -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TRT4SWZC');</script>
+    <!-- End Google Tag Manager -->
+    
     <!-- Primary Meta Tags -->
-    <meta name="description" content="See how our AI Secretary takes notes and writes meeting minutes for you, just like a real secretary would. Perfect meeting documentation with multilingual support and complete privacy." />
-    <meta name="keywords" content="audio transcription, voice to text, meeting transcription, speaker identification, multilingual transcription, AI transcription, business transcription solution" />
+    <meta name="description" content="Transform meetings into professional minutes with your AI Secretary. Features multilingual transcription, speaker identification, and complete privacy with on-premise deployment." />
+    <meta name="keywords" content="AI secretary, meeting minutes automation, audio transcription, voice to text, meeting transcription, speaker identification, multilingual transcription, Cantonese transcription, AI transcription, business transcription solution" />
     <meta name="author" content="Jarvis and Sam" />
     
     <!-- Open Graph / Facebook -->
@@ -17,16 +30,20 @@
     <meta property="og:site_name" content="Jarvis and Sam" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Voicebot - Your AI Secretary | Jarvis and Sam" />
-    <meta property="og:description" content="See how our AI Secretary takes notes and writes meeting minutes for you, just like a real secretary would. Perfect meeting documentation with multilingual support and complete privacy." />
+    <meta property="og:description" content="Transform meetings into professional minutes with your AI Secretary. Features multilingual transcription, speaker identification, and complete privacy with on-premise deployment." />
     <meta property="og:image" content="https://jarvisnsam.com/img/jns_logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jarvis and Sam - Voicebot AI Secretary Logo" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://jarvisnsam.com/voicebot/" />
     <meta property="twitter:site" content="@jarvisnsam" />
     <meta property="twitter:title" content="Voicebot - Your AI Secretary | Jarvis and Sam" />
-    <meta property="twitter:description" content="See how our AI Secretary takes notes and writes meeting minutes for you, just like a real secretary would. Perfect meeting documentation with multilingual support and complete privacy." />
+    <meta property="twitter:description" content="Transform meetings into professional minutes with your AI Secretary. Features multilingual transcription, speaker identification, and complete privacy with on-premise deployment." />
     <meta property="twitter:image" content="https://jarvisnsam.com/img/jns_logo.png" />
+    <meta property="twitter:image:alt" content="Jarvis and Sam - Voicebot AI Secretary Logo" />
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -184,10 +201,13 @@
             }
             
             .product-hero-description {
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 text-align: center;
                 margin-bottom: 30px;
-                color: #FFFFFF;
+            }
+            
+            .product-hero-description p {
+                font-size: 0.9rem !important;
             }
             
             .product-hero-buttons {
@@ -233,6 +253,10 @@
         @media (max-width: 576px) {
             .product-hero-title {
                 font-size: 2rem;
+            }
+            
+            .product-hero-description p {
+                font-size: 0.85rem !important;
             }
             
             .title-line-2 {
@@ -368,22 +392,7 @@
             z-index: 2;
         }
         
-        .feature-text-container h3 {
-            font-size: 2rem;
-            color: #FFFFFF;
-            margin-bottom: 20px;
-            font-weight: 700;
-            background: linear-gradient(90deg, #00BFFF, #FF3333);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .feature-text-container p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            line-height: 1.7;
-        }
+        /* Using product typography classes from style.css */
         
         .cta-section {
             text-align: center;
@@ -394,21 +403,7 @@
             margin: 30px 0 20px 0;
         }
         
-        .cta-section h2 {
-            font-size: 2.5rem;
-            color: #FFFFFF;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-        
-        .cta-section p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        /* CTA section uses product typography classes from style.css */
         
         /* Use Cases section styling */
         .use-case-card {
@@ -444,18 +439,7 @@
             left: 100%;
         }
         
-        .use-case-card h3 {
-            font-size: 1.5rem;
-            color: #FFFFFF;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        
-        .use-case-card p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
+        /* Use case cards use product typography classes from style.css */
         
         /* Mobile responsiveness */
         @media (max-width: 768px) {
@@ -469,7 +453,7 @@
             }
             
             .voicebot-hero .hero-description {
-                font-size: 1.1rem;
+                font-size: 0.9rem;
             }
             
             .feature-row {
@@ -490,14 +474,7 @@
                 order: 1;
             }
             
-            .feature-text-container h3 {
-                font-size: 1.6rem;
-                margin-bottom: 15px;
-            }
-            
-            .feature-text-container p {
-                font-size: 1.1rem;
-            }
+            /* Mobile text sizes handled by product typography classes in style.css */
             
             .use-case-card {
                 padding: 20px;
@@ -507,17 +484,16 @@
                 padding: 30px 15px;
             }
             
-            .cta-section h2 {
-                font-size: 1.8rem;
-            }
-            
-            .cta-section p {
-                font-size: 1rem;
-            }
+            /* Mobile text sizes handled by product typography classes in style.css */
         }
     </style>
 </head>
 <body class="dark-theme">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRT4SWZC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <!-- Header Section -->
     <div id="header"></div>
 
@@ -572,6 +548,28 @@
             </div>
         </section>
 
+        <!-- Video Section -->
+        <section class="container mb-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center mb-4">
+                        <div class="sub-title-2">
+                            <p>For Enterprise</p>
+                        </div>
+                        <h2>Meet Your New AI Meeting Secretary</h2>
+                    </div>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/beXa5nYhz7I" 
+                            title="Voicebot Demo Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Features Section -->
         <section class="container">
             <div class="row">
@@ -580,7 +578,7 @@
                         <div class="sub-title-2">
                             <p>Key Features</p>
                         </div>
-                        <h2>What Your AI Secretary Can Do</h2>
+                        <h2>Secure On-Premise Meeting Intelligence</h2>
                     </div>
                 </div>
             </div>
@@ -592,8 +590,8 @@
                         <img src="../img/voicebot/Voicebot_Feature_Transcript.png" alt="Perfect Meeting Documentation" class="feature-image">
                     </div>
                     <div class="feature-text-container">
-                        <h3>Precise Cantonese and multilingual transcription</h3>
-                        <p>Generate precise transcriptions and professionally formatted meeting minutes with high accuracy, capturing every important detail of your conversations.</p>
+                        <h3 class="product-feature-title">Precise Cantonese and multilingual transcription</h3>
+                        <p class="product-feature-description">Generate precise transcriptions and professionally formatted meeting minutes with high accuracy, capturing every important detail of your conversations.</p>
                     </div>
                 </div>
                 
@@ -603,8 +601,8 @@
                         <img src="../img/voicebot/Voicebot_Feature_Minute.png" alt="Smart Meeting Minutes" class="feature-image">
                     </div>
                     <div class="feature-text-container">
-                        <h3>Smart Meeting Minutes</h3>
-                        <p>Automatically generate structured and professional meeting minutes with action items, decisions, and key points organized exactly how you need them.</p>
+                        <h3 class="product-feature-title">Smart Meeting Minutes</h3>
+                        <p class="product-feature-description">Automatically generate structured and professional meeting minutes with action items, decisions, and key points organized exactly how you need them.</p>
                     </div>
                 </div>
                 
@@ -614,8 +612,8 @@
                         <img src="../img/voicebot/Voicebot_Feature_Speaker.png" alt="Multilingual Expertise" class="feature-image">
                     </div>
                     <div class="feature-text-container">
-                        <h3>Speaker Identification</h3>
-                        <p>Automatically distinguish between different speakers in conversations, making transcripts more readable and useful.</p>
+                        <h3 class="product-feature-title">Speaker Identification</h3>
+                        <p class="product-feature-description">Automatically distinguish between different speakers in conversations, making transcripts more readable and useful.</p>
                     </div>
                 </div>
                 
@@ -625,8 +623,8 @@
                         <img src="../img/voicebot/Voicebot_Feature_Instruction.png" alt="Tailored to Your Style" class="feature-image">
                     </div>
                     <div class="feature-text-container">
-                        <h3>Tailored to Your Style</h3>
-                        <p>Configure specific instructions and formatting preferences so your AI Secretary creates meeting minutes exactly how you want them structured.</p>
+                        <h3 class="product-feature-title">Tailored to Your Style</h3>
+                        <p class="product-feature-description">Configure specific instructions and formatting preferences so your AI Secretary creates meeting minutes exactly how you want them structured.</p>
                     </div>
                 </div>
                 
@@ -636,8 +634,8 @@
                         <img src="../img/voicebot/Voicebot_Feature_Secure.png" alt="Completely Private & Secure" class="feature-image">
                     </div>
                     <div class="feature-text-container">
-                        <h3>Completely Private & Secure</h3>
-                        <p>Complete on-premise deployment ensures your sensitive business conversations and meeting data remain entirely within your secure infrastructure.</p>
+                        <h3 class="product-feature-title">Completely Private & Secure</h3>
+                        <p class="product-feature-description">Complete on-premise deployment ensures your sensitive business conversations and meeting data remain entirely within your secure infrastructure.</p>
                     </div>
                 </div>
             </div>
@@ -659,26 +657,26 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="use-case-card">
-                        <h3>Meeting Minutes Creation</h3>
-                        <p>Your AI Secretary attends team meetings, board discussions, and client calls, creating professional meeting minutes just like a human secretary would.</p>
+                        <h3 class="product-use-case-title">Meeting Minutes Creation</h3>
+                        <p class="product-use-case-description">Your AI Secretary attends team meetings, board discussions, and client calls, creating professional meeting minutes just like a human secretary would.</p>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="use-case-card">
-                        <h3>Interview Documentation</h3>
-                        <p>Let your AI Secretary handle HR interviews, research sessions, and media interviews, providing detailed notes and summaries for easy review.</p>
+                        <h3 class="product-use-case-title">Interview Documentation</h3>
+                        <p class="product-use-case-description">Let your AI Secretary handle HR interviews, research sessions, and media interviews, providing detailed notes and summaries for easy review.</p>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="use-case-card">
-                        <h3>Conference Note-Taking</h3>
-                        <p>Your AI Secretary captures conference presentations, webinars, and training sessions, organizing key points and insights for future reference.</p>
+                        <h3 class="product-use-case-title">Conference Note-Taking</h3>
+                        <p class="product-use-case-description">Your AI Secretary captures conference presentations, webinars, and training sessions, organizing key points and insights for future reference.</p>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="use-case-card">
-                        <h3>Client Call Summaries</h3>
-                        <p>Never miss important client details again. Your AI Secretary documents customer calls and creates actionable summaries for your team.</p>
+                        <h3 class="product-use-case-title">Client Call Summaries</h3>
+                        <p class="product-use-case-description">Never miss important client details again. Your AI Secretary documents customer calls and creates actionable summaries for your team.</p>
                     </div>
                 </div>
             </div>
@@ -688,8 +686,8 @@
         <!-- Call-to-Action Section -->
         <section class="container">
             <div class="cta-section">
-                <h2>Ready to Get Your Personal AI Secretary?</h2>
-                <p>Experience having a dedicated secretary that never misses a detail. Contact us to see how your AI Secretary can transform your meeting productivity.</p>
+                <h2 class="product-cta-title">Empower Your Team with AI Secretary</h2>
+                <p class="product-cta-description">Transform how your team captures and shares meeting insights with enterprise-grade AI that works like a dedicated secretary. On-premise deployment ensures your confidential discussions never leave your secure infrastructure, while your team gains instant access to professional meeting documentation.</p>
                 <a href="../#contact" class="default-btn">
                     <i class="bx bx-message-square-dots me-2"></i>
                     <span>Contact Us</span>

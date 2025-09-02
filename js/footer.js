@@ -94,7 +94,7 @@ function generateFooterHTML() {
                         <h4>Products</h4>
                         <ul>
                             <li><a href="${basePath}index.html#smartgent-detail">Smartgent</a></li>
-                            <li><a href="${basePath}index.html#voicebot">Voicebot</a></li>
+                            <li><a href="${basePath}voicebot/">Voicebot</a></li>
                             <li><a href="${basePath}index.html#agentel-agency">Agentel Agency</a></li>
                             <li><a href="${basePath}index.html#custom-solutions">Custom Solutions</a></li>
                         </ul>
