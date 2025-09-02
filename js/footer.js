@@ -80,7 +80,6 @@ function generateFooterHTML() {
                     <div class="footer-widget">
                         <h4>Sitemap</h4>
                         <ul>
-                            <li><a href="${basePath}index.html#hero">Home</a></li>
                             <li><a href="${basePath}index.html#about">About</a></li>
                             <li><a href="${basePath}index.html#products">Products</a></li>
                             <li><a href="${basePath}lab/">Lab</a></li>

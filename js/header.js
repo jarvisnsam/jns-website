@@ -42,16 +42,13 @@ function generateHeaderHTML() {
                 </button>
             </div>
             <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="${basePath}index.html#hero" class="nav-link">Home</a>
-                    </li>
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a href="${basePath}index.html#about" class="nav-link">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="${basePath}index.html#products" class="nav-link dropdown-toggle" id="productsDropdown">Products</a>
-                        <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <ul class="dropdown-menu enhanced-dropdown" aria-labelledby="productsDropdown">
                             <li><a class="dropdown-item" href="${basePath}index.html#smartgent-detail">Smartgent</a></li>
                             <li><a class="dropdown-item" href="${basePath}voicebot/">Voicebot</a></li>
                             <li><a class="dropdown-item" href="${basePath}index.html#agentel-agency">Agentel Agency</a></li>
@@ -67,10 +64,8 @@ function generateHeaderHTML() {
                     <li class="nav-item">
                         <a href="${basePath}link/" class="nav-link">Link</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="${basePath}index.html#contact" class="nav-link">Contact Us</a>
-                    </li>
                 </ul>
+                <a href="${basePath}index.html#contact" class="btn contact-btn">Contact Us</a>
             </div>
         </nav>
     </div>
@@ -92,14 +87,11 @@ function generateHeaderHTML() {
     <div class="offcanvas-body">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="${basePath}index.html#hero" class="nav-link" onclick="toggleMobileMenu()">Home</a>
-            </li>
-            <li class="nav-item">
                 <a href="${basePath}index.html#about" class="nav-link" onclick="toggleMobileMenu()">About</a>
             </li>
             <li class="nav-item dropdown">
                 <a href="${basePath}index.html#products" class="nav-link dropdown-toggle" id="mobileProductsDropdown">Products</a>
-                <ul class="dropdown-menu mobile-dropdown">
+                <ul class="dropdown-menu mobile-dropdown enhanced-dropdown" aria-labelledby="mobileProductsDropdown">
                     <li><a class="dropdown-item" href="${basePath}index.html#smartgent-detail" onclick="toggleMobileMenu()">Smartgent</a></li>
                     <li><a class="dropdown-item" href="${basePath}voicebot/" onclick="toggleMobileMenu()">Voicebot</a></li>
                     <li><a class="dropdown-item" href="${basePath}index.html#agentel-agency" onclick="toggleMobileMenu()">Agentel Agency</a></li>
@@ -115,10 +107,10 @@ function generateHeaderHTML() {
             <li class="nav-item">
                 <a href="${basePath}link/" class="nav-link" onclick="toggleMobileMenu()">Link</a>
             </li>
-            <li class="nav-item">
-                <a href="${basePath}index.html#contact" class="nav-link" onclick="toggleMobileMenu()">Contact Us</a>
-            </li>
         </ul>
+        <div class="mobile-contact-btn-container">
+            <a href="${basePath}index.html#contact" class="btn contact-btn" onclick="toggleMobileMenu()">Contact Us</a>
+        </div>
     </div>
 </div>`;
 }
@@ -135,22 +127,24 @@ function initializeDropdowns() {
     desktopDropdowns.forEach(item => {
         const dropdownMenu = item.querySelector('.dropdown-menu');
         const dropdownToggle = item.querySelector('.dropdown-toggle');
-        let timeoutId;
         
-        // Desktop mouseover behavior
+        if (!dropdownMenu || !dropdownToggle) return;
+        
+        // Desktop mouseover behavior - ensure visibility
         item.addEventListener('mouseenter', () => {
-            clearTimeout(timeoutId);
-            dropdownMenu.style.display = 'block';
-            setTimeout(() => {
-                dropdownMenu.classList.add('show');
-            }, 10);
+            dropdownMenu.classList.add('show');
+            // Force visibility in case CSS doesn't apply immediately
+            dropdownMenu.style.visibility = 'visible';
+            dropdownMenu.style.opacity = '1';
+            dropdownMenu.style.pointerEvents = 'auto';
         });
         
         item.addEventListener('mouseleave', () => {
             dropdownMenu.classList.remove('show');
-            timeoutId = setTimeout(() => {
-                dropdownMenu.style.display = 'none';
-            }, 300);
+            // Reset inline styles to let CSS handle it
+            dropdownMenu.style.visibility = '';
+            dropdownMenu.style.opacity = '';
+            dropdownMenu.style.pointerEvents = '';
         });
         
         // Make Products clickable to go to products section

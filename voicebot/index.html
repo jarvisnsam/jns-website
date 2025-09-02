@@ -37,6 +37,225 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
+        /* Define consistent content text color for all pages */
+        :root {
+            --content-text-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Reusable Product Hero Section Styles */
+        .product-hero-section {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(255, 51, 51, 0.1));
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+            margin-bottom: 50px;
+        }
+        
+        /* Fix floating icons z-index to make them background layer */
+        .product-hero-section .floating-icons {
+            z-index: 0;
+        }
+        
+        .product-hero-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Floating icon adjustments for desktop */
+        .product-hero-section .floating-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+        }
+        
+        /* Better distribution of floating icons */
+        .product-hero-section .floating-icon.icon-1 {
+            top: 15%;
+            left: 8%;
+        }
+        
+        .product-hero-section .floating-icon.icon-2 {
+            top: 25%;
+            right: 12%;
+        }
+        
+        .product-hero-section .floating-icon.icon-3 {
+            top: 45%;
+            left: 5%;
+        }
+        
+        .product-hero-section .floating-icon.icon-4 {
+            top: 65%;
+            right: 8%;
+        }
+        
+        .product-hero-section .floating-icon.icon-5 {
+            top: 80%;
+            left: 15%;
+        }
+        
+        .product-hero-section .floating-icon.icon-6 {
+            top: 35%;
+            right: 25%;
+        }
+        
+        .product-hero-content {
+            padding: 20px 0;
+        }
+        
+        .product-hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #00BFFF, #FF3333);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+        
+        /* Two-line title styling */
+        .title-line-1 {
+            display: block;
+        }
+        
+        .title-line-2 {
+            display: block;
+            font-size: 0.8em;
+            background: linear-gradient(90deg, #00BFFF, #FF3333);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 1;
+        }
+        
+        .product-hero-description {
+            font-size: 1.3rem;
+            color: var(--content-text-color) !important;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .product-hero-description p {
+            color: var(--content-text-color) !important;
+            margin-bottom: 15px !important;
+        }
+        
+        /* Override base styles with higher specificity */
+        .product-hero-section .product-hero-description,
+        .product-hero-section .product-hero-description p {
+            color: var(--content-text-color) !important;
+        }
+        
+        .product-hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .product-hero-image {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Mobile responsiveness for product hero */
+        @media (max-width: 768px) {
+            .product-hero-section {
+                padding: 50px 0;
+                margin-bottom: 30px;
+            }
+            
+            .product-hero-title {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+            
+            .product-hero-description {
+                font-size: 1.1rem;
+                text-align: center;
+                margin-bottom: 30px;
+                color: #FFFFFF;
+            }
+            
+            .product-hero-buttons {
+                justify-content: center;
+                gap: 10px;
+                flex-direction: row !important;
+                order: 3 !important;
+            }
+            
+            .product-hero-buttons .default-btn {
+                flex: 1;
+                min-width: 140px;
+                text-align: center;
+                max-width: 180px;
+            }
+            
+            .product-hero-image {
+                order: 2 !important;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+            
+            .product-hero-content {
+                order: 1 !important;
+            }
+            
+            /* Force mobile layout with higher specificity */
+            .product-hero-section .row {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            .product-hero-section .col-lg-6 {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            .hero-image {
+                max-width: 280px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-hero-title {
+                font-size: 2rem;
+            }
+            
+            .title-line-2 {
+                font-size: 0.75em;
+                background: linear-gradient(90deg, #00BFFF, #FF3333);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            .product-hero-buttons {
+                flex-direction: row !important;
+                gap: 8px;
+            }
+            
+            .product-hero-buttons .default-btn {
+                flex: 1;
+                min-width: 120px;
+                max-width: none;
+                font-size: 0.9rem;
+                padding: 12px 8px;
+            }
+        }
         
         /* Video container for responsive 16:9 aspect ratio */
         .video-container {
@@ -305,7 +524,7 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="voicebot-hero">
+        <section class="product-hero-section">
             <!-- Floating Icons -->
             <div class="floating-icons">
                 <div class="floating-icon icon-1"><i class="bx bx-microphone"></i></div>
@@ -317,23 +536,37 @@
             </div>
             
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h1>Voicebot - Your AI Secretary</h1>
-                        <div class="hero-description">
-                            <p>See how our AI Secretary takes notes and writes meeting minutes for you, just like a real secretary would.</p>
+                <div class="row align-items-center">
+                    <!-- Left Column: Product Info -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product-hero-content">
+                            <h1 class="product-hero-title">
+                                <span class="title-line-1">Voicebot</span>
+                                <span class="title-line-2">Your AI Secretary</span>
+                            </h1>
+                            <div class="product-hero-description">
+                                <p>Transform meetings into professional minutes with multilingual AI transcription and complete privacy.</p>
+                            </div>
+                            <div class="product-hero-buttons">
+                                <a href="../#contact" class="default-btn me-3">
+                                    <i class="bx bx-message-square-dots me-2"></i>
+                                    <span>Contact Us</span>
+                                    <i class="bx bx-chevron-right ms-1"></i>
+                                </a>
+                                <a href="https://vb.jarvisnsam.ai/" class="default-btn red-btn" target="_blank" rel="noopener noreferrer">
+                                    <i class="bx bx-rocket me-2"></i>
+                                    <span>Try Demo</span>
+                                    <i class="bx bx-chevron-right ms-1"></i>
+                                </a>
+                            </div>
                         </div>
-                        
-                        <!-- Video Section -->
-                        <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/beXa5nYhz7I?modestbranding=1&rel=0&cc_load_policy=0"
-                                title="Voicebot Demo Video"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                    </div>
+                    
+                    <!-- Right Column: Hero Image -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product-hero-image">
+                            <img src="../img/ProductHero_Voicebot.png" alt="Voicebot AI Secretary" class="hero-image">
                         </div>
-                        
                     </div>
                 </div>
             </div>
