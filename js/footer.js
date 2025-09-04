@@ -78,10 +78,10 @@ function generateFooterHTML() {
                 </div>
                 <div class="col-lg-4 col-md-6 col-6">
                     <div class="footer-widget">
-                        <h4>Sitemap</h4>
+                        <h4><a href="${basePath}sitemap.xml" style="color: #FFFFFF; text-decoration: none;">Sitemap</a></h4>
                         <ul>
                             <li><a href="${basePath}index.html#about">About</a></li>
-                            <li><a href="${basePath}index.html#products">Products</a></li>
+                            <li><a href="${basePath}training/">Training</a></li>
                             <li><a href="${basePath}lab/">Lab</a></li>
                             <li><a href="${basePath}blog/">Blog</a></li>
                             <li><a href="${basePath}link/">Link</a></li>
@@ -91,7 +91,7 @@ function generateFooterHTML() {
                 </div>
                 <div class="col-lg-4 col-md-6 col-6">
                     <div class="footer-widget">
-                        <h4>Products</h4>
+                        <h4><a href="${basePath}index.html#products" style="color: #FFFFFF; text-decoration: none;">Products</a></h4>
                         <ul>
                             <li><a href="${basePath}index.html#smartgent-detail">Smartgent</a></li>
                             <li><a href="${basePath}voicebot/">Voicebot</a></li>

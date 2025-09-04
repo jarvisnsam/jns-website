@@ -43,8 +43,12 @@ function generateHeaderHTML() {
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a href="${basePath}index.html#about" class="nav-link">About</a>
+                    <li class="nav-item dropdown">
+                        <a href="${basePath}index.html#about" class="nav-link dropdown-toggle" id="aboutDropdown">About</a>
+                        <ul class="dropdown-menu enhanced-dropdown" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="${basePath}index.html#customers">Our Customer</a></li>
+                            <li><a class="dropdown-item" href="${basePath}link/">Link</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="${basePath}index.html#products" class="nav-link dropdown-toggle" id="productsDropdown">Products</a>
@@ -56,13 +60,13 @@ function generateHeaderHTML() {
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a href="${basePath}training/" class="nav-link">Training</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="${basePath}lab/" class="nav-link">Lab</a>
                     </li>
                     <li class="nav-item">
                         <a href="${basePath}blog/" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="${basePath}link/" class="nav-link">Link</a>
                     </li>
                 </ul>
                 <a href="${basePath}index.html#contact" class="btn contact-btn">Contact Us</a>
@@ -86,8 +90,12 @@ function generateHeaderHTML() {
     </div>
     <div class="offcanvas-body">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="${basePath}index.html#about" class="nav-link" onclick="toggleMobileMenu()">About</a>
+            <li class="nav-item dropdown">
+                <a href="${basePath}index.html#about" class="nav-link dropdown-toggle" id="mobileAboutDropdown">About</a>
+                <ul class="dropdown-menu mobile-dropdown enhanced-dropdown" aria-labelledby="mobileAboutDropdown">
+                    <li><a class="dropdown-item" href="${basePath}index.html#customers" onclick="toggleMobileMenu()">Our Customer</a></li>
+                    <li><a class="dropdown-item" href="${basePath}link/" onclick="toggleMobileMenu()">Link</a></li>
+                </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="${basePath}index.html#products" class="nav-link dropdown-toggle" id="mobileProductsDropdown">Products</a>
@@ -99,13 +107,13 @@ function generateHeaderHTML() {
                 </ul>
             </li>
             <li class="nav-item">
+                <a href="${basePath}training/" class="nav-link" onclick="toggleMobileMenu()">Training</a>
+            </li>
+            <li class="nav-item">
                 <a href="${basePath}lab/" class="nav-link" onclick="toggleMobileMenu()">Lab</a>
             </li>
             <li class="nav-item">
                 <a href="${basePath}blog/" class="nav-link" onclick="toggleMobileMenu()">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a href="${basePath}link/" class="nav-link" onclick="toggleMobileMenu()">Link</a>
             </li>
         </ul>
         <div class="mobile-contact-btn-container">
