@@ -401,183 +401,100 @@ document.head.appendChild(style);
 
 // Load latest blog posts for homepage
 function loadLatestBlogPosts() {
-    const desktopContainer = document.getElementById('latest-blog-posts');
-    const mobileContainer = document.getElementById('mobile-blog-carousel');
-    
-    if (!desktopContainer && !mobileContainer) return;
-
-    // Check if blog-data.js is available
-    if (typeof blogPosts === 'undefined') {
-        console.log('Blog data not available');
-        return;
-    }
-
-    // Sort posts by date (newest first) and get latest 3
-    const latestPosts = blogPosts
-        .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
-        .slice(0, 3);
-
-    // Generate desktop grid HTML
-    if (desktopContainer) {
-        const desktopHTML = latestPosts.map(post => {
-            // Fix image path for homepage context (remove ../ prefix)
-            const imagePath = post.featuredImage.replace('../', '');
-
-            return `
-                <div class="col-lg-4 col-md-6 mb-4 blog-card-item">
-                    <div class="latest-blog-card">
-                        <a href="./blog/${post.slug}" class="latest-blog-card-link">
-                            <div class="latest-blog-card-image">
-                                <img src="${imagePath}" alt="${post.title}" />
-                            </div>
-                            <div class="latest-blog-card-content">
-                                <h3 class="latest-blog-card-title">${post.title}</h3>
-                                <p class="latest-blog-card-excerpt">${post.excerpt}</p>
-                                <div class="latest-blog-card-date">${formatDate(post.publishDate)}</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            `;
-        }).join('');
-        
-        desktopContainer.innerHTML = desktopHTML;
-    }
-
-    // Generate mobile carousel HTML
-    if (mobileContainer) {
-        const mobileHTML = latestPosts.map(post => {
-            // Fix image path for homepage context (remove ../ prefix)
-            const imagePath = post.featuredImage.replace('../', '');
-
-            return `
-                <div class="blog-carousel-slide">
-                    <div class="latest-blog-card">
-                        <a href="./blog/${post.slug}" class="latest-blog-card-link">
-                            <div class="latest-blog-card-image">
-                                <img src="${imagePath}" alt="${post.title}" />
-                            </div>
-                            <div class="latest-blog-card-content">
-                                <h3 class="latest-blog-card-title">${post.title}</h3>
-                                <p class="latest-blog-card-excerpt">${post.excerpt}</p>
-                                <div class="latest-blog-card-date">${formatDate(post.publishDate)}</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            `;
-        }).join('');
-        
-        mobileContainer.innerHTML = mobileHTML;
-        
-        // Initialize carousel functionality
-        initializeBlogCarousel(latestPosts.length);
-    }
+    // Since blog posts are now hard-coded in HTML, just initialize the Swiper
+    // No need to dynamically load content
+    initializeBlogSwiper();
 }
 
-// Initialize blog carousel functionality
-function initializeBlogCarousel(totalSlides) {
-    const carousel = document.getElementById('mobile-blog-carousel');
-    const dotsContainer = document.getElementById('carousel-dots');
-    
-    if (!carousel || !dotsContainer) return;
-    
-    let currentSlide = 0;
-    let autoSlideInterval;
-    
-    // Create navigation dots
-    const dotsHTML = Array.from({length: totalSlides}, (_, i) => 
-        `<button class="carousel-dot ${i === 0 ? 'active' : ''}" data-slide="${i}"></button>`
-    ).join('');
-    dotsContainer.innerHTML = dotsHTML;
-    
-    // Get all dots
-    const dots = dotsContainer.querySelectorAll('.carousel-dot');
-    
-    // Function to go to specific slide
-    function goToSlide(slideIndex) {
-        currentSlide = slideIndex;
-        const translateX = -(slideIndex * 33.333);
-        carousel.style.transform = `translateX(${translateX}%)`;
-        
-        // Update active dot
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === slideIndex);
-        });
-    }
-    
-    // Function to go to next slide
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        goToSlide(currentSlide);
-    }
-    
-    // Add click handlers to dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-            resetAutoSlide();
-        });
-    });
-    
-    // Auto-slide functionality
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 4000); // 4 seconds
-    }
-    
-    function stopAutoSlide() {
-        if (autoSlideInterval) {
-            clearInterval(autoSlideInterval);
+// Initialize blog carousel using Swiper
+function initializeBlogSwiper() {
+    // Wait a moment to ensure Swiper library is loaded
+    setTimeout(() => {
+        if (typeof Swiper === 'undefined') {
+            console.log('Swiper library not loaded');
+            return;
         }
-    }
-    
-    function resetAutoSlide() {
-        stopAutoSlide();
-        startAutoSlide();
-    }
-    
-    // Touch/swipe support
-    let startX = 0;
-    let isDragging = false;
-    
-    carousel.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-        stopAutoSlide();
-    });
-    
-    carousel.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-    });
-    
-    carousel.addEventListener('touchend', (e) => {
-        if (!isDragging) return;
-        isDragging = false;
         
-        const endX = e.changedTouches[0].clientX;
-        const diffX = startX - endX;
+        // Check if swiper already exists to prevent duplicate initialization
+        if (window.blogSwiperInstance) {
+            window.blogSwiperInstance.destroy(true, true);
+        }
         
-        if (Math.abs(diffX) > 50) { // Minimum swipe distance
-            if (diffX > 0) {
-                // Swipe left - next slide
-                nextSlide();
-            } else {
-                // Swipe right - previous slide
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                goToSlide(currentSlide);
+        // Initialize Swiper for blog carousel
+        window.blogSwiperInstance = new Swiper('.blog-swiper', {
+            // Core settings - 1 slide at a time on mobile
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 600,
+            
+            // Loop through slides for infinite scrolling
+            loop: true,
+            
+            // Auto-play with 3.5 seconds delay
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                waitForTransition: true
+            },
+            
+            // Pagination dots
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+                dynamicMainBullets: 3
+            },
+            
+            // Navigation arrows (optional - can be added if needed)
+            navigation: {
+                nextEl: '.blog-swiper-next',
+                prevEl: '.blog-swiper-prev',
+            },
+            
+            // Touch settings for better mobile experience
+            touchEventsTarget: 'container',
+            grabCursor: true,
+            allowTouchMove: true,
+            threshold: 10,
+            touchRatio: 1,
+            touchReleaseOnEdges: true,
+            
+            // Prevent conflicts with vertical scrolling
+            touchStartPreventDefault: false,
+            touchMoveStopPropagation: true,
+            simulateTouch: true,
+            resistance: true,
+            resistanceRatio: 0.85,
+            
+            // Responsive breakpoints
+            breakpoints: {
+                // Mobile - 1 slide max
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // Tablet - 2 slides
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25
+                },
+                // Desktop - 3 slides max
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
             }
-        }
+        });
         
-        resetAutoSlide();
-    });
-    
-    // Pause on hover/touch
-    carousel.addEventListener('mouseenter', stopAutoSlide);
-    carousel.addEventListener('mouseleave', startAutoSlide);
-    
-    // Start auto-slide
-    startAutoSlide();
+        // Clean up on page unload
+        window.addEventListener('beforeunload', () => {
+            if (window.blogSwiperInstance && window.blogSwiperInstance.autoplay) {
+                window.blogSwiperInstance.autoplay.stop();
+                window.blogSwiperInstance.destroy(true, true);
+            }
+        });
+    }, 100);
 }
 
 // Format date for display
@@ -588,6 +505,12 @@ function formatDate(dateString) {
 
 // Load blog posts when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Add a small delay to ensure blog-data.js is loaded
-    setTimeout(loadLatestBlogPosts, 100);
+    // Wait for all scripts to load before initializing Swiper
+    if (document.readyState === 'complete' || document.readyState === 'loaded') {
+        initializeBlogSwiper();
+    } else {
+        window.addEventListener('load', function() {
+            initializeBlogSwiper();
+        });
+    }
 });

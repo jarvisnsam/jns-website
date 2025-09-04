@@ -2,126 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>./</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
+    <loc>https://jarvisnsam.com/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>./lab.html</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
+    <loc>https://jarvisnsam.com/voicebot/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://jarvisnsam.com/lab/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>./link.html</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
+    <loc>https://jarvisnsam.com/link/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://jarvisnsam.com/survey/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://jarvisnsam.com/privacy-policy/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
   </url>
   
   <!-- Blog Pages -->
   <url>
-    <loc>./blog/</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
+    <loc>https://jarvisnsam.com/blog/</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>./blog/agentic-protocol-future-trend.html</loc>
-    <lastmod>2025-05-27T00:00:00+00:00</lastmod>
+    <loc>https://jarvisnsam.com/blog/a2a-agent-setup-guide-n8n-developers.html</loc>
+    <lastmod>2025-06-06T00:00:00+00:00</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>./blog/mcp-vs-a2a-protocols.html</loc>
-    <lastmod>2025-05-27T00:00:00+00:00</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>./blog/parallel-internet.html</loc>
-    <lastmod>2025-05-26T00:00:00+00:00</lastmod>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>./blog/business-driven-agentic-workflow.html</loc>
+    <loc>https://jarvisnsam.com/blog/business-driven-agentic-workflow.html</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>./blog/a2a-agent-setup-guide-n8n-developers.html</loc>
-    <lastmod>2025-06-06T00:00:00+00:00</lastmod>
+    <loc>https://jarvisnsam.com/blog/agentic-protocol-future-trend.html</loc>
+    <lastmod>2025-05-27T00:00:00+00:00</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
-  <!-- Home Page Sections -->
   <url>
-    <loc>./#hero</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.9</priority>
+    <loc>https://jarvisnsam.com/blog/mcp-vs-a2a-protocols.html</loc>
+    <lastmod>2025-05-27T00:00:00+00:00</lastmod>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>./#about</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://jarvisnsam.com/blog/parallel-internet.html</loc>
+    <lastmod>2025-05-26T00:00:00+00:00</lastmod>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
+  <!-- Utility Pages -->
   <url>
-    <loc>./#products</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.9</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <!-- Product Detail Sections -->
-  <url>
-    <loc>./#smartgent-detail</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://jarvisnsam.com/thankyou.html</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
   </url>
   
   <url>
-    <loc>./#voicebot</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>./#agentel-agency</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>./#custom-solutions</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <!-- Other Sections -->
-  
-  <url>
-    <loc>./#contact</loc>
-    <lastmod>2025-07-07T00:00:00+00:00</lastmod>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://jarvisnsam.com/404.html</loc>
+    <lastmod>2025-09-04T00:00:00+00:00</lastmod>
+    <priority>0.2</priority>
+    <changefreq>yearly</changefreq>
   </url>
 </urlset>

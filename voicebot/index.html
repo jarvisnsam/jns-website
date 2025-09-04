@@ -49,6 +49,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/boxicons.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -177,7 +179,7 @@
         
         .hero-image {
             width: 100%;
-            max-width: 500px;
+            max-width: 400px;
             height: auto;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -246,7 +248,7 @@
             }
             
             .hero-image {
-                max-width: 280px;
+                max-width: 220px;
             }
         }
         
@@ -486,6 +488,991 @@
             
             /* Mobile text sizes handled by product typography classes in style.css */
         }
+        
+        /* How It Works Section Styles with Swiper */
+        .how-it-works-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .how-it-works-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Swiper Custom Styles */
+        .hiw-swiper {
+            padding-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hiw-swiper .swiper-slide {
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.5;
+            transform: scale(0.85);
+            transition: all 0.4s ease;
+            filter: blur(0.5px);
+        }
+        
+        .hiw-swiper .swiper-slide-active {
+            opacity: 1 !important;
+            transform: scale(1) !important;
+            filter: blur(0) !important;
+        }
+        
+        .hiw-swiper .swiper-slide-prev,
+        .hiw-swiper .swiper-slide-next {
+            opacity: 0.7;
+            transform: scale(0.9);
+        }
+        
+        /* Custom Pagination Styles - Clean default dots */
+        .hiw-swiper .swiper-pagination {
+            bottom: 20px !important;
+        }
+        
+        .hiw-swiper .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+            transition: all 0.3s ease;
+            width: 10px;
+            height: 10px;
+        }
+        
+        .hiw-swiper .swiper-pagination-bullet:hover {
+            background: rgba(0, 191, 255, 0.5);
+        }
+        
+        .hiw-swiper .swiper-pagination-bullet-active {
+            background: #00BFFF;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+            transform: scale(1.3);
+            width: 12px;
+            height: 12px;
+        }
+        
+        /* Progress Bar with Step Indicator */
+        .swiper-progress-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+        
+        .swiper-progress-bar {
+            position: relative;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .swiper-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00BFFF, #FF3333);
+            width: 0;
+            transition: width 0.3s ease;
+        }
+        
+        /* Step indicator text */
+        .swiper-step-indicator {
+            position: absolute;
+            top: 8px;
+            right: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 4px 12px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-step-indicator .current {
+            color: #00BFFF;
+            font-size: 14px;
+        }
+        
+        .swiper-step-indicator .total {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Navigation Buttons */
+        .hiw-swiper .swiper-button-next,
+        .hiw-swiper .swiper-button-prev {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 191, 255, 0.3);
+            color: #00BFFF;
+            transition: all 0.3s ease;
+        }
+        
+        .hiw-swiper .swiper-button-next:after,
+        .hiw-swiper .swiper-button-prev:after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .hiw-swiper .swiper-button-next:hover,
+        .hiw-swiper .swiper-button-prev:hover {
+            background: rgba(0, 191, 255, 0.1);
+            border-color: #00BFFF;
+            transform: scale(1.1);
+        }
+        
+        /* Step Content Styles */
+        .hiw-step-content {
+            text-align: center;
+            padding: 20px;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hiw-icon-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        
+        .hiw-icon-circle {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.2), rgba(255, 51, 51, 0.2));
+            border: 2px solid rgba(0, 191, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+        
+        .hiw-icon-circle i {
+            font-size: 40px;
+            background: linear-gradient(90deg, #00BFFF, #FF3333);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .swiper-slide-active .hiw-icon-circle {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .swiper-slide-active .hiw-icon-circle i {
+            font-size: 48px;
+        }
+        
+        .hiw-icon-bg-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.3), transparent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+        }
+        
+        .hiw-step-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            transition: all 0.4s ease;
+        }
+        
+        .swiper-slide-active .hiw-step-title {
+            font-size: 28px;
+        }
+        
+        .hiw-step-description {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+        
+        .swiper-slide-active .hiw-step-description {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Visual Elements */
+        .hiw-visual-elements {
+            margin-top: 30px;
+        }
+        
+        .file-format-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .format-badge {
+            padding: 8px 16px;
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            border-radius: 20px;
+            color: #00BFFF;
+            font-size: 14px;
+            font-weight: 500;
+            animation: fadeInUp 0.5s ease backwards;
+        }
+        
+        .format-badge:nth-child(1) { animation-delay: 0.1s; }
+        .format-badge:nth-child(2) { animation-delay: 0.2s; }
+        .format-badge:nth-child(3) { animation-delay: 0.3s; }
+        .format-badge:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .preference-items,
+        .download-options {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .pref-item,
+        .download-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            animation: fadeInUp 0.5s ease backwards;
+        }
+        
+        .pref-item:nth-child(1),
+        .download-item:nth-child(1) { animation-delay: 0.1s; }
+        .pref-item:nth-child(2),
+        .download-item:nth-child(2) { animation-delay: 0.2s; }
+        .pref-item:nth-child(3),
+        .download-item:nth-child(3) { animation-delay: 0.3s; }
+        
+        .pref-item i,
+        .download-item i {
+            font-size: 32px;
+            color: #00BFFF;
+            background: rgba(0, 191, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+        }
+        
+        .pref-item span,
+        .download-item span {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .how-it-works-container {
+                padding: 30px 15px;
+            }
+            
+            
+            .hiw-step-content {
+                min-height: 350px;
+                padding: 20px 45px; /* Add padding to avoid arrow overlap */
+            }
+            
+            .hiw-swiper .swiper-button-next,
+            .hiw-swiper .swiper-button-prev {
+                width: 35px;
+                height: 35px;
+                background: rgba(0, 0, 0, 0.7); /* Darker background for better visibility */
+            }
+            
+            .hiw-swiper .swiper-button-next {
+                right: 5px; /* Position closer to edge */
+            }
+            
+            .hiw-swiper .swiper-button-prev {
+                left: 5px; /* Position closer to edge */
+            }
+            
+            .hiw-swiper .swiper-button-next:after,
+            .hiw-swiper .swiper-button-prev:after {
+                font-size: 16px; /* Smaller arrow icons */
+            }
+            
+            
+            .hiw-icon-circle {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .hiw-icon-circle i {
+                font-size: 40px;
+            }
+            
+            .hiw-step-title {
+                font-size: 24px;
+            }
+            
+            .hiw-step-description {
+                font-size: 14px;
+            }
+            
+            .preference-items,
+            .download-options {
+                gap: 20px;
+            }
+            
+            .pref-item i,
+            .download-item i {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+            
+            .pref-item span,
+            .download-item span {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hiw-step-title {
+                font-size: 20px;
+            }
+            
+            .hiw-step-description {
+                font-size: 13px;
+            }
+            
+            .format-badge {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            /* Hide navigation arrows on very small screens */
+            .hiw-swiper .swiper-button-next,
+            .hiw-swiper .swiper-button-prev {
+                display: none;
+            }
+            
+            .hiw-step-content {
+                padding: 20px 15px; /* Less padding since no arrows */
+            }
+        }
+        
+        /* Testimonials Section Styles */
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Testimonials Swiper for mobile */
+        .testimonials-swiper {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .testimonials-static {
+                display: none;
+            }
+            
+            .testimonials-swiper {
+                display: block;
+                padding-bottom: 50px;
+            }
+            
+            .testimonials-swiper .swiper-pagination {
+                bottom: 10px !important;
+            }
+            
+            .testimonials-swiper .swiper-pagination-bullet {
+                background: rgba(255, 255, 255, 0.3);
+                opacity: 1;
+                width: 8px;
+                height: 8px;
+            }
+            
+            .testimonials-swiper .swiper-pagination-bullet-active {
+                background: #00BFFF;
+                width: 10px;
+                height: 10px;
+            }
+        }
+        
+        .testimonial-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+            z-index: 0;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 191, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial-card:hover::before {
+            left: 100%;
+        }
+        
+        .testimonial-quote {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 25px;
+        }
+        
+        .quote-icon {
+            font-size: 40px;
+            color: rgba(0, 191, 255, 0.4);
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .testimonial-text {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            position: relative;
+            z-index: 1;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .author-info {
+            margin-bottom: 10px;
+        }
+        
+        .author-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        
+        .author-title {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+        }
+        
+        .testimonial-rating {
+            display: flex;
+            gap: 5px;
+            color: #FFD700;
+            font-size: 16px;
+        }
+        
+        /* FAQ Section Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: rgba(0, 191, 255, 0.3);
+        }
+        
+        .faq-item.active {
+            background: rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 191, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.15);
+        }
+        
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            opacity: 1;
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 191, 255, 0.05);
+        }
+        
+        .faq-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin: 0;
+            padding-right: 20px;
+            flex: 1;
+        }
+        
+        .faq-icon {
+            font-size: 24px;
+            color: #00BFFF;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 30px;
+            position: relative;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px 30px;
+        }
+        
+        .faq-answer p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* Mobile Responsiveness for Testimonials and FAQ */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 25px;
+            }
+            
+            .quote-icon {
+                font-size: 32px;
+            }
+            
+            .testimonial-text {
+                font-size: 14px;
+            }
+            
+            .author-name {
+                font-size: 16px;
+            }
+            
+            .author-title {
+                font-size: 13px;
+            }
+            
+            .faq-question {
+                padding: 20px;
+            }
+            
+            .faq-title {
+                font-size: 16px;
+            }
+            
+            .faq-icon {
+                font-size: 20px;
+            }
+            
+            .faq-answer {
+                padding: 0 20px;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px 20px;
+            }
+            
+            .faq-answer p {
+                font-size: 14px;
+            }
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table-container {
+            overflow-x: auto;
+            padding: 0 15px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table thead {
+            background: rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid rgba(0, 191, 255, 0.3);
+        }
+
+        .comparison-table th {
+            padding: 25px 20px;
+            text-align: center;
+            font-weight: 600;
+            color: #fff;
+            vertical-align: top;
+        }
+
+        .comparison-table th.feature-col {
+            text-align: left;
+            background: rgba(0, 0, 0, 0.3);
+            width: 30%;
+        }
+
+        .comparison-table th.highlighted {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(255, 51, 51, 0.1));
+            position: relative;
+        }
+
+
+        .product-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-header i {
+            font-size: 32px;
+            color: #00BFFF;
+        }
+
+        .product-header span {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .product-header small {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+
+        .comparison-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: rgba(0, 191, 255, 0.05);
+        }
+
+        .comparison-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            vertical-align: middle;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .comparison-table td.feature-name {
+            text-align: left;
+            font-weight: 500;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .comparison-table td.highlighted {
+            background: rgba(0, 191, 255, 0.03);
+        }
+
+        .comparison-table .check-icon {
+            font-size: 24px;
+            color: #00FF88;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .comparison-table .x-icon {
+            font-size: 24px;
+            color: #FF4444;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .comparison-table .partial-icon {
+            font-size: 24px;
+            color: #FFB800;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .comparison-table .feature-text {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            display: block;
+        }
+
+        /* Mobile Responsiveness for Comparison Table */
+        @media (max-width: 768px) {
+            .comparison-table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+                min-width: 500px;
+                display: table !important;
+                table-layout: fixed; /* Force fixed table layout for consistent columns */
+            }
+
+            /* Keep table structure */
+            .comparison-table thead,
+            .comparison-table tbody,
+            .comparison-table tr {
+                display: table-row !important;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                display: table-cell !important;
+            }
+
+            /* Uniform padding for alignment */
+            .comparison-table th {
+                padding: 12px 8px; /* Same as td padding for consistency */
+            }
+
+            .comparison-table td {
+                padding: 12px 8px;
+                font-size: 11px;
+            }
+
+            /* Keep all text visible on mobile as requested */
+            .product-header {
+                gap: 4px;
+            }
+
+            .product-header i {
+                font-size: 24px;
+            }
+
+            .product-header span {
+                font-size: 14px;
+                font-weight: 700;
+            }
+
+            .product-header small {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.6);
+                font-weight: 400;
+            }
+
+            /* Remove the "RECOMMENDED" badge on mobile */
+            .comparison-table th.highlighted::before {
+                display: none;
+            }
+
+            /* Set consistent column widths for mobile */
+            .comparison-table th.feature-col,
+            .comparison-table td.feature-name {
+                width: 28% !important;
+            }
+
+            .comparison-table th:not(.feature-col),
+            .comparison-table td:not(.feature-name) {
+                width: 24% !important; /* (100% - 28%) / 3 columns */
+            }
+
+            /* Adjust feature column */
+            .comparison-table th.feature-col {
+                font-size: 11px;
+                padding-left: 8px;
+            }
+
+            /* Feature name styling */
+            .comparison-table td.feature-name {
+                font-size: 11px;
+                padding-left: 8px; /* Match header padding */
+            }
+
+            /* Smaller icons in cells */
+            .comparison-table .check-icon,
+            .comparison-table .x-icon,
+            .comparison-table .partial-icon {
+                font-size: 18px;
+                margin-bottom: 2px;
+            }
+
+            .comparison-table .feature-text {
+                font-size: 10px;
+                line-height: 1.2;
+            }
+
+            /* Add scroll indicator */
+            .comparison-table-container::after {
+                content: '→';
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #00BFFF;
+                font-size: 20px;
+                font-weight: bold;
+                opacity: 0.7;
+                animation: scrollHint 1.5s ease-in-out infinite;
+                pointer-events: none;
+            }
+
+            @keyframes scrollHint {
+                0%, 100% { right: 5px; }
+                50% { right: 15px; }
+            }
+
+            /* Hide scroll hint when user scrolls */
+            .comparison-table-container.scrolled::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .comparison-table {
+                min-width: 450px;
+                font-size: 11px;
+                table-layout: fixed;
+            }
+
+            /* Consistent padding across all cells */
+            .comparison-table th {
+                padding: 10px 6px;
+            }
+
+            .comparison-table td {
+                padding: 10px 6px;
+            }
+
+            .product-header i {
+                font-size: 20px;
+            }
+
+            .product-header span {
+                font-size: 12px;
+            }
+
+            .product-header small {
+                font-size: 9px;
+            }
+
+            /* Maintain column width percentages for smaller screens */
+            .comparison-table th.feature-col,
+            .comparison-table td.feature-name {
+                width: 28% !important;
+                font-size: 10px;
+                padding-left: 6px;
+            }
+
+            .comparison-table th:not(.feature-col),
+            .comparison-table td:not(.feature-name) {
+                width: 24% !important;
+            }
+
+            .comparison-table .check-icon,
+            .comparison-table .x-icon,
+            .comparison-table .partial-icon {
+                font-size: 16px;
+            }
+
+            .comparison-table .feature-text {
+                font-size: 9px;
+            }
+        }
     </style>
 </head>
 <body class="dark-theme">
@@ -557,6 +1544,7 @@
                             <p>For Enterprise</p>
                         </div>
                         <h2>Meet Your New AI Meeting Secretary</h2>
+                        <p class="section-description">Experience how Voicebot transforms your meeting documentation workflow with enterprise-grade AI that understands your business language and security requirements.</p>
                     </div>
                     <div class="video-container">
                         <iframe 
@@ -570,6 +1558,143 @@
             </div>
         </section>
 
+        <!-- How It Works Section -->
+        <section class="container mb-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center mb-5">
+                        <div class="sub-title-2">
+                            <p>How It Works</p>
+                        </div>
+                        <h2>3 Simple Steps to Perfect Meeting Minutes</h2>
+                        <p class="section-description">Transform your recordings into professional documentation with our streamlined AI-powered workflow designed for enterprise efficiency.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- How It Works Container with Swiper -->
+            <div class="how-it-works-container">
+                <!-- Progress Bar with Step Indicator -->
+                <div class="swiper-progress-wrapper">
+                    <div class="swiper-progress-bar">
+                        <div class="swiper-progress-fill"></div>
+                    </div>
+                    <div class="swiper-step-indicator">
+                        <span class="current">1</span><span class="total"> / 3</span>
+                    </div>
+                </div>
+                
+                <!-- Swiper Container -->
+                <div class="swiper hiw-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Step 1 -->
+                        <div class="swiper-slide">
+                            <div class="hiw-step-content">
+                                <div class="hiw-icon-wrapper">
+                                    <div class="hiw-icon-circle">
+                                        <i class="bx bx-upload"></i>
+                                    </div>
+                                    <div class="hiw-icon-bg-pulse"></div>
+                                </div>
+                                <h3 class="hiw-step-title">Upload Recording</h3>
+                                <p class="hiw-step-description">
+                                    Drag and drop or record with your mobile device. Supports common audio and video formats with multilanguage support.
+                                </p>
+                                <div class="hiw-visual-elements">
+                                    <div class="preference-items">
+                                        <div class="pref-item">
+                                            <i class="bx bx-headphone"></i>
+                                            <span>Audio</span>
+                                        </div>
+                                        <div class="pref-item">
+                                            <i class="bx bx-video"></i>
+                                            <span>Video</span>
+                                        </div>
+                                        <div class="pref-item">
+                                            <i class="bx bx-devices"></i>
+                                            <span>Multi Devices</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="swiper-slide">
+                            <div class="hiw-step-content">
+                                <div class="hiw-icon-wrapper">
+                                    <div class="hiw-icon-circle">
+                                        <i class="bx bx-cog"></i>
+                                    </div>
+                                    <div class="hiw-icon-bg-pulse"></div>
+                                </div>
+                                <h3 class="hiw-step-title">Set Preferences</h3>
+                                <p class="hiw-step-description">
+                                    Choose meeting templates, add custom instructions for key points, and select your preferred output language.
+                                </p>
+                                <div class="hiw-visual-elements">
+                                    <div class="preference-items">
+                                        <div class="pref-item">
+                                            <i class="bx bx-layout"></i>
+                                            <span>Templates</span>
+                                        </div>
+                                        <div class="pref-item">
+                                            <i class="bx bx-edit"></i>
+                                            <span>Instructions</span>
+                                        </div>
+                                        <div class="pref-item">
+                                            <i class="bx bx-globe"></i>
+                                            <span>Language</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="swiper-slide">
+                            <div class="hiw-step-content">
+                                <div class="hiw-icon-wrapper">
+                                    <div class="hiw-icon-circle">
+                                        <i class="bx bx-download"></i>
+                                    </div>
+                                    <div class="hiw-icon-bg-pulse"></div>
+                                </div>
+                                <h3 class="hiw-step-title">View & Download</h3>
+                                <p class="hiw-step-description">
+                                    AI processes fast. Get precise transcript and professional minutes, ready to download for distribution.
+                                </p>
+                                <div class="hiw-visual-elements">
+                                    <div class="download-options">
+                                        <div class="download-item">
+                                            <i class="bx bx-time"></i>
+                                            <span>Fast</span>
+                                        </div>
+                                        <div class="download-item">
+                                            <i class="bx bx-file"></i>
+                                            <span>Transcript</span>
+                                        </div>
+                                        <div class="download-item">
+                                            <i class="bx bx-file-blank"></i>
+                                            <span>Minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                    
+                    <!-- Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                
+            </div>
+        </section>
+
         <!-- Features Section -->
         <section class="container">
             <div class="row">
@@ -579,6 +1704,7 @@
                             <p>Key Features</p>
                         </div>
                         <h2>Secure On-Premise Meeting Intelligence</h2>
+                        <p class="section-description">Powerful AI capabilities with complete data sovereignty - all processing happens within your secure infrastructure, never in the cloud.</p>
                     </div>
                 </div>
             </div>
@@ -641,6 +1767,144 @@
             </div>
         </section>
 
+        <!-- Comparison Table Section -->
+        <section class="container mb-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center mb-5">
+                        <div class="sub-title-2">
+                            <p>Why Choose Voicebot</p>
+                        </div>
+                        <h2>Compare Your Options</h2>
+                        <p class="section-description">See how Voicebot stands out from other solutions</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comparison-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-col"></th>
+                            <th class="voicebot-col highlighted">
+                                <div class="product-header">
+                                    <i class="bx bx-microphone"></i>
+                                    <span>Voicebot</span>
+                                    <small>Jarvis and Sam</small>
+                                </div>
+                            </th>
+                            <th class="platform-col">
+                                <div class="product-header">
+                                    <i class="bx bx-video"></i>
+                                    <span>Meeting Platforms</span>
+                                    <small>Google, Zoom, Teams</small>
+                                </div>
+                            </th>
+                            <th class="device-col">
+                                <div class="product-header">
+                                    <i class="bx bx-disc"></i>
+                                    <span>Recording Devices</span>
+                                    <small>Plaud, Mobvoi</small>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Mixed Cantonese English Transcript</td>
+                            <td class="voicebot-col highlighted">
+                                <i class="bx bx-check-circle check-icon"></i>
+                                <span class="feature-text">Native support</span>
+                            </td>
+                            <td class="platform-col">
+                                <i class="bx bx-x-circle x-icon"></i>
+                                <span class="feature-text">English only</span>
+                            </td>
+                            <td class="device-col">
+                                <i class="bx bx-circle partial-icon"></i>
+                                <span class="feature-text">Limited</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Customized Minutes</td>
+                            <td class="voicebot-col highlighted">
+                                <i class="bx bx-check-circle check-icon"></i>
+                                <span class="feature-text">Flexible</span>
+                            </td>
+                            <td class="platform-col">
+                                <i class="bx bx-x-circle x-icon"></i>
+                                <span class="feature-text">Not available</span>
+                            </td>
+                            <td class="device-col">
+                                <i class="bx bx-circle partial-icon"></i>
+                                <span class="feature-text">Limited</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Speaker Identification</td>
+                            <td class="voicebot-col highlighted">
+                                <i class="bx bx-check-circle check-icon"></i>
+                                <span class="feature-text">Support</span>
+                            </td>
+                            <td class="platform-col">
+                                <i class="bx bx-check-circle check-icon"></i>
+                                <span class="feature-text">Support</span>
+                            </td>
+                            <td class="device-col">
+                                <i class="bx bx-check-circle check-icon"></i>
+                                <span class="feature-text">Support</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Enterprise Features</td>
+                            <td class="voicebot-col highlighted">
+                                <i class="bx bx-check-circle check-icon"></i>
+                                <span class="feature-text">Custom deployment</span>
+                            </td>
+                            <td class="platform-col">
+                                <i class="bx bx-circle partial-icon"></i>
+                                <span class="feature-text">Limited options</span>
+                            </td>
+                            <td class="device-col">
+                                <i class="bx bx-circle partial-icon"></i>
+                                <span class="feature-text">Basic features</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Extra Cost for LLM Subscription</td>
+                            <td class="voicebot-col highlighted">
+                                <i class="bx bx-check-circle check-icon"></i>
+                                <span class="feature-text">Not required</span>
+                            </td>
+                            <td class="platform-col">
+                                <i class="bx bx-x-circle x-icon"></i>
+                                <span class="feature-text">Need subscription</span>
+                            </td>
+                            <td class="device-col">
+                                <i class="bx bx-x-circle x-icon"></i>
+                                <span class="feature-text">Need subscription</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Data Security</td>
+                            <td class="voicebot-col highlighted">
+                                <i class="bx bx-check-circle check-icon"></i>
+                                <span class="feature-text">On-premise</span>
+                            </td>
+                            <td class="platform-col">
+                                <i class="bx bx-x-circle x-icon"></i>
+                                <span class="feature-text">Cloud-only storage</span>
+                            </td>
+                            <td class="device-col">
+                                <i class="bx bx-x-circle x-icon"></i>
+                                <span class="feature-text">Requires cloud upload</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
         <!-- Use Cases Section -->
         <section class="container mb-5">
             <div class="row">
@@ -649,7 +1913,8 @@
                         <div class="sub-title-2">
                             <p>Use Cases</p>
                         </div>
-                        <h2>How Your AI Secretary Helps</h2>
+                        <h2>Versatile Enterprise Scenarios</h2>
+                        <p class="section-description">How Your AI Secretary Helps Different Teams</p>
                     </div>
                 </div>
             </div>
@@ -682,17 +1947,279 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+        <section class="container mb-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center mb-5">
+                        <div class="sub-title-2">
+                            <p>Success Stories</p>
+                        </div>
+                        <h2>What Our Clients Say</h2>
+                        <p class="section-description">See how enterprises are transforming their meeting documentation with Voicebot</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-container">
+                <!-- Static grid for desktop -->
+                <div class="testimonials-static">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote">
+                                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                                    <p class="testimonial-text">"Voicebot has revolutionized our board meetings. We save 3+ hours per meeting on documentation, and the Cantonese transcription accuracy is exceptional."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">Sarah Chen</h4>
+                                        <p class="author-title">COO, Financial Services</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote">
+                                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                                    <p class="testimonial-text">"The on-premise deployment was crucial for us. Now we have AI-powered meeting intelligence without compromising our data security policies."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">Michael Wong</h4>
+                                        <p class="author-title">CTO, Healthcare Group</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-12 mb-4">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote">
+                                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                                    <p class="testimonial-text">"Our legal team loves how Voicebot captures every detail. The custom templates ensure compliance documentation is always perfect."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">Jennifer Liu</h4>
+                                        <p class="author-title">Legal Director, Law Firm</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Swiper carousel for mobile -->
+                <div class="swiper testimonials-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote">
+                                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                                    <p class="testimonial-text">"Voicebot has revolutionized our board meetings. We save 3+ hours per meeting on documentation, and the Cantonese transcription accuracy is exceptional."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">Sarah Chen</h4>
+                                        <p class="author-title">COO, Financial Services</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote">
+                                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                                    <p class="testimonial-text">"The on-premise deployment was crucial for us. Now we have AI-powered meeting intelligence without compromising our data security policies."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">Michael Wong</h4>
+                                        <p class="author-title">CTO, Healthcare Group</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote">
+                                    <i class="bx bxs-quote-alt-left quote-icon"></i>
+                                    <p class="testimonial-text">"Our legal team loves how Voicebot captures every detail. The custom templates ensure compliance documentation is always perfect."</p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">Jennifer Liu</h4>
+                                        <p class="author-title">Legal Director, Law Firm</p>
+                                    </div>
+                                    <div class="testimonial-rating">
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                        <i class="bx bxs-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container mb-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center mb-5">
+                        <div class="sub-title-2">
+                            <p>FAQs</p>
+                        </div>
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="1">
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How accurate is the Cantonese transcription?</h3>
+                                <i class="bx bx-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-1">
+                                <p>Our AI achieves excellent accuracy for Cantonese mixed with English dialogue, which is commonly used by Hong Kong people, and supports Mandarin as well. The system is specifically trained to understand local terminology, business jargon, and natural code-switching between Cantonese, Mandarin, and English as typically spoken in Hong Kong business environments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="2">
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>What audio/video formats are supported?</h3>
+                                <i class="bx bx-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-2">
+                                <p>Voicebot supports all common audio and video formats including MP3, MP4, M4A, and WAV. Files can be uploaded directly through the web interface from any device on your network.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="3">
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How does on-premise deployment work?</h3>
+                                <i class="bx bx-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-3">
+                                <p>Voicebot is a web-based system that can be accessed by different devices within your intranet. It's deployed as a complete on-premise solution entirely within your organization's infrastructure. All processing happens locally - no data ever leaves your secure environment. Your team can access it from any device on your network while maintaining complete data isolation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="4">
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>Can I customize the meeting minutes format?</h3>
+                                <i class="bx bx-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-4">
+                                <p>Yes! Voicebot offers complete customization of meeting minutes templates. You can define sections, formatting styles, what to include/exclude, and specific instructions for different meeting types. Create multiple templates for board meetings, client calls, team updates, etc.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="5">
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How long does processing take?</h3>
+                                <i class="bx bx-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-5">
+                                <p>Processing is remarkably fast - typically 2-3 minutes for a half-hour meeting. The actual processing time varies depending on your hardware specifications and recording file size. Once processed, transcripts and minutes can be viewed directly in the Voicebot interface or downloaded for distribution.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="6">
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>Does it identify different speakers?</h3>
+                                <i class="bx bx-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-6">
+                                <p>Yes, Voicebot automatically identifies and labels different speakers in conversations, making transcripts more accurate and organized for easy review and follow-up.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="7">
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How secure is my data with Voicebot?</h3>
+                                <i class="bx bx-chevron-down faq-icon"></i>
+                            </div>
+                            <div class="faq-answer" id="faq-7">
+                                <p>Your data security is our top priority. Voicebot includes automatic data cleanup within specified periods that you configure. All data remains within your secure infrastructure with on-premise deployment. You have complete control over retention policies, ensuring sensitive meeting data is automatically purged according to your organization's security requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Call-to-Action Section -->
         <section class="container">
-            <div class="cta-section">
-                <h2 class="product-cta-title">Empower Your Team with AI Secretary</h2>
-                <p class="product-cta-description">Transform how your team captures and shares meeting insights with enterprise-grade AI that works like a dedicated secretary. On-premise deployment ensures your confidential discussions never leave your secure infrastructure, while your team gains instant access to professional meeting documentation.</p>
-                <a href="../#contact" class="default-btn">
-                    <i class="bx bx-message-square-dots me-2"></i>
-                    <span>Contact Us</span>
-                    <i class="bx bx-chevron-right ms-1"></i>
-                </a>
+            <div class="cta-box" style="background: linear-gradient(135deg, rgba(0, 191, 255, 0.3), rgba(255, 107, 107, 0.3)); backdrop-filter: blur(20px); border: 2px solid rgba(255, 255, 255, 0.4); box-shadow: 0 20px 60px rgba(0, 191, 255, 0.4);">
+                <!-- Corner Accents with bright colors -->
+                <div class="cta-box-corners top-left" style="border-color: #00BFFF;"></div>
+                <div class="cta-box-corners top-right" style="border-color: #FF6B6B;"></div>
+                <div class="cta-box-corners bottom-left" style="border-color: #FF6B6B;"></div>
+                <div class="cta-box-corners bottom-right" style="border-color: #00BFFF;"></div>
+                
+                <!-- CTA Content -->
+                <div class="cta-box-content">
+                    <h2 class="cta-box-title" style="background: linear-gradient(90deg, #00BFFF, #FF6B6B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: brightness(1.2);">Talk with Us Now</h2>
+                    <p class="cta-box-description" style="color: rgba(255, 255, 255, 0.95); text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">Talk to our professional team for a personalized quote and discover how Voicebot can revolutionize your meeting documentation.</p>
+                    <div class="cta-box-buttons">
+                        <a href="../#contact" class="default-btn" style="background: linear-gradient(90deg, #00BFFF, #FF6B6B); border: 2px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 191, 255, 0.4);">
+                            <i class="bx bx-tags me-2"></i>
+                            <span>Get Pricing</span>
+                            <i class="bx bx-chevron-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -708,6 +2235,8 @@
 
     <!-- JavaScript Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../js/main.js"></script>
@@ -716,6 +2245,207 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadHeader();
             loadFooter();
+            
+            // Initialize How It Works auto-rotation
+            initHowItWorks();
+            
+            // Initialize FAQ accordion
+            initFAQAccordion();
+            
+            // Initialize testimonials carousel for mobile
+            initTestimonialsCarousel();
+        });
+        
+        // How It Works functionality with Swiper
+        function initHowItWorks() {
+            // Initialize Swiper with simpler, more reliable configuration
+            const swiper = new Swiper('.hiw-swiper', {
+                // Core settings - 1 slide at a time
+                slidesPerView: 1,
+                spaceBetween: 30,
+                speed: 600,
+                
+                // Use rewind instead of loop for more predictable behavior
+                rewind: true,
+                loop: false,
+                
+                // Auto-play settings - 3.5 seconds rotation
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                    waitForTransition: true
+                },
+                
+                // Pagination - simple dots
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                // Keyboard support
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true
+                },
+                
+                // Touch/swipe support
+                touchEventsTarget: 'container',
+                grabCursor: true,
+                allowTouchMove: true,
+                threshold: 10,
+                touchRatio: 1,
+                touchReleaseOnEdges: true,
+                
+                // Ensure proper mobile behavior
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 30
+                    },
+                    1024: {
+                        slidesPerView: 1,
+                        spaceBetween: 30
+                    }
+                },
+                
+                // Callbacks
+                on: {
+                    init: function() {
+                        updateProgressBar(this);
+                    },
+                    slideChange: function() {
+                        updateProgressBar(this);
+                    }
+                }
+            });
+            
+            // Progress bar and step indicator update function
+            function updateProgressBar(swiperInstance) {
+                const progressFill = document.querySelector('.swiper-progress-fill');
+                const stepIndicator = document.querySelector('.swiper-step-indicator .current');
+                
+                if (progressFill) {
+                    // Use activeIndex for non-loop mode
+                    const currentIndex = swiperInstance.activeIndex || 0;
+                    const totalSlides = 3;
+                    const progressPercentage = ((currentIndex + 1) / totalSlides) * 100;
+                    progressFill.style.width = progressPercentage + '%';
+                }
+                
+                if (stepIndicator) {
+                    // Update step indicator text
+                    const currentStep = (swiperInstance.activeIndex || 0) + 1;
+                    stepIndicator.textContent = currentStep;
+                }
+            }
+            
+            // Clean up on page unload
+            window.addEventListener('beforeunload', () => {
+                if (swiper && swiper.autoplay) {
+                    swiper.autoplay.stop();
+                }
+            });
+        }
+        
+        // FAQ Accordion functionality
+        function initFAQAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const faqNumber = this.getAttribute('data-faq');
+                    const wasActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    faqItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't already active
+                    if (!wasActive) {
+                        faqItem.classList.add('active');
+                        
+                        // Scroll to the FAQ item (optional, for better UX)
+                        setTimeout(() => {
+                            const yOffset = -100; // Offset to account for fixed header
+                            const element = faqItem;
+                            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            
+                            window.scrollTo({
+                                top: y,
+                                behavior: 'smooth'
+                            });
+                        }, 300);
+                    }
+                });
+            });
+            
+            // Optional: Open first FAQ by default
+            // if (faqItems.length > 0) {
+            //     faqItems[0].classList.add('active');
+            // }
+        }
+        
+        // Testimonials carousel for mobile
+        function initTestimonialsCarousel() {
+            // Only initialize on mobile
+            if (window.innerWidth <= 768) {
+                const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    speed: 600,
+                    loop: true,
+                    
+                    // Auto-play settings - slide every 4 seconds
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    },
+                    
+                    // Pagination
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    
+                    // Touch support
+                    grabCursor: true,
+                    allowTouchMove: true,
+                    threshold: 10
+                });
+            }
+        }
+        
+        // Re-initialize on window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Destroy existing Swiper if window is resized to desktop
+                if (window.innerWidth > 768) {
+                    const swiperEl = document.querySelector('.testimonials-swiper');
+                    if (swiperEl && swiperEl.swiper) {
+                        swiperEl.swiper.destroy(true, true);
+                    }
+                } else {
+                    // Re-initialize if resized to mobile
+                    initTestimonialsCarousel();
+                }
+            }, 250);
         });
     </script>
 </body>
