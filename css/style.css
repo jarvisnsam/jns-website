@@ -749,6 +749,7 @@ a.contact-btn.btn {
   align-items: center;
   position: relative;
   overflow: hidden;
+  z-index: 1; /* Ensure hero doesn't overlap blog section */
 }
 
 .hero-content-2 {
@@ -969,6 +970,8 @@ a.contact-btn.btn {
 .about-content p {
   color: var(--contentTextColor);
   font-size: 17px;
+  text-align: left;
+  line-height: 1.8;
 }
 
 .about-content ul {
@@ -1230,7 +1233,7 @@ a.contact-btn.btn {
 
 /* Brand Section */
 .brand-section-2 {
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 .customers-grid {
@@ -1437,16 +1440,67 @@ a.contact-btn.btn {
 }
 
 .contact-form-wrapper {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 15px;
-  padding: 30px;
+  position: relative;
+  padding: 60px 40px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 191, 255, 0.2));
+  border: 2px solid rgba(0, 191, 255, 0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0, 191, 255, 0.3);
+  overflow: hidden;
+  text-align: center;
   height: 100%;
-  border: 1px solid rgba(0, 191, 255, 0.25);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated background effect for contact form */
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 191, 255, 0.1) 0%, transparent 50%);
+  animation: rotateGlow 20s linear infinite;
+  pointer-events: none;
+}
+
+/* Sweep effect on hover for contact form */
+.contact-form-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.2), transparent);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+.contact-form-wrapper:hover::after {
+  left: 100%;
+}
+
+.contact-form-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 191, 255, 0.4);
+  border-color: rgba(0, 191, 255, 0.6);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 191, 255, 0.3));
 }
 
 .contact-form-wrapper h3 {
-  font-size: 1.5rem;
-  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #00BFFF, #FF3333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-form-wrapper .form-control {
@@ -1905,9 +1959,9 @@ a.contact-btn.btn {
     padding-right: 25px;
   }
   
-  .contact-section-new {
-    padding: 50px 0;
-  }
+.contact-section-new {
+  padding: 60px 0;
+}
   
   .contact-content-wrapper {
     padding: 20px 15px;
@@ -2069,8 +2123,8 @@ section {
 
 /* Mobile smaller text */
 @media (max-width: 768px) {
-  .form-privacy-text {
-    font-size: 0.75rem;
+  .contact-section-new {
+    padding: 40px 0;
   }
 }
 
@@ -2366,6 +2420,7 @@ section {
   background: linear-gradient(45deg, #00BFFF, #FF3333, #00BFFF);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   animation: borderRotate 4s linear infinite;
   pointer-events: none;
@@ -2505,6 +2560,11 @@ textarea.form-control {
   margin-bottom: 15px;
 }
 
+/* Remove bottom margin when icon-circle is in a flex container for proper vertical alignment */
+.d-flex .icon-circle {
+  margin-bottom: 0;
+}
+
 .icon-circle i {
   font-size: 28px;
   background: linear-gradient(90deg, #00BFFF, #FF3333);
@@ -2557,6 +2617,8 @@ textarea.form-control {
 .latest-blog-section {
   background-color: var(--DarkBg);
   position: relative;
+  z-index: 2; /* Ensure blog section is above hero section */
+  overflow: visible; /* Allow cards to extend outside section bounds */
 }
 
 .latest-blog-card {
@@ -2585,10 +2647,11 @@ textarea.form-control {
 }
 
 .latest-blog-card:hover {
-  transform: translateY(-5px); /* Reduced to prevent overlap with elements above */
+  transform: translateY(-5px); /* Restore hover effect now that z-index is fixed */
   border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2);
   background: rgba(0, 0, 0, 0.25);
+  z-index: 10; /* Ensure hover card is on top without overlapping others */
 }
 
 .latest-blog-card:hover::before {
@@ -2690,22 +2753,30 @@ textarea.form-control {
 
 /* Blog Swiper Mobile Styles */
 .blog-swiper {
-  padding-bottom: 90px; /* Increased to ensure dots are below cards */
+  padding-bottom: 80px; /* Space for pagination dots */
   position: relative;
+  overflow: visible; /* Allow cards to extend outside container */
+}
+
+.blog-swiper .swiper-wrapper {
+  padding-top: 20px; /* Add top padding to prevent clipping */
+  padding-bottom: 20px; /* Add bottom padding for card shadows */
 }
 
 .blog-swiper .swiper-slide {
   height: auto;
-  padding-bottom: 30px; /* Add padding to ensure date doesn't overlap with dots */
+  padding: 10px 5px; /* Add padding to prevent edge clipping */
 }
 
 /* Swiper Pagination - Neon Light Style (No Gradient) */
 .blog-swiper .swiper-pagination {
-  bottom: 20px !important; /* Position dots below the card content */
+  bottom: 0px !important; /* Position dots with more space below the card content */
   position: absolute !important;
   width: 100% !important;
-  left: 0 !important;
-  right: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  text-align: center !important;
+  z-index: 5 !important; /* Ensure dots are above background but below cards */
 }
 
 .blog-swiper .swiper-pagination-bullet {
@@ -2748,7 +2819,16 @@ textarea.form-control {
   
   /* More spacing for mobile blog swiper to avoid date/dots overlap */
   .blog-swiper {
-    padding-bottom: 60px;
+    padding-bottom: 70px; /* Adequate space for pagination dots on mobile */
+  }
+  
+  .blog-swiper .swiper-wrapper {
+    padding-top: 15px; /* Slightly less top padding on mobile */
+    padding-bottom: 15px;
+  }
+  
+  .blog-swiper .swiper-pagination {
+    bottom: 15px !important; /* Adjust for mobile */
   }
   
   .latest-blog-card-date {

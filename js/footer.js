@@ -26,11 +26,13 @@ function generateFooterHTML() {
                         <!-- Centered Logo and Company Name -->
                         <div class="footer-brand-section mb-4">
                             <div class="footer-logo mb-3">
-                                <img 
-                                    src="${basePath}img/JnS_logo_960x540.png" 
-                                    alt="Jarvis and Sam - Enterprise AI Solutions" 
-                                    style="max-width: 140px; height: auto; object-fit: contain; display: block; margin: 0 auto;"
-                                />
+                                <a href="${basePath}" style="display: block;">
+                                    <img 
+                                        src="${basePath}img/JnS_logo_960x540.png" 
+                                        alt="Jarvis and Sam - Enterprise AI Solutions" 
+                                        style="max-width: 140px; height: auto; object-fit: contain; display: block; margin: 0 auto;"
+                                    />
+                                </a>
                             </div>
                             <p style="margin: 0; font-size: 0.85rem; font-weight: 400; color: #fff;">Enterprise AI Solutions | AI Enablement Training</p>
                         </div>
