@@ -34,7 +34,7 @@ body {
   font-family: var(--fontFamily);
   background-color: var(--DarkBg);
   color: var(--contentTextColor);
-  padding-top: 70px;
+  padding-top: 55px; /* Reduced from 70px for less spacing */
 }
 
 body.dark-theme {
@@ -73,33 +73,33 @@ img {
 
 /* Utility Classes */
 .ptb-100 {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 70px; /* Reduced from 100px */
+  padding-bottom: 70px; /* Reduced from 100px */
 }
 
 .pt-100 {
-  padding-top: 100px;
+  padding-top: 70px; /* Reduced from 100px */
 }
 
 .pb-100 {
-  padding-bottom: 100px;
+  padding-bottom: 70px; /* Reduced from 100px */
 }
 
 .ptb-70 {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 50px; /* Reduced from 70px */
+  padding-bottom: 50px; /* Reduced from 70px */
 }
 
 .pt-70 {
-  padding-top: 70px;
+  padding-top: 50px; /* Reduced from 70px */
 }
 
 .pt-50 {
-  padding-top: 50px;
+  padding-top: 40px; /* Reduced from 50px */
 }
 
 .pb-70 {
-  padding-bottom: 70px;
+  padding-bottom: 50px; /* Reduced from 70px */
 }
 
 /* Button Styles */
@@ -310,7 +310,7 @@ img {
 }
 
 .navbar-area .navbar {
-  padding: 15px 20px;
+  padding: 10px 20px; /* Reduced vertical padding from 15px to 10px */
 }
 
 .navbar-area .navbar .navbar-brand {
@@ -743,7 +743,7 @@ a.contact-btn.btn {
   background: none;
   background-repeat: no-repeat;
   background-position: center;
-  padding-top: 100px;
+  padding-top: 60px; /* Reduced from 100px */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1785,7 +1785,7 @@ a.contact-btn.btn {
   
   body {
     font-size: 14px;
-    padding-top: 60px;
+    padding-top: 50px; /* Keep mobile spacing compact */
   }
   
   .ptb-100 {

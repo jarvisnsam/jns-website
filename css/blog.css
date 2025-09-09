@@ -3,6 +3,61 @@ Blog Styles for Jarvis and Sam Website
 Consistent with existing design system
 =================================================*/
 
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    padding: 0;
+    margin-bottom: 5px;
+    margin-top: 50px; /* Even closer to header */
+    position: relative;
+    z-index: 100;
+    display: block;
+}
+
+.breadcrumb-nav .container {
+    max-width: 1000px; /* Match blog content width */
+    margin: 0 auto;
+    padding: 0 20px; /* Same padding as blog content for alignment */
+}
+
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.breadcrumb-item {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "›";
+    padding: 0 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 400;
+}
+
+.breadcrumb-item a:hover {
+    color: #00BFFF;
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
 /* Blog Hero Section */
 .blog-hero-section {
     background: linear-gradient(135deg, #05051E 0%, #0a0a2e 100%);
@@ -326,13 +381,14 @@ Consistent with existing design system
 /* Blog Post Page Styles */
 .blog-post-section {
     background-color: var(--DarkBg);
-    padding: 100px 0;
+    padding: 10px 0 100px; /* Reduced top padding */
     position: relative;
 }
 
 .blog-post-container {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 20px; /* Add padding to match breadcrumb alignment */
 }
 
 .blog-post-header {
@@ -560,6 +616,33 @@ Consistent with existing design system
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .breadcrumb-nav {
+        padding: 0;
+        margin-bottom: 5px;
+        margin-top: 48px; /* Even closer to header on mobile */
+    }
+    
+    .breadcrumb-nav .container {
+        padding: 0 15px; /* Same as mobile blog content padding */
+    }
+    
+    .blog-post-container {
+        padding: 0 15px; /* Mobile padding */
+    }
+    
+    .breadcrumb {
+        font-size: 12px;
+    }
+    
+    .breadcrumb-item + .breadcrumb-item::before {
+        padding: 0 6px;
+        font-size: 12px;
+    }
+    
+    .blog-post-section {
+        padding: 5px 0 80px; /* Reduced top padding on mobile */
+    }
+    
     .blog-hero-title {
         font-size: 32px;
     }
@@ -591,7 +674,7 @@ Consistent with existing design system
     }
     
     .blog-post-title {
-        font-size: 28px;
+        font-size: 24px; /* Reduced for better mobile readability */
     }
     
     .blog-post-meta {
@@ -612,6 +695,10 @@ Consistent with existing design system
 @media (max-width: 480px) {
     .blog-hero-title {
         font-size: 28px;
+    }
+    
+    .blog-post-title {
+        font-size: 22px; /* Even smaller on very small screens */
     }
     
     .blog-card-tags {
