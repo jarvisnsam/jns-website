@@ -96,6 +96,11 @@ const linksData = {
     ],
     other: [
         {
+            name: "Support",
+            url: "https://support.jarvisnsam.com/",
+            icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/helpdesk.svg"
+        },
+        {
             name: "Survey",
             url: "../survey/",
             icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googleforms.svg"
