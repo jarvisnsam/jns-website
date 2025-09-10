@@ -378,6 +378,37 @@ Consistent with existing design system
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* Blog-specific Breadcrumb */
+.blog-breadcrumb {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 20px 0;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.blog-breadcrumb a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.blog-breadcrumb span {
+    margin: 0 8px;
+    color: #9ca3af;
+}
+
+/* Blog Container */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Blog Post Page Styles */
 .blog-post-section {
     background-color: var(--DarkBg);
@@ -712,5 +743,157 @@ Consistent with existing design system
     
     .blog-post-content {
         padding: 20px;
+    }
+}
+
+/* Read More Section */
+.read-more-section {
+    padding: 60px 0;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 80px;
+}
+
+.read-more-section .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.read-more-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.read-more-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+}
+
+/* Read More Card Styles - Match home page blog cards exactly */
+.read-more-card {
+    background: rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.read-more-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.read-more-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.read-more-card:hover::before {
+    left: 100%;
+}
+
+.read-more-card-link {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.read-more-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.read-more-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.read-more-card:hover .read-more-card-image img {
+    transform: scale(1.05);
+}
+
+.read-more-card-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.read-more-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    font-family: 'Newsreader', serif;
+}
+
+.read-more-card:hover .read-more-card-title {
+    background: linear-gradient(90deg, #00BFFF, #FF3333);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.read-more-card-excerpt {
+    color: rgba(224, 224, 224, 0.7);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more-card-date {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+/* Read More Section Responsive */
+@media (max-width: 768px) {
+    .read-more-section {
+        padding: 40px 0;
+    }
+    
+    .read-more-section h2 {
+        font-size: 26px;
+    }
+    
+    .read-more-card-title {
+        font-size: 18px;
     }
 }

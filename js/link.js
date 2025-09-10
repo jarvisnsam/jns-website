@@ -98,7 +98,7 @@ const linksData = {
         {
             name: "Support",
             url: "https://support.jarvisnsam.com/",
-            icon: "https://cdn.jsdelivr.net/gh/atisawd/boxicons/svg/regular/bx-support.svg"
+            icon: "https://cdn.jsdelivr.net/gh/atisawd/boxicons/svg/regular/bx-headphone.svg"
         },
         {
             name: "Survey",

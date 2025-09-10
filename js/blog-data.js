@@ -51,7 +51,7 @@ const blogPosts = [
         publishDate: "2025-05-26",
         author: "Jarvis and Sam",
         tags: ["Internet Architecture", "AI Agents", "MCP Protocol", "Future Tech"],
-        featuredImage: "../img/blog/parellel_internet.svg",
+        featuredImage: "../img/blog/parellel_internet.png",
         excerpt: "The fundamental shift we're witnessing in internet architecture from traditional internet to emerging agentic internet where AI agents act as intelligent intermediaries."
     }
 ];
