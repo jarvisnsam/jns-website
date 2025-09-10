@@ -569,8 +569,8 @@ Consistent with existing design system
 
 /* Tags Section */
 .blog-post-tags {
-    margin-top: 40px;
-    padding-top: 30px;
+    margin-top: 10px;
+    padding-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -578,7 +578,7 @@ Consistent with existing design system
     color: #FFFFFF;
     font-size: 16px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .blog-post-tags-list {
@@ -748,10 +748,10 @@ Consistent with existing design system
 
 /* Read More Section */
 .read-more-section {
-    padding: 60px 0;
+    padding: 5px 0 60px;
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .read-more-section .section-title {

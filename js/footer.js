@@ -87,6 +87,7 @@ function generateFooterHTML() {
                             <li><a href="${basePath}lab/">Lab</a></li>
                             <li><a href="${basePath}blog/">Blog</a></li>
                             <li><a href="${basePath}link/">Link</a></li>
+                            <li><a href="https://support.jarvisnsam.com/" target="_blank" rel="noopener noreferrer">Support</a></li>
                             <li><a href="${basePath}index.html#contact">Contact Us</a></li>
                         </ul>
                     </div>
