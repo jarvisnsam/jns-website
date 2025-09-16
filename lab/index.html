@@ -239,7 +239,6 @@
 
         .extra-link-btn {
             padding: 0.4rem 0.8rem;
-            background: #00BFFF;
             color: white;
             border: none;
             border-radius: 20px;
@@ -252,11 +251,38 @@
             gap: 0.3rem;
             font-family: 'Inter', sans-serif;
         }
-
-        .extra-link-btn:hover {
-            background: #0099cc;
+        
+        /* Try button - Green */
+        .extra-link-btn.btn-try {
+            background: #10B981;
+        }
+        
+        .extra-link-btn.btn-try:hover {
+            background: #059669;
             transform: translateY(-1px);
-            box-shadow: 0 3px 8px rgba(0, 191, 255, 0.3);
+            box-shadow: 0 3px 8px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Demo button - Blue */
+        .extra-link-btn.btn-demo {
+            background: #3B82F6;
+        }
+        
+        .extra-link-btn.btn-demo:hover {
+            background: #2563EB;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Setup Guide button - Purple */
+        .extra-link-btn.btn-guide {
+            background: #8B5CF6;
+        }
+        
+        .extra-link-btn.btn-guide:hover {
+            background: #7C3AED;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(139, 92, 246, 0.3);
         }
 
         .extra-link-btn i {
@@ -373,7 +399,10 @@
                 "tags": ["AI", "Agent"],
                 "status": "active",
                 "link": "https://smartgendev.w3btest.com/",
-                "image": "https://smartgendev.w3btest.com/api/v1/images/logo.jpeg"
+                "image": "https://smartgendev.w3btest.com/api/v1/images/logo.jpeg",
+                "extraLinks": [
+                    {"text": "Demo", "url": "http://demo.jarvisnsam.ai/smartgent/", "icon": "fa-desktop"}
+                ]
             },
             {
                 "id": 2,
@@ -384,8 +413,8 @@
                 "link": "https://vb.jarvisnsam.ai/",
                 "image": "https://cdn-icons-png.flaticon.com/512/8862/8862366.png",
                 "extraLinks": [
-                    {"text": "Video", "url": "https://www.youtube.com/watch?v=beXa5nYhz7I", "icon": "fa-play"},
-                    {"text": "Setup Guide", "url": "https://vbsetup.jarvisnsam.ai/", "icon": "fa-cogs"}
+                    {"text": "Demo", "url": "http://demo.jarvisnsam.ai/voicebot/", "icon": "fa-desktop"},
+                    {"text": "Setup Guide", "url": "https://vbsetup.jarvisnsam.ai/", "icon": "fa-book"}
                 ]
             },
             {
@@ -445,14 +474,14 @@
             createLabCard(lab) {
                 const tagsHtml = lab.tags.map(tag => `<span class="lab-card-tag">${tag}</span>`).join('');
                 
-                // Create all buttons - Demo button for all cards + any extra links
+                // Create all buttons - Try button for all cards + any extra links
                 const allButtons = [];
                 
-                // Add Demo button for all cards (links to main card link)
+                // Add Try button for all cards (links to main card link)
                 allButtons.push({
-                    text: "Demo",
+                    text: "Try",
                     url: lab.link,
-                    icon: "fa-external-link-alt"
+                    icon: "fa-flask"
                 });
                 
                 // Add any existing extra links
@@ -461,11 +490,17 @@
                 }
                 
                 const buttonsHtml = `<div class="lab-card-extra-links">
-                    ${allButtons.map(button => 
-                        `<button class="extra-link-btn" data-url="${button.url}" onclick="event.stopPropagation(); window.open('${button.url}', '_blank')">
+                    ${allButtons.map(button => {
+                        // Determine button class based on text
+                        let btnClass = 'extra-link-btn';
+                        if (button.text === 'Try') btnClass += ' btn-try';
+                        else if (button.text === 'Demo') btnClass += ' btn-demo';
+                        else if (button.text === 'Setup Guide') btnClass += ' btn-guide';
+                        
+                        return `<button class="${btnClass}" data-url="${button.url}" onclick="event.stopPropagation(); window.open('${button.url}', '_blank')">
                             <i class="fa ${button.icon}"></i> ${button.text}
-                        </button>`
-                    ).join('')}
+                        </button>`;
+                    }).join('')}
                 </div>`;
                 
                 return `
