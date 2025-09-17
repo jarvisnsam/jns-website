@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="../img/jns_logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voicebot - Your AI Secretary | Jarvis and Sam</title>
+    <title>SmartGent - Integrated AI Platform | Jarvis and Sam</title>
     
     <!-- Initialize dataLayer -->
     <script>
@@ -20,30 +20,30 @@
     <!-- End Google Tag Manager -->
     
     <!-- Primary Meta Tags -->
-    <meta name="description" content="Transform meetings into professional minutes with your AI Secretary. Features multilingual transcription, speaker identification, and complete privacy with on-premise deployment." />
-    <meta name="keywords" content="AI secretary, meeting minutes automation, audio transcription, voice to text, meeting transcription, speaker identification, multilingual transcription, Cantonese transcription, AI transcription, business transcription solution" />
+    <meta name="description" content="SmartGent is an integrated AI platform designed to streamline enterprise operations with conversational AI, RAG technology, and intelligent workflow automation. Available as SaaS or on-premise." />
+    <meta name="keywords" content="AI platform, enterprise AI, conversational AI, LLM chat, RAG technology, workflow automation, SaaS AI, on-premise AI, business automation, intelligent automation" />
     <meta name="author" content="Jarvis and Sam" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jarvisnsam.com/voicebot/" />
+    <meta property="og:url" content="https://jarvisnsam.com/smartgent/" />
     <meta property="og:site_name" content="Jarvis and Sam" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Voicebot - Your AI Secretary | Jarvis and Sam" />
-    <meta property="og:description" content="Transform meetings into professional minutes with your AI Secretary. Features multilingual transcription, speaker identification, and complete privacy with on-premise deployment." />
+    <meta property="og:title" content="SmartGent - Integrated AI Platform | Jarvis and Sam" />
+    <meta property="og:description" content="SmartGent is an integrated AI platform designed to streamline enterprise operations with conversational AI, RAG technology, and intelligent workflow automation. Available as SaaS or on-premise." />
     <meta property="og:image" content="https://jarvisnsam.com/img/JnS_Backdrop_1920×1080.jpg" />
     <meta property="og:image:width" content="1920" />
     <meta property="og:image:height" content="1080" />
-    <meta property="og:image:alt" content="Jarvis and Sam - Voicebot AI Secretary Logo" />
+    <meta property="og:image:alt" content="Jarvis and Sam - SmartGent AI Platform" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://jarvisnsam.com/voicebot/" />
+    <meta property="twitter:url" content="https://jarvisnsam.com/smartgent/" />
     <meta property="twitter:site" content="@jarvisnsam" />
-    <meta property="twitter:title" content="Voicebot - Your AI Secretary | Jarvis and Sam" />
-    <meta property="twitter:description" content="Transform meetings into professional minutes with your AI Secretary. Features multilingual transcription, speaker identification, and complete privacy with on-premise deployment." />
+    <meta property="twitter:title" content="SmartGent - Integrated AI Platform | Jarvis and Sam" />
+    <meta property="twitter:description" content="SmartGent is an integrated AI platform designed to streamline enterprise operations with conversational AI, RAG technology, and intelligent workflow automation. Available as SaaS or on-premise." />
     <meta property="twitter:image" content="https://jarvisnsam.com/img/JnS_Backdrop_1920×1080.jpg" />
-    <meta property="twitter:image:alt" content="Jarvis and Sam - Voicebot AI Secretary Logo" />
+    <meta property="twitter:image:alt" content="Jarvis and Sam - SmartGent AI Platform" />
     
     <!-- CSS Files -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -293,6 +293,19 @@
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             margin: 30px 0;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(255, 51, 51, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
         }
         
         .video-container iframe {
@@ -305,34 +318,7 @@
             border-radius: 15px;
         }
         
-        /* Voicebot specific styles */
-        .voicebot-hero {
-            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(255, 51, 51, 0.1));
-            position: relative;
-            overflow: hidden;
-            padding: 60px 0 30px;
-            margin-bottom: 30px;
-        }
-        
-        .voicebot-hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 25px;
-            background: linear-gradient(90deg, #00BFFF, #FF3333);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .voicebot-hero .hero-description {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
+        /* Features section */
         .features-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -379,6 +365,24 @@
             flex: 1;
             position: relative;
             z-index: 2;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-image-placeholder {
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(255, 51, 51, 0.1));
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .feature-image {
@@ -394,8 +398,7 @@
             z-index: 2;
         }
         
-        /* Using product typography classes from style.css */
-        
+        /* CTA section */
         .cta-section {
             text-align: center;
             padding: 40px 0;
@@ -404,8 +407,6 @@
             border: 1px solid rgba(0, 191, 255, 0.2);
             margin: 30px 0 20px 0;
         }
-        
-        /* CTA section uses product typography classes from style.css */
         
         /* Use Cases section styling */
         .use-case-card {
@@ -441,23 +442,8 @@
             left: 100%;
         }
         
-        /* Use case cards use product typography classes from style.css */
-        
         /* Mobile responsiveness */
         @media (max-width: 768px) {
-            .voicebot-hero {
-                padding: 30px 0 20px;
-                margin-bottom: 20px;
-            }
-            
-            .voicebot-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .voicebot-hero .hero-description {
-                font-size: 0.9rem;
-            }
-            
             .feature-row {
                 flex-direction: column;
                 margin-bottom: 50px;
@@ -476,7 +462,9 @@
                 order: 1;
             }
             
-            /* Mobile text sizes handled by product typography classes in style.css */
+            .feature-image-placeholder {
+                height: 250px;
+            }
             
             .use-case-card {
                 padding: 20px;
@@ -485,8 +473,6 @@
             .cta-section {
                 padding: 30px 15px;
             }
-            
-            /* Mobile text sizes handled by product typography classes in style.css */
         }
         
         /* How It Works Section Styles with Swiper */
@@ -743,36 +729,9 @@
             margin-top: 30px;
         }
         
-        .file-format-icons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .format-badge {
-            padding: 8px 16px;
-            background: rgba(0, 191, 255, 0.1);
-            border: 1px solid rgba(0, 191, 255, 0.3);
-            border-radius: 20px;
-            color: #00BFFF;
-            font-size: 14px;
-            font-weight: 500;
-            animation: fadeInUp 0.5s ease backwards;
-        }
-        
-        .format-badge:nth-child(1) { animation-delay: 0.1s; }
-        .format-badge:nth-child(2) { animation-delay: 0.2s; }
-        .format-badge:nth-child(3) { animation-delay: 0.3s; }
-        .format-badge:nth-child(4) { animation-delay: 0.4s; }
-        
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        
         .preference-items,
-        .download-options {
+        .integration-items,
+        .deploy-options {
             display: flex;
             gap: 30px;
             justify-content: center;
@@ -780,7 +739,8 @@
         }
         
         .pref-item,
-        .download-item {
+        .integration-item,
+        .deploy-item {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -789,14 +749,18 @@
         }
         
         .pref-item:nth-child(1),
-        .download-item:nth-child(1) { animation-delay: 0.1s; }
+        .integration-item:nth-child(1),
+        .deploy-item:nth-child(1) { animation-delay: 0.1s; }
         .pref-item:nth-child(2),
-        .download-item:nth-child(2) { animation-delay: 0.2s; }
+        .integration-item:nth-child(2),
+        .deploy-item:nth-child(2) { animation-delay: 0.2s; }
         .pref-item:nth-child(3),
-        .download-item:nth-child(3) { animation-delay: 0.3s; }
+        .integration-item:nth-child(3),
+        .deploy-item:nth-child(3) { animation-delay: 0.3s; }
         
         .pref-item i,
-        .download-item i {
+        .integration-item i,
+        .deploy-item i {
             font-size: 32px;
             color: #00BFFF;
             background: rgba(0, 191, 255, 0.1);
@@ -810,45 +774,48 @@
         }
         
         .pref-item span,
-        .download-item span {
+        .integration-item span,
+        .deploy-item span {
             color: rgba(255, 255, 255, 0.8);
             font-size: 14px;
             font-weight: 500;
         }
         
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
         
-        /* Mobile Responsiveness */
+        /* Mobile Responsiveness for How It Works */
         @media (max-width: 768px) {
             .how-it-works-container {
                 padding: 30px 15px;
             }
             
-            
             .hiw-step-content {
                 min-height: 350px;
-                padding: 20px 45px; /* Add padding to avoid arrow overlap */
+                padding: 20px 45px;
             }
             
             .hiw-swiper .swiper-button-next,
             .hiw-swiper .swiper-button-prev {
                 width: 35px;
                 height: 35px;
-                background: rgba(0, 0, 0, 0.7); /* Darker background for better visibility */
+                background: rgba(0, 0, 0, 0.7);
             }
             
             .hiw-swiper .swiper-button-next {
-                right: 5px; /* Position closer to edge */
+                right: 5px;
             }
             
             .hiw-swiper .swiper-button-prev {
-                left: 5px; /* Position closer to edge */
+                left: 5px;
             }
             
             .hiw-swiper .swiper-button-next:after,
             .hiw-swiper .swiper-button-prev:after {
-                font-size: 16px; /* Smaller arrow icons */
+                font-size: 16px;
             }
-            
             
             .hiw-icon-circle {
                 width: 100px;
@@ -868,19 +835,22 @@
             }
             
             .preference-items,
-            .download-options {
+            .integration-items,
+            .deploy-options {
                 gap: 20px;
             }
             
             .pref-item i,
-            .download-item i {
+            .integration-item i,
+            .deploy-item i {
                 width: 50px;
                 height: 50px;
                 font-size: 24px;
             }
             
             .pref-item span,
-            .download-item span {
+            .integration-item span,
+            .deploy-item span {
                 font-size: 12px;
             }
         }
@@ -894,29 +864,304 @@
                 font-size: 13px;
             }
             
-            .format-badge {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-            
-            /* Hide navigation arrows on very small screens */
             .hiw-swiper .swiper-button-next,
             .hiw-swiper .swiper-button-prev {
                 display: none;
             }
             
             .hiw-step-content {
-                padding: 20px 15px; /* Less padding since no arrows */
+                padding: 20px 15px;
             }
         }
         
+        /* Comparison Table Styles */
+        .comparison-table-container {
+            overflow-x: auto;
+            padding: 0 15px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table thead {
+            background: rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid rgba(0, 191, 255, 0.3);
+        }
+
+        .comparison-table th {
+            padding: 25px 20px;
+            text-align: center;
+            font-weight: 600;
+            color: #fff;
+            vertical-align: top;
+        }
+
+        .comparison-table th.feature-col {
+            text-align: left;
+            background: rgba(0, 0, 0, 0.3);
+            width: 30%;
+        }
+
+        .comparison-table th.highlighted {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(255, 51, 51, 0.1));
+            position: relative;
+        }
+
+        .product-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-header i {
+            font-size: 32px;
+            color: #00BFFF;
+        }
+
+        .product-header span {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .product-header small {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+
+        .comparison-table tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: rgba(0, 191, 255, 0.05);
+        }
+
+        .comparison-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            vertical-align: middle;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .comparison-table td.feature-name {
+            text-align: left;
+            font-weight: 500;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .comparison-table td.highlighted {
+            background: rgba(0, 191, 255, 0.03);
+        }
+
+        .comparison-table .check-icon {
+            font-size: 24px;
+            color: #00FF88;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .comparison-table .x-icon {
+            font-size: 24px;
+            color: #FF4444;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .comparison-table .partial-icon {
+            font-size: 24px;
+            color: #FFB800;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .comparison-table .feature-text {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            display: block;
+        }
+
+        /* Mobile Responsiveness for Comparison Table */
+        @media (max-width: 768px) {
+            .comparison-table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+                min-width: 500px;
+                display: table !important;
+                table-layout: fixed;
+            }
+
+            .comparison-table thead,
+            .comparison-table tbody,
+            .comparison-table tr {
+                display: table-row !important;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                display: table-cell !important;
+            }
+
+            .comparison-table th {
+                padding: 12px 8px;
+            }
+
+            .comparison-table td {
+                padding: 12px 8px;
+                font-size: 11px;
+            }
+
+            .product-header {
+                gap: 4px;
+            }
+
+            .product-header i {
+                font-size: 24px;
+            }
+
+            .product-header span {
+                font-size: 14px;
+                font-weight: 700;
+            }
+
+            .product-header small {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.6);
+                font-weight: 400;
+            }
+
+            .comparison-table th.highlighted::before {
+                display: none;
+            }
+
+            .comparison-table th.feature-col,
+            .comparison-table td.feature-name {
+                width: 28% !important;
+            }
+
+            .comparison-table th:not(.feature-col),
+            .comparison-table td:not(.feature-name) {
+                width: 24% !important;
+            }
+
+            .comparison-table th.feature-col {
+                font-size: 11px;
+                padding-left: 8px;
+            }
+
+            .comparison-table td.feature-name {
+                font-size: 11px;
+                padding-left: 8px;
+            }
+
+            .comparison-table .check-icon,
+            .comparison-table .x-icon,
+            .comparison-table .partial-icon {
+                font-size: 18px;
+                margin-bottom: 2px;
+            }
+
+            .comparison-table .feature-text {
+                font-size: 10px;
+                line-height: 1.2;
+            }
+
+            .comparison-table-container::after {
+                content: '→';
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #00BFFF;
+                font-size: 20px;
+                font-weight: bold;
+                opacity: 0.7;
+                animation: scrollHint 1.5s ease-in-out infinite;
+                pointer-events: none;
+            }
+
+            @keyframes scrollHint {
+                0%, 100% { right: 5px; }
+                50% { right: 15px; }
+            }
+
+            .comparison-table-container.scrolled::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .comparison-table {
+                min-width: 450px;
+                font-size: 11px;
+                table-layout: fixed;
+            }
+
+            .comparison-table th {
+                padding: 10px 6px;
+            }
+
+            .comparison-table td {
+                padding: 10px 6px;
+            }
+
+            .product-header i {
+                font-size: 20px;
+            }
+
+            .product-header span {
+                font-size: 12px;
+            }
+
+            .product-header small {
+                font-size: 9px;
+            }
+
+            .comparison-table th.feature-col,
+            .comparison-table td.feature-name {
+                width: 28% !important;
+                font-size: 10px;
+                padding-left: 6px;
+            }
+
+            .comparison-table th:not(.feature-col),
+            .comparison-table td:not(.feature-name) {
+                width: 24% !important;
+            }
+
+            .comparison-table .check-icon,
+            .comparison-table .x-icon,
+            .comparison-table .partial-icon {
+                font-size: 16px;
+            }
+
+            .comparison-table .feature-text {
+                font-size: 9px;
+            }
+        }
+
         /* Testimonials Section Styles */
         .testimonials-container {
             max-width: 1200px;
             margin: 0 auto;
         }
         
-        /* Testimonials Swiper for mobile */
         .testimonials-swiper {
             display: none;
         }
@@ -1178,301 +1423,6 @@
                 font-size: 14px;
             }
         }
-
-        /* Comparison Table Styles */
-        .comparison-table-container {
-            overflow-x: auto;
-            padding: 0 15px;
-        }
-
-        .comparison-table {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .comparison-table thead {
-            background: rgba(0, 0, 0, 0.5);
-            border-bottom: 2px solid rgba(0, 191, 255, 0.3);
-        }
-
-        .comparison-table th {
-            padding: 25px 20px;
-            text-align: center;
-            font-weight: 600;
-            color: #fff;
-            vertical-align: top;
-        }
-
-        .comparison-table th.feature-col {
-            text-align: left;
-            background: rgba(0, 0, 0, 0.3);
-            width: 30%;
-        }
-
-        .comparison-table th.highlighted {
-            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(255, 51, 51, 0.1));
-            position: relative;
-        }
-
-
-        .product-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .product-header i {
-            font-size: 32px;
-            color: #00BFFF;
-        }
-
-        .product-header span {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .product-header small {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 400;
-        }
-
-        .comparison-table tbody tr {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .comparison-table tbody tr:hover {
-            background: rgba(0, 191, 255, 0.05);
-        }
-
-        .comparison-table tbody tr:last-child {
-            border-bottom: none;
-        }
-
-        .comparison-table td {
-            padding: 20px;
-            text-align: center;
-            vertical-align: middle;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .comparison-table td.feature-name {
-            text-align: left;
-            font-weight: 500;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .comparison-table td.highlighted {
-            background: rgba(0, 191, 255, 0.03);
-        }
-
-        .comparison-table .check-icon {
-            font-size: 24px;
-            color: #00FF88;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .comparison-table .x-icon {
-            font-size: 24px;
-            color: #FF4444;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .comparison-table .partial-icon {
-            font-size: 24px;
-            color: #FFB800;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .comparison-table .feature-text {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.7);
-            display: block;
-        }
-
-        /* Mobile Responsiveness for Comparison Table */
-        @media (max-width: 768px) {
-            .comparison-table-container {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .comparison-table {
-                font-size: 12px;
-                min-width: 500px;
-                display: table !important;
-                table-layout: fixed; /* Force fixed table layout for consistent columns */
-            }
-
-            /* Keep table structure */
-            .comparison-table thead,
-            .comparison-table tbody,
-            .comparison-table tr {
-                display: table-row !important;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                display: table-cell !important;
-            }
-
-            /* Uniform padding for alignment */
-            .comparison-table th {
-                padding: 12px 8px; /* Same as td padding for consistency */
-            }
-
-            .comparison-table td {
-                padding: 12px 8px;
-                font-size: 11px;
-            }
-
-            /* Keep all text visible on mobile as requested */
-            .product-header {
-                gap: 4px;
-            }
-
-            .product-header i {
-                font-size: 24px;
-            }
-
-            .product-header span {
-                font-size: 14px;
-                font-weight: 700;
-            }
-
-            .product-header small {
-                font-size: 10px;
-                color: rgba(255, 255, 255, 0.6);
-                font-weight: 400;
-            }
-
-            /* Remove the "RECOMMENDED" badge on mobile */
-            .comparison-table th.highlighted::before {
-                display: none;
-            }
-
-            /* Set consistent column widths for mobile */
-            .comparison-table th.feature-col,
-            .comparison-table td.feature-name {
-                width: 28% !important;
-            }
-
-            .comparison-table th:not(.feature-col),
-            .comparison-table td:not(.feature-name) {
-                width: 24% !important; /* (100% - 28%) / 3 columns */
-            }
-
-            /* Adjust feature column */
-            .comparison-table th.feature-col {
-                font-size: 11px;
-                padding-left: 8px;
-            }
-
-            /* Feature name styling */
-            .comparison-table td.feature-name {
-                font-size: 11px;
-                padding-left: 8px; /* Match header padding */
-            }
-
-            /* Smaller icons in cells */
-            .comparison-table .check-icon,
-            .comparison-table .x-icon,
-            .comparison-table .partial-icon {
-                font-size: 18px;
-                margin-bottom: 2px;
-            }
-
-            .comparison-table .feature-text {
-                font-size: 10px;
-                line-height: 1.2;
-            }
-
-            /* Add scroll indicator */
-            .comparison-table-container::after {
-                content: '→';
-                position: absolute;
-                right: 5px;
-                top: 50%;
-                transform: translateY(-50%);
-                color: #00BFFF;
-                font-size: 20px;
-                font-weight: bold;
-                opacity: 0.7;
-                animation: scrollHint 1.5s ease-in-out infinite;
-                pointer-events: none;
-            }
-
-            @keyframes scrollHint {
-                0%, 100% { right: 5px; }
-                50% { right: 15px; }
-            }
-
-            /* Hide scroll hint when user scrolls */
-            .comparison-table-container.scrolled::after {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .comparison-table {
-                min-width: 450px;
-                font-size: 11px;
-                table-layout: fixed;
-            }
-
-            /* Consistent padding across all cells */
-            .comparison-table th {
-                padding: 10px 6px;
-            }
-
-            .comparison-table td {
-                padding: 10px 6px;
-            }
-
-            .product-header i {
-                font-size: 20px;
-            }
-
-            .product-header span {
-                font-size: 12px;
-            }
-
-            .product-header small {
-                font-size: 9px;
-            }
-
-            /* Maintain column width percentages for smaller screens */
-            .comparison-table th.feature-col,
-            .comparison-table td.feature-name {
-                width: 28% !important;
-                font-size: 10px;
-                padding-left: 6px;
-            }
-
-            .comparison-table th:not(.feature-col),
-            .comparison-table td:not(.feature-name) {
-                width: 24% !important;
-            }
-
-            .comparison-table .check-icon,
-            .comparison-table .x-icon,
-            .comparison-table .partial-icon {
-                font-size: 16px;
-            }
-
-            .comparison-table .feature-text {
-                font-size: 9px;
-            }
-        }
     </style>
 </head>
 <body class="dark-theme">
@@ -1490,12 +1440,12 @@
         <section class="product-hero-section">
             <!-- Floating Icons -->
             <div class="floating-icons">
-                <div class="floating-icon icon-1"><i class="bx bx-microphone"></i></div>
-                <div class="floating-icon icon-2"><i class="bx bx-user-voice"></i></div>
-                <div class="floating-icon icon-3"><i class="bx bx-globe"></i></div>
-                <div class="floating-icon icon-4"><i class="bx bx-sort"></i></div>
-                <div class="floating-icon icon-5"><i class="bx bx-file-blank"></i></div>
-                <div class="floating-icon icon-6"><i class="bx bx-data"></i></div>
+                <div class="floating-icon icon-1"><i class="bx bx-brain"></i></div>
+                <div class="floating-icon icon-2"><i class="bx bx-message-dots"></i></div>
+                <div class="floating-icon icon-3"><i class="bx bx-data"></i></div>
+                <div class="floating-icon icon-4"><i class="bx bx-cog"></i></div>
+                <div class="floating-icon icon-5"><i class="bx bx-cloud"></i></div>
+                <div class="floating-icon icon-6"><i class="bx bx-server"></i></div>
             </div>
             
             <div class="container">
@@ -1504,14 +1454,14 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="product-hero-content">
                             <h1 class="product-hero-title" style="display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap;">
-                                <img src="../img/voicebot/Voicebot_logo_500x500.png" alt="Voicebot" style="width: 60px; height: 60px; margin-right: 15px; object-fit: contain;">
+                                <img src="../img/smartgent/Smartgent_logo_500x500.png" alt="SmartGent" style="width: 60px; height: 60px; margin-right: 15px; object-fit: contain;">
                                 <div>
-                                    <span class="title-line-1">Voicebot</span>
-                                    <span class="title-line-2">Your AI Secretary</span>
+                                    <span class="title-line-1">SmartGent</span>
+                                    <span class="title-line-2">Enterprise AI Assistant</span>
                                 </div>
                             </h1>
                             <div class="product-hero-description">
-                                <p>Transform meetings into professional minutes with multilingual AI transcription and complete privacy.</p>
+                                <p>Transform your enterprise operations through intelligent document processing and workflow automation. Reduce processing time from hours to seconds.</p>
                             </div>
                             <div class="product-hero-buttons">
                                 <a href="../#contact" class="default-btn me-3">
@@ -1519,7 +1469,7 @@
                                     <span>Contact Us</span>
                                     <i class="bx bx-chevron-right ms-1"></i>
                                 </a>
-                                <a href="https://vb.jarvisnsam.ai/" class="default-btn red-btn" target="_blank" rel="noopener noreferrer">
+                                <a href="../lab/" class="default-btn red-btn">
                                     <i class="bx bx-rocket me-2"></i>
                                     <span>Try Demo</span>
                                     <i class="bx bx-chevron-right ms-1"></i>
@@ -1531,51 +1481,120 @@
                     <!-- Right Column: Hero Image -->
                     <div class="col-lg-6 col-md-6">
                         <div class="product-hero-image">
-                            <img src="../img/ProductHero_Voicebot.png" alt="VoiceBot AI Platform" class="hero-image">
+                            <img src="../img/ProductHero_Smartgent.png" alt="SmartGent AI Platform" class="hero-image">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Video Section -->
-        <section class="container mb-5">
+        <!-- Features Section -->
+        <section class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title text-center mb-4">
+                    <div class="section-title text-center mb-5">
                         <div class="sub-title-2">
-                            <p>For Enterprise</p>
+                            <p>Key Features</p>
                         </div>
-                        <h2>Meet Your New AI Meeting Secretary</h2>
-                        <p class="section-description">Experience how Voicebot transforms your meeting documentation workflow with enterprise-grade AI that understands your business language and security requirements.</p>
+                        <h2>Comprehensive AI Capabilities</h2>
+                        <p class="section-description">Everything you need to build intelligent, automated workflows that transform how your organization operates.</p>
                     </div>
-                    <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/beXa5nYhz7I" 
-                            title="Voicebot Demo Video"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
+                </div>
+            </div>
+            
+            <div class="features-container">
+                <!-- Feature 1: Left Image, Right Text -->
+                <div class="feature-row">
+                    <div class="feature-image-container">
+                        <div class="feature-image-placeholder">
+                            <i class="bx bx-message-dots" style="font-size: 80px; color: #00BFFF; margin-bottom: 20px;"></i>
+                            <h4 style="color: #fff;">Conversational AI Interface</h4>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px;">LLM-powered chat screenshot</p>
+                        </div>
+                    </div>
+                    <div class="feature-text-container">
+                        <h3 class="product-feature-title">Advanced Conversational AI</h3>
+                        <p class="product-feature-description">Engage with state-of-the-art large language models that understand context, provide intelligent responses, and learn from interactions to continuously improve your business communications.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2: Right Image, Left Text -->
+                <div class="feature-row reverse">
+                    <div class="feature-image-container">
+                        <div class="feature-image-placeholder">
+                            <i class="bx bx-data" style="font-size: 80px; color: #00BFFF; margin-bottom: 20px;"></i>
+                            <h4 style="color: #fff;">RAG Technology Dashboard</h4>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px;">Knowledge retrieval interface</p>
+                        </div>
+                    </div>
+                    <div class="feature-text-container">
+                        <h3 class="product-feature-title">Retrieval-Augmented Generation</h3>
+                        <p class="product-feature-description">Combine the power of AI generation with real-time data retrieval from your knowledge bases, ensuring responses are always accurate, relevant, and grounded in your organization's information.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3: Left Image, Right Text -->
+                <div class="feature-row">
+                    <div class="feature-image-container">
+                        <div class="feature-image-placeholder">
+                            <i class="bx bx-cog" style="font-size: 80px; color: #00BFFF; margin-bottom: 20px;"></i>
+                            <h4 style="color: #fff;">Workflow Builder</h4>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px;">Visual automation designer</p>
+                        </div>
+                    </div>
+                    <div class="feature-text-container">
+                        <h3 class="product-feature-title">Intelligent Workflow Automation</h3>
+                        <p class="product-feature-description">Design and deploy complex business workflows with our intuitive visual builder. Automate repetitive tasks, orchestrate multi-step processes, and integrate with existing tools seamlessly.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 4: Right Image, Left Text -->
+                <div class="feature-row reverse">
+                    <div class="feature-image-container">
+                        <div class="feature-image-placeholder">
+                            <i class="bx bx-shield-alt-2" style="font-size: 80px; color: #00BFFF; margin-bottom: 20px;"></i>
+                            <h4 style="color: #fff;">Enterprise Security</h4>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px;">Security & compliance features</p>
+                        </div>
+                    </div>
+                    <div class="feature-text-container">
+                        <h3 class="product-feature-title">Enterprise-Grade Security & Deployment</h3>
+                        <p class="product-feature-description">Built with security at its core, SmartGent includes role-based access control, end-to-end encryption, audit logging, and compliance with major industry standards. Available as cloud SaaS or on-premise to meet your data sovereignty needs.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 5: Left Image, Right Text -->
+                <div class="feature-row">
+                    <div class="feature-image-container">
+                        <div class="feature-image-placeholder">
+                            <i class="bx bx-line-chart" style="font-size: 80px; color: #00BFFF; margin-bottom: 20px;"></i>
+                            <h4 style="color: #fff;">Analytics & Insights</h4>
+                            <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px;">Performance monitoring dashboard</p>
+                        </div>
+                    </div>
+                    <div class="feature-text-container">
+                        <h3 class="product-feature-title">Real-Time Analytics & Monitoring</h3>
+                        <p class="product-feature-description">Track system performance, user interactions, and workflow efficiency with comprehensive dashboards. Gain actionable insights to continuously optimize your AI operations and maximize ROI.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- How It Works Section -->
+        <!-- Real-World Use Cases Section -->
         <section class="container mb-5">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title text-center mb-5">
                         <div class="sub-title-2">
-                            <p>How It Works</p>
+                            <p>Use Cases</p>
                         </div>
-                        <h2>3 Simple Steps to Perfect Meeting Minutes</h2>
-                        <p class="section-description">Transform your recordings into professional documentation with our streamlined AI-powered workflow designed for enterprise efficiency.</p>
+                        <h2>Real-World Applications</h2>
+                        <p class="section-description">See how enterprises are using SmartGent to transform their daily operations</p>
                     </div>
                 </div>
             </div>
             
-            <!-- How It Works Container with Swiper -->
+            <!-- Use Cases Container with Swiper -->
             <div class="how-it-works-container">
                 <!-- Progress Bar with Step Indicator -->
                 <div class="swiper-progress-wrapper">
@@ -1590,96 +1609,96 @@
                 <!-- Swiper Container -->
                 <div class="swiper hiw-swiper">
                     <div class="swiper-wrapper">
-                        <!-- Step 1 -->
+                        <!-- Use Case 1: Expense Claim -->
                         <div class="swiper-slide">
                             <div class="hiw-step-content">
                                 <div class="hiw-icon-wrapper">
                                     <div class="hiw-icon-circle">
-                                        <i class="bx bx-upload"></i>
+                                        <i class="bx bx-receipt"></i>
                                     </div>
                                     <div class="hiw-icon-bg-pulse"></div>
                                 </div>
-                                <h3 class="hiw-step-title">Upload Recording</h3>
+                                <h3 class="hiw-step-title">Expense Claim</h3>
                                 <p class="hiw-step-description">
-                                    Drag and drop or record with your mobile device. Supports common audio and video formats with multilanguage support.
+                                    System processes receipt images, extracts data fields, and auto-populates expense forms. Automated workflow routes for approval. Digital archive for audit compliance.
                                 </p>
                                 <div class="hiw-visual-elements">
-                                    <div class="preference-items">
-                                        <div class="pref-item">
-                                            <i class="bx bx-headphone"></i>
-                                            <span>Audio</span>
+                                    <div class="integration-items">
+                                        <div class="integration-item">
+                                            <i class="bx bx-scan"></i>
+                                            <span>OCR Processing</span>
                                         </div>
-                                        <div class="pref-item">
-                                            <i class="bx bx-video"></i>
-                                            <span>Video</span>
+                                        <div class="integration-item">
+                                            <i class="bx bx-data"></i>
+                                            <span>Data Extraction</span>
                                         </div>
-                                        <div class="pref-item">
-                                            <i class="bx bx-devices"></i>
-                                            <span>Multi Devices</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Step 2 -->
-                        <div class="swiper-slide">
-                            <div class="hiw-step-content">
-                                <div class="hiw-icon-wrapper">
-                                    <div class="hiw-icon-circle">
-                                        <i class="bx bx-cog"></i>
-                                    </div>
-                                    <div class="hiw-icon-bg-pulse"></div>
-                                </div>
-                                <h3 class="hiw-step-title">Set Preferences</h3>
-                                <p class="hiw-step-description">
-                                    Choose meeting templates, add custom instructions for key points, and select your preferred output language.
-                                </p>
-                                <div class="hiw-visual-elements">
-                                    <div class="preference-items">
-                                        <div class="pref-item">
-                                            <i class="bx bx-layout"></i>
-                                            <span>Templates</span>
-                                        </div>
-                                        <div class="pref-item">
-                                            <i class="bx bx-edit"></i>
-                                            <span>Instructions</span>
-                                        </div>
-                                        <div class="pref-item">
-                                            <i class="bx bx-globe"></i>
-                                            <span>Language</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Step 3 -->
-                        <div class="swiper-slide">
-                            <div class="hiw-step-content">
-                                <div class="hiw-icon-wrapper">
-                                    <div class="hiw-icon-circle">
-                                        <i class="bx bx-download"></i>
-                                    </div>
-                                    <div class="hiw-icon-bg-pulse"></div>
-                                </div>
-                                <h3 class="hiw-step-title">View & Download</h3>
-                                <p class="hiw-step-description">
-                                    AI processes fast. Get precise transcript and professional minutes, ready to download for distribution.
-                                </p>
-                                <div class="hiw-visual-elements">
-                                    <div class="download-options">
-                                        <div class="download-item">
-                                            <i class="bx bx-time"></i>
-                                            <span>Fast</span>
-                                        </div>
-                                        <div class="download-item">
-                                            <i class="bx bx-file"></i>
-                                            <span>Transcript</span>
-                                        </div>
-                                        <div class="download-item">
+                                        <div class="integration-item">
                                             <i class="bx bx-file-blank"></i>
-                                            <span>Minutes</span>
+                                            <span>Form Generation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Use Case 2: Apply Leave -->
+                        <div class="swiper-slide">
+                            <div class="hiw-step-content">
+                                <div class="hiw-icon-wrapper">
+                                    <div class="hiw-icon-circle">
+                                        <i class="bx bxs-plane-alt"></i>
+                                    </div>
+                                    <div class="hiw-icon-bg-pulse"></div>
+                                </div>
+                                <h3 class="hiw-step-title">Apply Leave</h3>
+                                <p class="hiw-step-description">
+                                    System parses travel documents, identifies date fields, and creates leave records. Integration with HR database for balance tracking. Automated routing to approvers.
+                                </p>
+                                <div class="hiw-visual-elements">
+                                    <div class="preference-items">
+                                        <div class="pref-item">
+                                            <i class="bx bx-upload"></i>
+                                            <span>Document Input</span>
+                                        </div>
+                                        <div class="pref-item">
+                                            <i class="bx bx-spreadsheet"></i>
+                                            <span>Record Creation</span>
+                                        </div>
+                                        <div class="pref-item">
+                                            <i class="bx bx-git-merge"></i>
+                                            <span>Workflow Routing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Use Case 3: Talent Match -->
+                        <div class="swiper-slide">
+                            <div class="hiw-step-content">
+                                <div class="hiw-icon-wrapper">
+                                    <div class="hiw-icon-circle">
+                                        <i class="bx bx-group"></i>
+                                    </div>
+                                    <div class="hiw-icon-bg-pulse"></div>
+                                </div>
+                                <h3 class="hiw-step-title">Talent Match</h3>
+                                <p class="hiw-step-description">
+                                    System analyzes resume content, extracts skill sets, and generates compatibility matrix. Database matching with job requirements. Automated candidate ranking and reporting.
+                                </p>
+                                <div class="hiw-visual-elements">
+                                    <div class="deploy-options">
+                                        <div class="deploy-item">
+                                            <i class="bx bx-file-find"></i>
+                                            <span>CV Parsing</span>
+                                        </div>
+                                        <div class="deploy-item">
+                                            <i class="bx bx-grid-alt"></i>
+                                            <span>Matrix Scoring</span>
+                                        </div>
+                                        <div class="deploy-item">
+                                            <i class="bx bx-sort-alt-2"></i>
+                                            <span>Rank Output</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1696,77 +1715,14 @@
                 </div>
                 
             </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title text-center mb-5">
-                        <div class="sub-title-2">
-                            <p>Key Features</p>
-                        </div>
-                        <h2>Secure On-Premise Meeting Intelligence</h2>
-                        <p class="section-description">Powerful AI capabilities with complete data sovereignty - all processing happens within your secure infrastructure, never in the cloud.</p>
-                    </div>
-                </div>
-            </div>
             
-            <div class="features-container">
-                <!-- Feature 1: Left Image, Right Text -->
-                <div class="feature-row">
-                    <div class="feature-image-container">
-                        <img src="../img/voicebot/Voicebot_Feature_Cantonese.png" alt="Perfect Meeting Documentation" class="feature-image">
-                    </div>
-                    <div class="feature-text-container">
-                        <h3 class="product-feature-title">Precise Cantonese and multilingual transcription</h3>
-                        <p class="product-feature-description">Generate precise transcriptions and professionally formatted meeting minutes with high accuracy, capturing every important detail of your conversations.</p>
-                    </div>
-                </div>
-                
-                <!-- Feature 2: Right Image, Left Text -->
-                <div class="feature-row reverse">
-                    <div class="feature-image-container">
-                        <img src="../img/voicebot/Voicebot_Feature_Minute.png" alt="Smart Meeting Minutes" class="feature-image">
-                    </div>
-                    <div class="feature-text-container">
-                        <h3 class="product-feature-title">Smart Meeting Minutes</h3>
-                        <p class="product-feature-description">Automatically generate structured and professional meeting minutes with action items, decisions, and key points organized exactly how you need them.</p>
-                    </div>
-                </div>
-                
-                <!-- Feature 3: Left Image, Right Text -->
-                <div class="feature-row">
-                    <div class="feature-image-container">
-                        <img src="../img/voicebot/Voicebot_Feature_Speaker.png" alt="Multilingual Expertise" class="feature-image">
-                    </div>
-                    <div class="feature-text-container">
-                        <h3 class="product-feature-title">Speaker Identification</h3>
-                        <p class="product-feature-description">Automatically distinguish between different speakers in conversations, making transcripts more readable and useful.</p>
-                    </div>
-                </div>
-                
-                <!-- Feature 4: Right Image, Left Text -->
-                <div class="feature-row reverse">
-                    <div class="feature-image-container">
-                        <img src="../img/voicebot/Voicebot_Feature_Instruction.png" alt="Tailored to Your Style" class="feature-image">
-                    </div>
-                    <div class="feature-text-container">
-                        <h3 class="product-feature-title">Tailored to Your Style</h3>
-                        <p class="product-feature-description">Configure specific instructions and formatting preferences so your AI Secretary creates meeting minutes exactly how you want them structured.</p>
-                    </div>
-                </div>
-                
-                <!-- Feature 5: Left Image, Right Text -->
-                <div class="feature-row">
-                    <div class="feature-image-container">
-                        <img src="../img/voicebot/Voicebot_Feature_Secure.png" alt="Completely Private & Secure" class="feature-image">
-                    </div>
-                    <div class="feature-text-container">
-                        <h3 class="product-feature-title">Completely Private & Secure</h3>
-                        <p class="product-feature-description">Complete on-premise deployment ensures your sensitive business conversations and meeting data remain entirely within your secure infrastructure.</p>
-                    </div>
-                </div>
+            <!-- Watch Demo Button -->
+            <div class="text-center mt-4">
+                <a href="http://demo.jarvisnsam.ai/smartgent/" target="_blank" rel="noopener noreferrer" class="default-btn red-btn">
+                    <i class="bx bx-play-circle me-2"></i>
+                    <span>Watch Demo</span>
+                    <i class="bx bx-chevron-right ms-1"></i>
+                </a>
             </div>
         </section>
 
@@ -1776,10 +1732,10 @@
                 <div class="col-lg-12">
                     <div class="section-title text-center mb-5">
                         <div class="sub-title-2">
-                            <p>Why Choose Voicebot</p>
+                            <p>Why Choose SmartGent</p>
                         </div>
-                        <h2>Compare Your Options</h2>
-                        <p class="section-description">See how Voicebot stands out from other solutions</p>
+                        <h2>Key Differentiators</h2>
+                        <p class="section-description">Why enterprises choose SmartGent for their AI transformation</p>
                     </div>
                 </div>
             </div>
@@ -1789,164 +1745,69 @@
                     <thead>
                         <tr>
                             <th class="feature-col"></th>
-                            <th class="voicebot-col highlighted">
+                            <th class="smartgent-col highlighted">
                                 <div class="product-header">
-                                    <i class="bx bx-microphone"></i>
-                                    <span>Voicebot</span>
-                                    <small>Jarvis and Sam</small>
+                                    <i class="bx bx-brain"></i>
+                                    <span>SmartGent</span>
+                                    <small>Enterprise AI Platform</small>
                                 </div>
                             </th>
-                            <th class="platform-col">
+                            <th class="general-ai-col">
                                 <div class="product-header">
-                                    <i class="bx bx-video"></i>
-                                    <span>Meeting Platforms</span>
-                                    <small>Google, Zoom, Teams</small>
-                                </div>
-                            </th>
-                            <th class="device-col">
-                                <div class="product-header">
-                                    <i class="bx bx-disc"></i>
-                                    <span>Recording Devices</span>
-                                    <small>Plaud, Mobvoi</small>
+                                    <i class="bx bx-chat"></i>
+                                    <span>General AI Tools</span>
+                                    <small>Consumer Solutions</small>
                                 </div>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="feature-name">Mixed Cantonese English Transcript</td>
-                            <td class="voicebot-col highlighted">
+                            <td class="feature-name">Document Intelligence</td>
+                            <td class="smartgent-col highlighted">
                                 <i class="bx bx-check-circle check-icon"></i>
-                                <span class="feature-text">Native support</span>
+                                <span class="feature-text">Auto-extract & process</span>
                             </td>
-                            <td class="platform-col">
+                            <td class="general-ai-col">
                                 <i class="bx bx-x-circle x-icon"></i>
-                                <span class="feature-text">English only</span>
-                            </td>
-                            <td class="device-col">
-                                <i class="bx bx-circle partial-icon"></i>
-                                <span class="feature-text">Limited</span>
+                                <span class="feature-text">Manual input required</span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Customized Minutes</td>
-                            <td class="voicebot-col highlighted">
+                            <td class="feature-name">Workflow Automation</td>
+                            <td class="smartgent-col highlighted">
                                 <i class="bx bx-check-circle check-icon"></i>
-                                <span class="feature-text">Flexible</span>
+                                <span class="feature-text">AI-powered workflows</span>
                             </td>
-                            <td class="platform-col">
+                            <td class="general-ai-col">
                                 <i class="bx bx-x-circle x-icon"></i>
-                                <span class="feature-text">Not available</span>
-                            </td>
-                            <td class="device-col">
-                                <i class="bx bx-circle partial-icon"></i>
-                                <span class="feature-text">Limited</span>
+                                <span class="feature-text">Conversation only</span>
                             </td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Speaker Identification</td>
-                            <td class="voicebot-col highlighted">
+                            <td class="feature-name">Enterprise Integration</td>
+                            <td class="smartgent-col highlighted">
                                 <i class="bx bx-check-circle check-icon"></i>
-                                <span class="feature-text">Support</span>
+                                <span class="feature-text">Native connectors</span>
                             </td>
-                            <td class="platform-col">
-                                <i class="bx bx-check-circle check-icon"></i>
-                                <span class="feature-text">Support</span>
-                            </td>
-                            <td class="device-col">
-                                <i class="bx bx-check-circle check-icon"></i>
-                                <span class="feature-text">Support</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Enterprise Features</td>
-                            <td class="voicebot-col highlighted">
-                                <i class="bx bx-check-circle check-icon"></i>
-                                <span class="feature-text">Custom deployment</span>
-                            </td>
-                            <td class="platform-col">
+                            <td class="general-ai-col">
                                 <i class="bx bx-circle partial-icon"></i>
-                                <span class="feature-text">Limited options</span>
-                            </td>
-                            <td class="device-col">
-                                <i class="bx bx-circle partial-icon"></i>
-                                <span class="feature-text">Basic features</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="feature-name">Extra Cost for LLM Subscription</td>
-                            <td class="voicebot-col highlighted">
-                                <i class="bx bx-check-circle check-icon"></i>
-                                <span class="feature-text">Not required</span>
-                            </td>
-                            <td class="platform-col">
-                                <i class="bx bx-x-circle x-icon"></i>
-                                <span class="feature-text">Need subscription</span>
-                            </td>
-                            <td class="device-col">
-                                <i class="bx bx-x-circle x-icon"></i>
-                                <span class="feature-text">Need subscription</span>
+                                <span class="feature-text">Limited support</span>
                             </td>
                         </tr>
                         <tr>
                             <td class="feature-name">Data Security</td>
-                            <td class="voicebot-col highlighted">
+                            <td class="smartgent-col highlighted">
                                 <i class="bx bx-check-circle check-icon"></i>
-                                <span class="feature-text">On-premise</span>
+                                <span class="feature-text">On-premise available</span>
                             </td>
-                            <td class="platform-col">
+                            <td class="general-ai-col">
                                 <i class="bx bx-x-circle x-icon"></i>
-                                <span class="feature-text">Cloud-only storage</span>
-                            </td>
-                            <td class="device-col">
-                                <i class="bx bx-x-circle x-icon"></i>
-                                <span class="feature-text">Requires cloud upload</span>
+                                <span class="feature-text">Cloud-only</span>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </section>
-
-        <!-- Use Cases Section -->
-        <section class="container mb-5">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title text-center mb-5">
-                        <div class="sub-title-2">
-                            <p>Use Cases</p>
-                        </div>
-                        <h2>Versatile Enterprise Scenarios</h2>
-                        <p class="section-description">How Your AI Secretary Helps Different Teams</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="use-case-card">
-                        <h3 class="product-use-case-title">Meeting Minutes Creation</h3>
-                        <p class="product-use-case-description">Your AI Secretary attends team meetings, board discussions, and client calls, creating professional meeting minutes just like a human secretary would.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="use-case-card">
-                        <h3 class="product-use-case-title">Interview Documentation</h3>
-                        <p class="product-use-case-description">Let your AI Secretary handle HR interviews, research sessions, and media interviews, providing detailed notes and summaries for easy review.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="use-case-card">
-                        <h3 class="product-use-case-title">Conference Note-Taking</h3>
-                        <p class="product-use-case-description">Your AI Secretary captures conference presentations, webinars, and training sessions, organizing key points and insights for future reference.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="use-case-card">
-                        <h3 class="product-use-case-title">Client Call Summaries</h3>
-                        <p class="product-use-case-description">Never miss important client details again. Your AI Secretary documents customer calls and creates actionable summaries for your team.</p>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -1959,7 +1820,7 @@
                             <p>Success Stories</p>
                         </div>
                         <h2>What Our Clients Say</h2>
-                        <p class="section-description">See how enterprises are transforming their meeting documentation with Voicebot</p>
+                        <p class="section-description">See how enterprises are transforming their operations with SmartGent</p>
                     </div>
                 </div>
             </div>
@@ -1972,12 +1833,12 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-quote">
                                     <i class="bx bxs-quote-alt-left quote-icon"></i>
-                                    <p class="testimonial-text">"Voicebot has revolutionized our board meetings. We save 3+ hours per meeting on documentation, and the Cantonese transcription accuracy is exceptional."</p>
+                                    <p class="testimonial-text">"SmartGent transformed our customer service. Response times dropped by 70% while satisfaction scores increased. The RAG feature ensures accurate answers every time."</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="author-info">
-                                        <h4 class="author-name">Sarah Chen</h4>
-                                        <p class="author-title">COO, Financial Services</p>
+                                        <h4 class="author-name">David Lee</h4>
+                                        <p class="author-title">CTO, Tech Solutions Inc.</p>
                                     </div>
                                     <div class="testimonial-rating">
                                         <i class="bx bxs-star"></i>
@@ -1994,12 +1855,12 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-quote">
                                     <i class="bx bxs-quote-alt-left quote-icon"></i>
-                                    <p class="testimonial-text">"The on-premise deployment was crucial for us. Now we have AI-powered meeting intelligence without compromising our data security policies."</p>
+                                    <p class="testimonial-text">"The workflow automation capabilities are game-changing. We've automated 80% of our repetitive tasks, allowing our team to focus on strategic initiatives."</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="author-info">
-                                        <h4 class="author-name">Michael Wong</h4>
-                                        <p class="author-title">CTO, Healthcare Group</p>
+                                        <h4 class="author-name">Emily Zhang</h4>
+                                        <p class="author-title">Operations Director, Global Retail</p>
                                     </div>
                                     <div class="testimonial-rating">
                                         <i class="bx bxs-star"></i>
@@ -2016,12 +1877,12 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-quote">
                                     <i class="bx bxs-quote-alt-left quote-icon"></i>
-                                    <p class="testimonial-text">"Our legal team loves how Voicebot captures every detail. The custom templates ensure compliance documentation is always perfect."</p>
+                                    <p class="testimonial-text">"On-premise deployment was crucial for our compliance needs. SmartGent delivered enterprise AI capabilities while keeping our data completely secure."</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="author-info">
-                                        <h4 class="author-name">Jennifer Liu</h4>
-                                        <p class="author-title">Legal Director, Law Firm</p>
+                                        <h4 class="author-name">Robert Kim</h4>
+                                        <p class="author-title">CISO, Financial Group</p>
                                     </div>
                                     <div class="testimonial-rating">
                                         <i class="bx bxs-star"></i>
@@ -2043,12 +1904,12 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-quote">
                                     <i class="bx bxs-quote-alt-left quote-icon"></i>
-                                    <p class="testimonial-text">"Voicebot has revolutionized our board meetings. We save 3+ hours per meeting on documentation, and the Cantonese transcription accuracy is exceptional."</p>
+                                    <p class="testimonial-text">"SmartGent transformed our customer service. Response times dropped by 70% while satisfaction scores increased. The RAG feature ensures accurate answers every time."</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="author-info">
-                                        <h4 class="author-name">Sarah Chen</h4>
-                                        <p class="author-title">COO, Financial Services</p>
+                                        <h4 class="author-name">David Lee</h4>
+                                        <p class="author-title">CTO, Tech Solutions Inc.</p>
                                     </div>
                                     <div class="testimonial-rating">
                                         <i class="bx bxs-star"></i>
@@ -2065,12 +1926,12 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-quote">
                                     <i class="bx bxs-quote-alt-left quote-icon"></i>
-                                    <p class="testimonial-text">"The on-premise deployment was crucial for us. Now we have AI-powered meeting intelligence without compromising our data security policies."</p>
+                                    <p class="testimonial-text">"The workflow automation capabilities are game-changing. We've automated 80% of our repetitive tasks, allowing our team to focus on strategic initiatives."</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="author-info">
-                                        <h4 class="author-name">Michael Wong</h4>
-                                        <p class="author-title">CTO, Healthcare Group</p>
+                                        <h4 class="author-name">Emily Zhang</h4>
+                                        <p class="author-title">Operations Director, Global Retail</p>
                                     </div>
                                     <div class="testimonial-rating">
                                         <i class="bx bxs-star"></i>
@@ -2087,12 +1948,12 @@
                             <div class="testimonial-card">
                                 <div class="testimonial-quote">
                                     <i class="bx bxs-quote-alt-left quote-icon"></i>
-                                    <p class="testimonial-text">"Our legal team loves how Voicebot captures every detail. The custom templates ensure compliance documentation is always perfect."</p>
+                                    <p class="testimonial-text">"On-premise deployment was crucial for our compliance needs. SmartGent delivered enterprise AI capabilities while keeping our data completely secure."</p>
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="author-info">
-                                        <h4 class="author-name">Jennifer Liu</h4>
-                                        <p class="author-title">Legal Director, Law Firm</p>
+                                        <h4 class="author-name">Robert Kim</h4>
+                                        <p class="author-title">CISO, Financial Group</p>
                                     </div>
                                     <div class="testimonial-rating">
                                         <i class="bx bxs-star"></i>
@@ -2129,73 +1990,64 @@
                     <div class="faq-container">
                         <div class="faq-item">
                             <div class="faq-question" data-faq="1">
-                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How accurate is the Cantonese transcription?</h3>
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>What makes SmartGent different from other AI solutions?</h3>
                                 <i class="bx bx-chevron-down faq-icon"></i>
                             </div>
                             <div class="faq-answer" id="faq-1">
-                                <p>Our AI achieves excellent accuracy for Cantonese mixed with English dialogue, which is commonly used by Hong Kong people, and supports Mandarin as well. The system is specifically trained to understand local terminology, business jargon, and natural code-switching between Cantonese, Mandarin, and English as typically spoken in Hong Kong business environments.</p>
+                                <p>SmartGent is a complete enterprise AI platform that combines conversational AI with RAG technology and workflow automation. Unlike general AI tools, SmartGent can be deployed on-premise, integrates with your existing systems, and provides automated workflows beyond just chat interactions.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" data-faq="2">
-                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>What audio/video formats are supported?</h3>
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How does RAG improve AI accuracy?</h3>
                                 <i class="bx bx-chevron-down faq-icon"></i>
                             </div>
                             <div class="faq-answer" id="faq-2">
-                                <p>Voicebot supports all common audio and video formats including MP3, MP4, M4A, and WAV. Files can be uploaded directly through the web interface from any device on your network.</p>
+                                <p>RAG (Retrieval-Augmented Generation) combines AI's generative capabilities with real-time retrieval from your knowledge bases. This ensures responses are grounded in your actual data, reducing hallucinations and providing accurate, contextual answers specific to your business.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" data-faq="3">
-                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How does on-premise deployment work?</h3>
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>Can SmartGent integrate with our existing tools?</h3>
                                 <i class="bx bx-chevron-down faq-icon"></i>
                             </div>
                             <div class="faq-answer" id="faq-3">
-                                <p>Voicebot is a web-based system that can be accessed by different devices within your intranet. It's deployed as a complete on-premise solution entirely within your organization's infrastructure. All processing happens locally - no data ever leaves your secure environment. Your team can access it from any device on your network while maintaining complete data isolation.</p>
+                                <p>Yes! SmartGent provides extensive APIs and pre-built connectors for popular enterprise tools including CRM systems, databases, communication platforms, and productivity suites. Our team can also develop custom integrations for your specific requirements.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" data-faq="4">
-                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>Can I customize the meeting minutes format?</h3>
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>What's the difference between SaaS and on-premise deployment?</h3>
                                 <i class="bx bx-chevron-down faq-icon"></i>
                             </div>
                             <div class="faq-answer" id="faq-4">
-                                <p>Yes! Voicebot offers complete customization of meeting minutes templates. You can define sections, formatting styles, what to include/exclude, and specific instructions for different meeting types. Create multiple templates for board meetings, client calls, team updates, etc.</p>
+                                <p>SaaS deployment offers rapid setup, automatic updates, and scalability through the cloud. On-premise gives you complete control over your data and infrastructure, ideal for organizations with strict compliance requirements. Both options include the same features and support.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" data-faq="5">
-                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How long does processing take?</h3>
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How long does implementation take?</h3>
                                 <i class="bx bx-chevron-down faq-icon"></i>
                             </div>
                             <div class="faq-answer" id="faq-5">
-                                <p>Processing is remarkably fast - typically 2-3 minutes for a half-hour meeting. The actual processing time varies depending on your hardware specifications and recording file size. Once processed, transcripts and minutes can be viewed directly in the Voicebot interface or downloaded for distribution.</p>
+                                <p>SaaS deployment can be operational within 24 hours for basic setups. On-premise installation typically takes 1-2 weeks depending on infrastructure complexity. Full customization and integration projects range from 2-8 weeks based on requirements.</p>
                             </div>
                         </div>
                         
                         <div class="faq-item">
                             <div class="faq-question" data-faq="6">
-                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>Does it identify different speakers?</h3>
+                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>Do we need technical expertise to use SmartGent?</h3>
                                 <i class="bx bx-chevron-down faq-icon"></i>
                             </div>
                             <div class="faq-answer" id="faq-6">
-                                <p>Yes, Voicebot automatically identifies and labels different speakers in conversations, making transcripts more accurate and organized for easy review and follow-up.</p>
+                                <p>SmartGent is designed for business users with an intuitive interface and visual workflow builder. No coding is required for basic operations. We provide comprehensive training and support, plus professional services for advanced customizations if needed.</p>
                             </div>
                         </div>
                         
-                        <div class="faq-item">
-                            <div class="faq-question" data-faq="7">
-                                <h3 class="faq-title"><i class="bx bx-question-mark" style="margin-right: 10px; color: #00BFFF;"></i>How secure is my data with Voicebot?</h3>
-                                <i class="bx bx-chevron-down faq-icon"></i>
-                            </div>
-                            <div class="faq-answer" id="faq-7">
-                                <p>Your data security is our top priority. Voicebot includes automatic data cleanup within specified periods that you configure. All data remains within your secure infrastructure with on-premise deployment. You have complete control over retention policies, ensuring sensitive meeting data is automatically purged according to your organization's security requirements.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -2213,12 +2065,12 @@
                 
                 <!-- CTA Content -->
                 <div class="cta-box-content">
-                    <h2 class="cta-box-title" style="background: linear-gradient(90deg, #00BFFF, #FF6B6B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: brightness(1.2);">Talk with Us Now</h2>
-                    <p class="cta-box-description" style="color: rgba(255, 255, 255, 0.95); text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">Talk to our professional team for a personalized quote and discover how Voicebot can revolutionize your meeting documentation.</p>
+                    <h2 class="cta-box-title" style="background: linear-gradient(90deg, #00BFFF, #FF6B6B); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: brightness(1.2);">Ready to Transform Your Business?</h2>
+                    <p class="cta-box-description" style="color: rgba(255, 255, 255, 0.95); text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">Schedule a demo to see how SmartGent can revolutionize your enterprise operations with intelligent automation.</p>
                     <div class="cta-box-buttons">
                         <a href="../#contact" class="default-btn" style="background: linear-gradient(90deg, #00BFFF, #FF6B6B); border: 2px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 191, 255, 0.4);">
-                            <i class="bx bx-tags me-2"></i>
-                            <span>Get Pricing</span>
+                            <i class="bx bx-calendar me-2"></i>
+                            <span>Schedule Demo</span>
                             <i class="bx bx-chevron-right ms-1"></i>
                         </a>
                     </div>
@@ -2395,11 +2247,6 @@
                     }
                 });
             });
-            
-            // Optional: Open first FAQ by default
-            // if (faqItems.length > 0) {
-            //     faqItems[0].classList.add('active');
-            // }
         }
         
         // Testimonials carousel for mobile

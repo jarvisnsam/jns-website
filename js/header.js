@@ -53,7 +53,7 @@ function generateHeaderHTML() {
                     <li class="nav-item dropdown">
                         <a href="${basePath}index.html#products" class="nav-link dropdown-toggle" id="productsDropdown">Products</a>
                         <ul class="dropdown-menu enhanced-dropdown" aria-labelledby="productsDropdown">
-                            <li><a class="dropdown-item" href="${basePath}index.html#smartgent-detail">Smartgent</a></li>
+                            <li><a class="dropdown-item" href="${basePath}smartgent/">Smartgent</a></li>
                             <li><a class="dropdown-item" href="${basePath}voicebot/">Voicebot</a></li>
                             <li><a class="dropdown-item" href="${basePath}index.html#agentel-agency">Agentel Agency</a></li>
                             <li><a class="dropdown-item" href="${basePath}index.html#custom-solutions">Custom Solutions</a></li>
@@ -100,7 +100,7 @@ function generateHeaderHTML() {
             <li class="nav-item dropdown">
                 <a href="${basePath}index.html#products" class="nav-link dropdown-toggle" id="mobileProductsDropdown">Products</a>
                 <ul class="dropdown-menu mobile-dropdown enhanced-dropdown" aria-labelledby="mobileProductsDropdown">
-                    <li><a class="dropdown-item" href="${basePath}index.html#smartgent-detail" onclick="toggleMobileMenu()">Smartgent</a></li>
+                    <li><a class="dropdown-item" href="${basePath}smartgent/" onclick="toggleMobileMenu()">Smartgent</a></li>
                     <li><a class="dropdown-item" href="${basePath}voicebot/" onclick="toggleMobileMenu()">Voicebot</a></li>
                     <li><a class="dropdown-item" href="${basePath}index.html#agentel-agency" onclick="toggleMobileMenu()">Agentel Agency</a></li>
                     <li><a class="dropdown-item" href="${basePath}index.html#custom-solutions" onclick="toggleMobileMenu()">Custom Solutions</a></li>
